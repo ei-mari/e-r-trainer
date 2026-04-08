@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eimari Roleplay Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-stage">
+      <div class="phone-shell">
+        <div class="phone-camera"></div>
+
+        <section class="screen lesson-screen" id="lessonScreen">
+          <div class="screen-scroll lesson-scroll">
+            <section class="panel lesson-panel" id="lessonPanel">
+              <div class="page-thumbnail" aria-hidden="true">
+                <img class="page-thumbnail-image" src="./Eimari Thumbnail.png" alt="" />
+              </div>
+              <div class="page-thumbnail-divider"></div>
+
+              <div class="lesson-topbar">
+                <div class="mode-switch" id="modeSwitch">
+                  <button class="mode-switch-button active" data-mode="translation">瞬間英作文モード</button>
+                  <button class="mode-switch-button" data-mode="mission">ミッションモード</button>
+                </div>
+                <div class="role-switch" id="roleSwitch">
+                  <button class="role-switch-button active" data-role="detective">Detective</button>
+                  <button class="role-switch-button" data-role="suspect">Suspect</button>
+                </div>
+                <div class="topline">
+                  <div class="topline-main">
+                    <p id="tabLabel" class="tab-label">暗記</p>
+                    <button id="switchModeLink" class="switch-mode-link is-hidden" type="button">
+                      暗記モードに切り替える
+                    </button>
+                  </div>
+                  <button id="starToggleButton" class="star-toggle-button" aria-label="Toggle star">☆</button>
+                </div>
+              </div>
+
+              <div id="progressWrap" class="progress-wrap">
+                <div class="progress-bar">
+                  <div id="progressFill" class="progress-fill"></div>
+                </div>
+              </div>
+
+              <section id="homeView" class="home-view is-hidden">
+                <div class="home-hero">
+                  <p id="homeSummary" class="home-summary"></p>
+                </div>
+                <div class="home-card home-guide">
+                  <p class="mission-label">How To Use</p>
+                  <p class="home-guide-text">
+                    1. まず自分の役を選びます。
+                  </p>
+                  <p class="home-guide-text">
+                    2. 役を選んだあと、学び方を選びます。
+                  </p>
+                  <p class="home-guide-text">
+                    3. 瞬間英作文モードかミッションモードで練習を始めます。
+                  </p>
+                </div>
+                <div class="home-role-grid" id="homeRoleGrid">
+                  <button id="homeDetectiveButton" class="home-role-card active" data-home-role="detective">
+                    <span class="home-role-title">Detective</span>
+                    <span class="home-role-copy">刑事側の流れを主語にして練習する</span>
+                  </button>
+                  <button id="homeSuspectButton" class="home-role-card" data-home-role="suspect">
+                    <span class="home-role-title">Suspect</span>
+                    <span class="home-role-copy">容疑者側の受け答えを会話順で練習する</span>
+                  </button>
+                </div>
+              </section>
+
+              <section id="cardView" class="card-view">
+                <div id="challengeCard" class="challenge-card">
+                  <div class="mission-card">
+                    <p class="mission-label">Mission</p>
+                    <p id="challengePrompt" class="challenge-prompt"></p>
+                  </div>
+
+                  <div class="answer-actions">
+                    <button id="showHintButton" class="secondary">ヒント</button>
+                    <button id="showAnswerButton" class="primary">答え</button>
+                  </div>
+
+                  <div id="hintBox" class="hint-box is-hidden">
+                    <div id="hintChipList" class="hint-chip-list"></div>
+                  </div>
+
+                  <div id="feedbackBox" class="feedback-box is-hidden">
+                    <div class="feedback-grid">
+                      <div id="modelAnswerCard" class="feedback-item">
+                        <span class="feedback-item-label">Model answer</span>
+                        <strong id="correctAnswerText"></strong>
+                        <p id="correctAnswerJapanese"></p>
+                        <div class="feedback-action-row">
+                          <button id="reviewLaterButton" class="review-later-button" type="button">
+                            後で復習する（☆）
+                          </button>
+                          <button id="nextAnswerButton" class="review-later-button next-answer-button" type="button">
+                            次へ進む
+                          </button>
+                        </div>
+                      </div>
+                      <div id="partnerLineCard" class="feedback-item">
+                        <span class="feedback-item-label">Next Line</span>
+                        <strong id="partnerLineText"></strong>
+                        <p id="partnerLineJapanese"></p>
+                        <div class="feedback-divider"></div>
+                        <p id="partnerLineNote" class="feedback-note is-hidden">
+                          NEXT LINEはSuspectの想定解答です。会話の流れを意識して練習をしましょう。⭐︎を押したあと、ページ下部の⭐︎ボタンを押すと、練習したい文だけを確認することができます。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="listView" class="list-view is-hidden"></section>
+
+              <section id="clozeView" class="cloze-view is-hidden">
+                <p class="cloze-intro">
+                  こちらはミッションを見ながら練習するモードです。穴埋めはあくまでヒントとして使い、会話の流れを想定して実践してみてください。自分の解答があっているかどうか気になった時は、BauerまでDMを送ってください。
+                </p>
+              </section>
+
+              <section id="modeSelectView" class="home-view is-hidden">
+                <div class="home-hero">
+                  <p class="home-kicker">Choose Study Mode</p>
+                  <h1>How do you want to practice?</h1>
+                  <p class="home-summary">役割を選んだら、次は学び方を選びます。</p>
+                </div>
+                <div class="home-mode-actions">
+                  <button id="homeTranslationButton" class="primary large-button">瞬間英作文モード</button>
+                  <button id="homeClozeButton" class="secondary large-button">ミッションモード</button>
+                </div>
+              </section>
+
+              <section id="emptyStarredView" class="empty-view is-hidden">
+                <div class="home-card">
+                  <p class="mission-label">Starred</p>
+                  <h2>まだ保存がありません</h2>
+                  <p class="home-summary">☆ を押すと、このタブであとから見返せます。</p>
+                </div>
+              </section>
+
+              <div id="sessionCompleteCard" class="complete-card is-hidden">
+                <p class="eyebrow">Session Complete</p>
+                <h2>Nice work.</h2>
+                <p id="completeSummary" class="complete-summary"></p>
+                <div class="complete-actions">
+                  <button id="retryButton" class="primary">最初から見る</button>
+                  <button id="backToSetupButton" class="secondary">ホームへ</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <div class="role-footer" id="roleFooter">
+          <button id="footerHomeButton" class="footer-nav-button" data-tab="home" aria-label="Home">🏠</button>
+          <button id="footerStarredButton" class="footer-nav-button" data-tab="starred">⭐︎</button>
+          <button id="footerMemorizeButton" class="footer-nav-button active" data-tab="memorize">暗記</button>
+          <button id="footerListButton" class="footer-nav-button" data-tab="list">一覧</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
