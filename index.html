@@ -38,10 +38,58 @@
                   <div class="topline-main">
                     <p id="tabLabel" class="tab-label">暗記</p>
                     <button id="switchModeLink" class="switch-mode-link is-hidden" type="button">
-                      暗記モードに切り替える
+                      暗記モード
+                    </button>
+                    <button id="switchStarredLink" class="switch-mode-link is-hidden" type="button">
+                      スターモード
                     </button>
                   </div>
                   <button id="starToggleButton" class="star-toggle-button" aria-label="Toggle star">☆</button>
+                </div>
+                <div id="usageWrap" class="usage-wrap is-hidden">
+                  <button id="usageToggleButton" class="usage-toggle-button" type="button">使い方</button>
+                  <div id="usagePanel" class="usage-panel is-hidden">
+                    <div class="usage-item">
+                      <button class="usage-item-toggle" type="button" data-usage-item="1">
+                        <span>1. <strong>３つのモードを用意しております。</strong></span>
+                        <span class="usage-item-icon" aria-hidden="true">＋</span>
+                      </button>
+                      <div class="usage-item-body is-hidden" data-usage-body="1">
+                        今見えている一覧モード、１つずつ問題が表示される暗記モード、⭐︎をつけた項目だけが表示されるスターモードの３つです。<br /><br />
+                        それぞれをタップして好きなものを使ってくださいね。
+                      </div>
+                    </div>
+                    <div class="usage-item">
+                      <button class="usage-item-toggle" type="button" data-usage-item="2">
+                        <span id="usageItem2Title">2. <strong>一覧モードを使う場合は、会話の流れを想定しながら問題を解き、答えを押して確認してください。</strong></span>
+                        <span class="usage-item-icon" aria-hidden="true">＋</span>
+                      </button>
+                      <div class="usage-item-body is-hidden" data-usage-body="2">
+                        <span id="usageItem2Body">単語などが思い浮かばないときはヒントを押すとフレーズや英単語のガイドがあります。</span>
+                      </div>
+                    </div>
+                    <div class="usage-item">
+                      <button class="usage-item-toggle" type="button" data-usage-item="3">
+                        <span>3. <strong>これまでのレッスンで（おそらく）登場しなかった単語については、辞書へのリンクを貼っております。</strong></span>
+                        <span class="usage-item-icon" aria-hidden="true">＋</span>
+                      </button>
+                      <div class="usage-item-body is-hidden" data-usage-body="3">
+                        単語のボタンをタップするとCambridge Dictionaryで発音記号と音声を確認いただけます。
+                      </div>
+                    </div>
+                    <div class="usage-item">
+                      <button class="usage-item-toggle" type="button" data-usage-item="4">
+                        <span>4. <strong>Let's try!</strong></span>
+                        <span class="usage-item-icon" aria-hidden="true">＋</span>
+                      </button>
+                      <div class="usage-item-body is-hidden" data-usage-body="4">
+                        日本語のヒントを使いたくない時は、ミッションモードをお選びください。
+                      </div>
+                    </div>
+                    <div class="usage-item">
+                      5. ご質問がある場合はSlackにてお問い合わせください！
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -109,6 +157,8 @@
                             次へ進む
                           </button>
                         </div>
+                        <div id="modelAnswerVocabularyDivider" class="feedback-divider is-hidden"></div>
+                        <div id="modelAnswerVocabulary" class="list-vocabulary is-hidden"></div>
                       </div>
                       <div id="partnerLineCard" class="feedback-item">
                         <span class="feedback-item-label">Next Line</span>
@@ -128,8 +178,17 @@
 
               <section id="clozeView" class="cloze-view is-hidden">
                 <p class="cloze-intro">
-                  こちらはミッションを見ながら練習するモードです。穴埋めはあくまでヒントとして使い、会話の流れを想定して実践してみてください。自分の解答があっているかどうか気になった時は、BauerまでDMを送ってください。
+                  こちらはミッションを見ながら練習するモードです。穴埋めはあくまでヒントとして使い、会話の流れを想定して実践してみてください。
                 </p>
+                <div class="cloze-tip-box">
+                  <button id="clozeTipToggleButton" class="cloze-tip-toggle" type="button">
+                    <span>💡ポイント</span>
+                    <span id="clozeTipIcon" class="usage-item-icon" aria-hidden="true">＋</span>
+                  </button>
+                  <p id="clozeTipText" class="cloze-tip-text is-hidden">
+                    ミッションモードが難しいなと思う場合は、ヒントが多い瞬間英作文モードからお試しください。ご質問がある場合はなんでもSlackで送ってくださいね。
+                  </p>
+                </div>
               </section>
 
               <section id="modeSelectView" class="home-view is-hidden">
@@ -165,12 +224,7 @@
           </div>
         </section>
 
-        <div class="role-footer" id="roleFooter">
-          <button id="footerHomeButton" class="footer-nav-button" data-tab="home" aria-label="Home">🏠</button>
-          <button id="footerStarredButton" class="footer-nav-button" data-tab="starred">⭐︎</button>
-          <button id="footerMemorizeButton" class="footer-nav-button active" data-tab="memorize">暗記</button>
-          <button id="footerListButton" class="footer-nav-button" data-tab="list">一覧</button>
-        </div>
+        <button id="scrollTopButton" class="scroll-top-button" type="button" aria-label="Back to top">↑</button>
       </div>
     </div>
 

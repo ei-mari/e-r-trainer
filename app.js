@@ -103,6 +103,7 @@ const cards = [
     suspectEnglish: "No.",
     suspectJapanese: "言っていません。",
     notes: "刑事: say who : 誰かを言う。容疑者: 誰を待っていたのかは知らないと伝える。",
+    suspectNotes: "シンプルに１語で表現しよう",
   },
   {
     id: 12,
@@ -202,8 +203,8 @@ const cards = [
       "Alex, I need you to listen carefully. We have a record of an outgoing call to Maria at 9:12 from your phone.",
     detectiveJapanese:
       "アレックス、よく聞いて。あなたの携帯から9時12分にマリアへ発信した記録があります。",
-    suspectEnglish: "What? No. I did not call.",
-    suspectJapanese: "え？ いいえ。私はかけてません。",
+    suspectEnglish: "What? No. I did not call her.",
+    suspectJapanese: "え？ いいえ。彼女にはかけていません。",
     notes: "刑事: What? : え？。容疑者: 自分は電話をかけていないと否定する。",
   },
   {
@@ -218,7 +219,7 @@ const cards = [
   {
     id: 24,
     section: "Pressure",
-    detectiveEnglish: "An accident call that lasts forty seconds?",
+    detectiveEnglish: "An accident call that lasted forty seconds?",
     detectiveJapanese: "事故発信で40秒も？",
     suspectEnglish: "I do not know.",
     suspectJapanese: "分かりません。",
@@ -275,8 +276,8 @@ const cards = [
     section: "Pressure",
     detectiveEnglish: "Did you meet Maria again after you left?",
     detectiveJapanese: "あなたが出た後、マリアと再度会った？",
-    suspectEnglish: "I went back to the cafe area. I just drove by.",
-    suspectJapanese: "カフェのあたりに戻ったことはあります。車で通っただけです。",
+    suspectEnglish: "I went back to the cafe. I just drove by.",
+    suspectJapanese: "カフェに戻ったことはあります。車で通っただけです。",
     notes: "刑事: カフェを去った後、またマリアと会ったかを聞く。容疑者: カフェに戻ったことを認めて、車で通っただけだと伝える。",
   },
   {
@@ -321,139 +322,139 @@ const cards = [
 const missionGuides = {
   1: {
     detective: ["来てくれたお礼を言いましょう", "seat を使って座るよう促してください"],
-    suspect: ["了解する"],
+    suspect: ["了解してください。"],
   },
   2: {
     detective: ["この取調べは録音されると伝えてください", "最後に理解したかを聞いてください"],
-    suspect: ["理解したことを伝える"],
+    suspect: ["理解したことを伝えてください。"],
   },
   3: {
     detective: ["記録のためだと伝えた上でフルネームを聞いてください"],
-    suspect: ["フルネームを伝える"],
+    suspect: ["フルネームを伝えてください。"],
   },
   4: {
     detective: ["Maria O'Brian とはどういう関係かをHowで始まる疑問文で聞いてください"],
-    suspect: ["友人だと答える", "以前一緒に働いたことも伝える"],
+    suspect: ["友人だと答えてください。", "以前一緒に働いたことも伝えてください。"],
   },
   5: {
     detective: ["最後に Maria に会ったのはいつか聞いてください"],
-    suspect: ["昨日の夕方だと答える"],
+    suspect: ["昨日の夕方だと答えてください。"],
   },
   6: {
     detective: ["どこで会ったかを聞いてください"],
-    suspect: ["Main Street にあるカフェだと答える"],
+    suspect: ["Main Street にあるカフェだと答えてください。"],
   },
   7: {
     detective: ["Suspectがそこに着いた時間を聞いてください"],
-    suspect: ["7時10分くらいだと答える"],
+    suspect: ["7時10分くらいだと答えてください。"],
   },
   8: {
     detective: ["二人で何について話したか聞いてください"],
-    suspect: ["仕事のことと生活のことを話したと答える", "大した話ではなかったと伝える"],
+    suspect: ["仕事のことと生活のことを話したと答えてください。", "大した話ではなかったと伝えてください。"],
   },
   9: {
     detective: ["口論があったかを短く聞いてください"],
-    suspect: ["なかったと答える"],
+    suspect: ["なかったと答えてください。"],
   },
   10: {
     detective: ["後で誰かと会う話が出たか聞いてください"],
-    suspect: ["Maria は誰かを待っていたと言っていたと答える"],
+    suspect: ["Maria は誰かを待っていたと言っていたと答えてください。"],
   },
   11: {
     detective: ["誰と会うか言っていたかを聞いてください。"],
-    suspect: ["誰かまでは言っていなかったと伝える"],
+    suspect: ["シンプルに否定してください。"],
   },
   12: {
     detective: ["Suspectがカフェを出た時間を聞いてください"],
-    suspect: ["8時25分くらいだと答える"],
+    suspect: ["8時25分くらいだと答えてください。"],
   },
   13: {
     detective: ["Mariaが一緒に出たかを聞いてください"],
-    suspect: ["否定する", "Maria は残ったと伝える"],
+    suspect: ["否定してください。", "Maria は残ったと伝えてください。"],
   },
   14: {
     detective: ["Suspectがカフェを出た後に何をしたか聞いてください"],
-    suspect: ["まっすぐ車で帰宅したと答える"],
+    suspect: ["まっすぐ車で帰宅したと答えてください。"],
   },
   15: {
     detective: ["Suspectが途中でどこかに寄ったか聞いてください"],
-    suspect: ["否定する"],
+    suspect: ["否定してください。"],
   },
   16: {
     detective: ["Suspectが家に着いた時間を聞いてください"],
-    suspect: ["8時45分くらいだと答える"],
+    suspect: ["8時45分くらいだと答えてください。"],
   },
   17: {
     detective: ["家には誰といたかを聞いてください。"],
-    suspect: ["妻だと答える"],
+    suspect: ["妻だと答えてください。"],
   },
   18: {
     detective: ["出た後に Maria にメッセージしたか聞いてください。"],
-    suspect: ["1回だけしたと答える"],
+    suspect: ["1回だけしたと答えてください。"],
   },
   19: {
     detective: ["何と言ったかを聞いてください。"],
-    suspect: ["無事に帰れたか確認したと答える"],
+    suspect: ["無事に帰れたか確認したと答えてください。"],
   },
   20: {
     detective: ["Mariaが返信したかを聞いてください。"],
-    suspect: ["返信はなかったと答える"],
+    suspect: ["返信はなかったと答えてください。"],
   },
   21: {
     detective: ["タイムラインが見えてきたことを伝えてください。"],
-    suspect: ["了解すると返す"],
+    suspect: ["了解すると返してください。"],
   },
   22: {
     detective: ["注意して聞くよう促してください。", "Maria への発信記録があると示してください。"],
-    suspect: ["電話をかけていないと否定する"],
+    suspect: ["彼女に電話していないと否定してください。"],
   },
   23: {
     detective: ["その通話を説明するよう促してください。"],
-    suspect: ["事故発信かもしれないと伝える"],
+    suspect: ["事故発信かもしれないと伝えてください。"],
   },
   24: {
     detective: ["40秒続いた事故発信なのかと疑ってください。"],
-    suspect: ["分からないと伝える"],
+    suspect: ["分からないと伝えてください。"],
   },
   25: {
     detective: ["帰宅後に何をしたか細かく聞いてください。"],
-    suspect: ["着替えて少し食べてテレビを見たと伝える"],
+    suspect: ["着替えて少し食べてテレビを見たと伝えてください。"],
   },
   26: {
     detective: ["何を食べたか聞いてください。"],
-    suspect: ["残り物だと答える"],
+    suspect: ["残り物だと答えてください。"],
   },
   27: {
     detective: ["何の番組を見たか聞いてください。"],
-    suspect: ["覚えていないと伝える"],
+    suspect: ["覚えていないと伝えてください。"],
   },
   28: {
     detective: ["目撃者が9時にカフェ付近で見たと伝えてください"],
-    suspect: ["自分ではないと否定する"],
+    suspect: ["自分ではないと否定してください。"],
   },
   29: {
     detective: ["本当のことを言うよう促してください", "Maria を殺したか聞いてください"],
-    suspect: ["Maria を傷つけていないと伝える"],
+    suspect: ["Maria を傷つけていないと伝えてください。"],
   },
   30: {
     detective: ["出た後にもう一度 Maria と会ったか聞いてください"],
-    suspect: ["カフェのあたりに戻ったとは認める", "車で通っただけだと伝える"],
+    suspect: ["カフェのあたりに戻ったとは認めてください。", "車で通っただけだと伝えてください。"],
   },
   31: {
     detective: ["Maria を見たか聞いてください"],
-    suspect: ["見ていないと否定する"],
+    suspect: ["見ていないと否定してください。"],
   },
   32: {
     detective: ["なぜ 9時12分 に Maria に電話したのか聞いてください"],
-    suspect: ["様子を確かめるために電話したと伝える", "Maria は出なかったと伝える"],
+    suspect: ["様子を確かめるために電話したと伝えてください。", "Maria は出なかったと伝えてください。"],
   },
   33: {
     detective: ["最初の話と違うことを指摘してください。"],
-    suspect: ["分かっていると伝える", "パニックだったと伝える"],
+    suspect: ["分かっていると伝えてください。", "パニックだったと伝えてください。"],
   },
   34: {
     detective: ["最後の質問だと伝える", "あの夜 Maria と一緒にいた人を見たか聞く"],
-    suspect: ["見ていないと伝える"],
+    suspect: ["見ていないと伝えてください。"],
   },
 };
 
@@ -468,11 +469,15 @@ const state = {
   listModeByCard: {},
   clozeModeByCard: {},
   cardMode: "closed",
+  usageOpen: false,
+  usageExpandedItems: [],
+  clozeTipOpen: false,
   starred: loadStarred(),
 };
 
 const elements = {
   lessonScreen: document.querySelector("#lessonScreen"),
+  lessonScroll: document.querySelector(".lesson-scroll"),
   lessonTopbar: document.querySelector(".lesson-topbar"),
   progressWrap: document.querySelector("#progressWrap"),
   progressFill: document.querySelector("#progressFill"),
@@ -480,6 +485,17 @@ const elements = {
   roleSwitchButtons: document.querySelectorAll("[data-role]"),
   tabLabel: document.querySelector("#tabLabel"),
   switchModeLink: document.querySelector("#switchModeLink"),
+  switchStarredLink: document.querySelector("#switchStarredLink"),
+  usageWrap: document.querySelector("#usageWrap"),
+  usageToggleButton: document.querySelector("#usageToggleButton"),
+  usagePanel: document.querySelector("#usagePanel"),
+  usageItem2Title: document.querySelector("#usageItem2Title"),
+  usageItem2Body: document.querySelector("#usageItem2Body"),
+  usageItemButtons: document.querySelectorAll("[data-usage-item]"),
+  usageItemBodies: document.querySelectorAll("[data-usage-body]"),
+  clozeTipToggleButton: document.querySelector("#clozeTipToggleButton"),
+  clozeTipText: document.querySelector("#clozeTipText"),
+  clozeTipIcon: document.querySelector("#clozeTipIcon"),
   starToggleButton: document.querySelector("#starToggleButton"),
   homeView: document.querySelector("#homeView"),
   homeSummary: document.querySelector("#homeSummary"),
@@ -499,6 +515,8 @@ const elements = {
   partnerLineCard: document.querySelector("#partnerLineCard"),
   correctAnswerText: document.querySelector("#correctAnswerText"),
   correctAnswerJapanese: document.querySelector("#correctAnswerJapanese"),
+  modelAnswerVocabularyDivider: document.querySelector("#modelAnswerVocabularyDivider"),
+  modelAnswerVocabulary: document.querySelector("#modelAnswerVocabulary"),
   reviewLaterButton: document.querySelector("#reviewLaterButton"),
   nextAnswerButton: document.querySelector("#nextAnswerButton"),
   partnerLineText: document.querySelector("#partnerLineText"),
@@ -511,9 +529,7 @@ const elements = {
   completeSummary: document.querySelector("#completeSummary"),
   retryButton: document.querySelector("#retryButton"),
   backToSetupButton: document.querySelector("#backToSetupButton"),
-  footerHomeButton: document.querySelector("#footerHomeButton"),
-  roleFooter: document.querySelector("#roleFooter"),
-  footerNavButtons: document.querySelectorAll("[data-tab]"),
+  scrollTopButton: document.querySelector("#scrollTopButton"),
 };
 
 function loadStarred() {
@@ -648,6 +664,114 @@ const phraseHints = [
   ["that night", "that night : あの夜"],
 ];
 
+const dictionaryLinks = {
+  3: [
+    {
+      label: "state",
+      url: "https://dictionary.cambridge.org/dictionary/english/state",
+    },
+  ],
+  9: [
+    {
+      label: "argument",
+      url: "https://dictionary.cambridge.org/dictionary/english/argument",
+    },
+  ],
+  10: [
+    {
+      label: "mention",
+      url: "https://dictionary.cambridge.org/dictionary/english/mention",
+    },
+  ],
+  15: [
+    {
+      label: "anywhere",
+      url: "https://dictionary.cambridge.org/dictionary/english/anywhere",
+    },
+  ],
+  20: [
+    {
+      label: "reply",
+      url: "https://dictionary.cambridge.org/dictionary/english/reply",
+    },
+  ],
+  21: [
+    {
+      label: "timeline",
+      url: "https://dictionary.cambridge.org/dictionary/english/timeline",
+    },
+  ],
+  22: [
+    {
+      label: "carefully",
+      url: "https://dictionary.cambridge.org/dictionary/english/carefully",
+    },
+    {
+      label: "outgoing",
+      url: "https://dictionary.cambridge.org/dictionary/english/outgoing",
+    },
+  ],
+  25: [
+    {
+      label: "tighten",
+      url: "https://dictionary.cambridge.org/dictionary/english/tighten",
+    },
+  ],
+  28: [
+    {
+      label: "witness",
+      url: "https://dictionary.cambridge.org/dictionary/english/witness",
+    },
+  ],
+  29: [
+    {
+      label: "truth",
+      url: "https://dictionary.cambridge.org/dictionary/english/truth",
+    },
+  ],
+};
+
+const suspectHiddenDictionaryIds = new Set([3, 9, 10, 15, 20, 21, 22, 25, 28, 29]);
+
+const suspectDictionaryLinks = {
+  7: [
+    {
+      label: "around",
+      url: "https://dictionary.cambridge.org/dictionary/english/around",
+    },
+  ],
+  8: [
+    {
+      label: "stuff",
+      url: "https://dictionary.cambridge.org/dictionary/english/stuff",
+    },
+  ],
+  23: [
+    {
+      label: "accident",
+      url: "https://dictionary.cambridge.org/dictionary/english/accident",
+    },
+  ],
+  26: [
+    {
+      label: "leftover",
+      url: "https://dictionary.cambridge.org/dictionary/english/leftover",
+    },
+  ],
+  29: [
+    {
+      label: "hurt",
+      url: "https://dictionary.cambridge.org/dictionary/english/hurt",
+    },
+  ],
+  33: [
+    {
+      label: "panick",
+      url: "https://dictionary.cambridge.org/dictionary/english/panic",
+    },
+  ],
+};
+
 function getHintEntries(card) {
   const targetEnglish = getTargetEnglish(card).toLowerCase();
   const seen = new Set();
@@ -679,6 +803,28 @@ function getHintEntries(card) {
   }
 
   return hints;
+}
+
+function getDictionaryLinks(card) {
+  const commonLinks =
+    state.selectedRole === "suspect" && suspectHiddenDictionaryIds.has(card.id)
+      ? []
+      : dictionaryLinks[card.id] ?? [];
+  const roleLinks = state.selectedRole === "suspect" ? suspectDictionaryLinks[card.id] ?? [] : [];
+  return [...commonLinks, ...roleLinks];
+}
+
+function getDictionaryMarkup(card) {
+  const links = getDictionaryLinks(card);
+  if (!links.length) return "";
+
+  return `<p class="cloze-answer-label">Vocabulary</p>
+    <div class="dictionary-link-row">${links
+      .map(
+        (link) =>
+          `<a class="dictionary-link-button" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`,
+      )
+      .join("")}</div>`;
 }
 
 function getRoleMissionNote(card) {
@@ -739,6 +885,11 @@ function setClozeMode(cardId, mode) {
   state.clozeModeByCard[getClozeModeKey(cardId)] = mode;
 }
 
+function isClozeAnswerOpen(cardId) {
+  const mode = getClozeMode(cardId);
+  return mode === "answer" || mode === "both";
+}
+
 function getClozeLines(card) {
   if (state.selectedRole === "detective") {
     return {
@@ -757,6 +908,13 @@ function getClozeLines(card) {
     secondText: getMaskedTargetEnglish(card),
     answerText: card.suspectEnglish,
   };
+}
+
+function getMissionAnswerNote(card) {
+  if (card.id === 3 && state.selectedRole === "suspect") {
+    return "本番では好きな名前でOKです。";
+  }
+  return "";
 }
 
 function getListMode(cardId) {
@@ -852,12 +1010,6 @@ function renderModeSwitch() {
   });
 }
 
-function renderFooterTabs() {
-  elements.footerNavButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.tab === state.activeTab);
-  });
-}
-
 function renderTopline() {
   const labels = {
     home: "ホーム",
@@ -871,12 +1023,55 @@ function renderTopline() {
   elements.tabLabel.classList.toggle("is-hidden", state.selectedMode === "mission");
   const showModeLink =
     state.selectedMode === "translation" &&
-    (state.activeTab === "list" || state.activeTab === "memorize");
+    (state.activeTab === "list" || state.activeTab === "memorize" || state.activeTab === "starred");
   elements.switchModeLink.classList.toggle("is-hidden", !showModeLink);
   if (state.activeTab === "list") {
-    elements.switchModeLink.textContent = "暗記モードに切り替える";
-  } else if (state.activeTab === "memorize") {
-    elements.switchModeLink.textContent = "一覧モードに切り替える";
+    elements.switchModeLink.textContent = "暗記モード";
+  } else if (state.activeTab === "starred") {
+    elements.switchModeLink.textContent = "暗記モード";
+  } else {
+    elements.switchModeLink.textContent = "一覧モード";
+  }
+
+  const showStarredLink =
+    state.selectedMode === "translation" &&
+    (state.activeTab === "list" || state.activeTab === "memorize" || state.activeTab === "starred");
+  elements.switchStarredLink.classList.toggle("is-hidden", !showStarredLink);
+  if (state.activeTab === "starred") {
+    elements.switchStarredLink.textContent = "一覧モード";
+  } else {
+    elements.switchStarredLink.textContent = "スターモード";
+  }
+  const showUsageHeading =
+    state.selectedMode === "translation" &&
+    (state.activeTab === "list" || state.activeTab === "memorize");
+  elements.usageWrap.classList.toggle("is-hidden", !showUsageHeading);
+  elements.usagePanel.classList.toggle("is-hidden", !showUsageHeading || !state.usageOpen);
+  if (state.activeTab === "memorize" || state.activeTab === "starred") {
+    elements.usageItem2Title.innerHTML =
+      "2. <strong>暗記モードを使う場合は、瞬発的に文が作れるかを意識して練習してください。</strong>";
+    elements.usageItem2Body.innerHTML =
+      "単語などが思い浮かばないときはヒントを押すとフレーズや英単語のガイドがあります。<br /><br />自分の回答が自然か悩んだ時はBauerまでDMをお送りください。";
+  } else {
+    elements.usageItem2Title.innerHTML =
+      "2. <strong>一覧モードを使う場合は、会話の流れを想定しながら問題を解き、答えを押して確認してください。</strong>";
+    elements.usageItem2Body.innerHTML =
+      "単語などが思い浮かばないときはヒントを押すとフレーズや英単語のガイドがあります。";
+  }
+  elements.usageItemButtons.forEach((button) => {
+    const isOpen = state.usageExpandedItems.includes(button.dataset.usageItem);
+    button.classList.toggle("is-open", isOpen);
+    const icon = button.querySelector(".usage-item-icon");
+    if (icon) {
+      icon.textContent = isOpen ? "−" : "＋";
+    }
+  });
+  elements.usageItemBodies.forEach((body) => {
+    body.classList.toggle("is-hidden", !state.usageExpandedItems.includes(body.dataset.usageBody));
+  });
+  if (elements.clozeTipText && elements.clozeTipIcon) {
+    elements.clozeTipText.classList.toggle("is-hidden", !state.clozeTipOpen);
+    elements.clozeTipIcon.textContent = state.clozeTipOpen ? "−" : "＋";
   }
 
   const currentCard = getCurrentCard();
@@ -893,7 +1088,7 @@ function renderTopline() {
 
 function renderHomeView() {
   elements.homeSummary.textContent =
-    "ロープレで用いる会話を役ごとに step by step で練習できます。昨日のレッスンを踏まえ、一部内容を変更する可能性がございますのでご了承ください。";
+    "ロープレで用いる会話を役ごとに step by step で練習できます。レッスン本番では一部内容を変更する可能性がございますのでご了承ください。";
   elements.homeRoleButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.homeRole === state.selectedRole);
   });
@@ -903,6 +1098,9 @@ function clearCardFeedback() {
   elements.hintBox.classList.add("is-hidden");
   elements.feedbackBox.classList.add("is-hidden");
   elements.partnerLineNote.classList.add("is-hidden");
+  elements.modelAnswerVocabularyDivider.classList.add("is-hidden");
+  elements.modelAnswerVocabulary.classList.add("is-hidden");
+  elements.modelAnswerVocabulary.innerHTML = "";
   elements.modelAnswerCard.classList.remove("speaker-detective", "speaker-suspect");
   elements.partnerLineCard.classList.remove("speaker-detective", "speaker-suspect");
 }
@@ -962,6 +1160,12 @@ function renderCardView() {
     elements.partnerLineText.textContent = getPartnerEnglish(currentCard);
     elements.partnerLineJapanese.textContent = getPartnerJapanese(currentCard);
     elements.partnerLineNote.textContent = `NEXT LINEは${getNextLineRoleLabel()}の想定解答です。会話の流れを意識して練習をしましょう。⭐︎を押したあと、ページ下部の⭐︎ボタンを押すと、練習したい文だけを確認することができます。`;
+    const dictionaryMarkup = getDictionaryMarkup(currentCard);
+    if (dictionaryMarkup) {
+      elements.modelAnswerVocabularyDivider.classList.remove("is-hidden");
+      elements.modelAnswerVocabulary.innerHTML = dictionaryMarkup;
+      elements.modelAnswerVocabulary.classList.remove("is-hidden");
+    }
   }
 }
 
@@ -971,6 +1175,7 @@ function renderListView() {
       const active = isStarred(card.id) ? "active" : "";
       const listMode = getListMode(card.id);
       const hints = getHintEntries(card);
+      const dictionaryMarkup = getDictionaryMarkup(card);
       const answerSpeakerClass =
         state.selectedRole === "detective" ? "list-answer-detective" : "list-answer-suspect";
       const partnerSpeakerClass = "list-answer-partner";
@@ -980,6 +1185,7 @@ function renderListView() {
             .map((hint) => `<span class="hint-chip">${escapeHtml(hint)}</span>`)
             .join("")
         : `<span class="hint-chip hint-chip-muted">ヒントなし</span>`;
+      const vocabularyMarkup = dictionaryMarkup ? `<div class="list-vocabulary">${dictionaryMarkup}</div>` : "";
       return `
         <article class="list-item">
           <div class="list-item-head">
@@ -1013,6 +1219,7 @@ function renderListView() {
               <span class="feedback-item-label">Model answer</span>
               <p class="list-item-en">${getTargetEnglish(card)}</p>
               <p class="list-item-partner">${getTargetJapanese(card)}</p>
+              ${vocabularyMarkup}
             </div>
             <div class="list-answer-block ${partnerSpeakerClass}">
               <span class="feedback-item-label">Next Line</span>
@@ -1040,6 +1247,8 @@ function renderClozeView() {
       const clozeMode = getClozeMode(card.id);
       const lines = getClozeLines(card);
       const missions = getMissionEntries(card);
+      const answerNote = getMissionAnswerNote(card);
+      const answerOpen = isClozeAnswerOpen(card.id);
       const missionMarkup = missions.length
         ? `<ul class="mission-guide-list">${missions
             .map((item) => `<li>${escapeHtml(item)}</li>`)
@@ -1059,16 +1268,17 @@ function renderClozeView() {
           </div>
           <div class="list-pill-row">
             <button
-              class="list-pill ${clozeMode === "answer" ? "active" : ""}"
+              class="list-pill ${answerOpen ? "active" : ""}"
               data-cloze-mode="answer"
               data-card-id="${card.id}"
             >
               Answer
             </button>
           </div>
-          <div class="cloze-answer ${clozeMode === "answer" ? "" : "is-hidden"}">
+          <div class="cloze-answer ${answerOpen ? "" : "is-hidden"}">
             <p class="cloze-answer-label">Answer</p>
             <p class="cloze-answer-text">${escapeHtml(lines.answerText)}</p>
+            ${answerNote ? `<p class="cloze-answer-note">${escapeHtml(answerNote)}</p>` : ""}
           </div>
         </article>
       `;
@@ -1077,8 +1287,17 @@ function renderClozeView() {
 
   elements.clozeView.innerHTML = `
     <p class="cloze-intro">
-      こちらはミッションを見ながら練習するモードです。穴埋めはあくまでヒントとして使い、会話の流れを想定して実践してみてください。自分の解答があっているかどうか気になった時は、BauerまでDMを送ってください。
+      こちらはミッションを見ながら練習するモードです。穴埋めはあくまでヒントとして使い、会話の流れを想定して実践してみてください。
     </p>
+    <div class="cloze-tip-box">
+      <button id="clozeTipToggleButton" class="cloze-tip-toggle" type="button">
+        <span>💡ポイント</span>
+        <span class="usage-item-icon" aria-hidden="true">${state.clozeTipOpen ? "−" : "＋"}</span>
+      </button>
+      <p class="cloze-tip-text ${state.clozeTipOpen ? "" : "is-hidden"}">
+        ミッションモードが難しいなと思う場合は、ヒントが多い瞬間英作文モードからお試しください。ご質問がある場合はなんでもSlackで送ってくださいね。
+      </p>
+    </div>
     ${cardsMarkup}
   `;
 }
@@ -1086,7 +1305,6 @@ function renderClozeView() {
 function render() {
   renderModeSwitch();
   renderRoleSwitch();
-  renderFooterTabs();
   renderTopline();
   renderHomeView();
   renderListView();
@@ -1109,13 +1327,12 @@ function render() {
   elements.sessionCompleteCard.classList.toggle("is-hidden", true);
   elements.emptyStarredView.classList.toggle("is-hidden", true);
   elements.lessonTopbar.classList.toggle("is-hidden", hideChrome);
-  elements.roleFooter.classList.toggle("is-hidden", isMissionMode || hideChrome);
 
   if (isTranslationMode && isCardTab) {
     renderCardView();
   } else if (isTranslationMode) {
-    elements.challengeCard.classList.add("is-hidden");
-    elements.sessionCompleteCard.classList.add("is-hidden");
+  elements.challengeCard.classList.add("is-hidden");
+  elements.sessionCompleteCard.classList.add("is-hidden");
   }
 }
 
@@ -1143,6 +1360,9 @@ function resetDeck(role = state.selectedRole, tab = "memorize") {
   state.activeTab = tab;
   state.currentIndexByTab[tab] = 0;
   state.cardMode = "closed";
+  state.usageOpen = false;
+  state.usageExpandedItems = [];
+  state.clozeTipOpen = false;
   render();
 }
 
@@ -1154,6 +1374,9 @@ elements.roleSwitchButtons.forEach((button) => {
     state.currentIndexByTab.memorize = 0;
     state.currentIndexByTab.starred = 0;
     state.cardMode = "closed";
+    state.usageOpen = false;
+    state.usageExpandedItems = [];
+    state.clozeTipOpen = false;
     render();
   });
 });
@@ -1164,18 +1387,47 @@ elements.modeSwitchButtons.forEach((button) => {
     if (nextMode === state.selectedMode) return;
     state.selectedMode = nextMode;
     state.cardMode = "closed";
+    state.usageOpen = false;
+    state.usageExpandedItems = [];
+    state.clozeTipOpen = false;
     render();
   });
 });
 
-elements.footerNavButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setTab(button.dataset.tab);
-  });
+elements.switchModeLink.addEventListener("click", () => {
+  if (state.activeTab === "list" || state.activeTab === "starred") {
+    setTab("memorize");
+    return;
+  }
+  setTab("list");
 });
 
-elements.switchModeLink.addEventListener("click", () => {
-  setTab(state.activeTab === "list" ? "memorize" : "list");
+elements.switchStarredLink.addEventListener("click", () => {
+  if (state.activeTab === "starred") {
+    setTab("list");
+    return;
+  }
+  setTab("starred");
+});
+
+elements.usageToggleButton.addEventListener("click", () => {
+  state.usageOpen = !state.usageOpen;
+  if (!state.usageOpen) {
+    state.usageExpandedItems = [];
+  }
+  renderTopline();
+});
+
+elements.usagePanel.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-usage-item]");
+  if (!button) return;
+  const itemId = button.dataset.usageItem;
+  if (state.usageExpandedItems.includes(itemId)) {
+    state.usageExpandedItems = state.usageExpandedItems.filter((id) => id !== itemId);
+  } else {
+    state.usageExpandedItems = [...state.usageExpandedItems, itemId];
+  }
+  renderTopline();
 });
 
 elements.starToggleButton.addEventListener("click", () => {
@@ -1209,6 +1461,13 @@ elements.listView.addEventListener("click", (event) => {
 });
 
 elements.clozeView.addEventListener("click", (event) => {
+  const tipButton = event.target.closest("#clozeTipToggleButton");
+  if (tipButton) {
+    state.clozeTipOpen = !state.clozeTipOpen;
+    renderClozeView();
+    return;
+  }
+
   const modeButton = event.target.closest("[data-cloze-mode]");
   if (!modeButton) return;
   const cardId = Number(modeButton.dataset.cardId);
@@ -1221,6 +1480,9 @@ elements.homeRoleButtons.forEach((button) => {
   button.addEventListener("click", () => {
     state.selectedRole = button.dataset.homeRole;
     state.activeTab = "mode-select";
+    state.usageOpen = false;
+    state.usageExpandedItems = [];
+    state.clozeTipOpen = false;
     render();
   });
 });
@@ -1234,12 +1496,9 @@ elements.homeClozeButton.addEventListener("click", () => {
   state.selectedMode = "mission";
   state.activeTab = "list";
   state.cardMode = "closed";
-  render();
-});
-
-elements.footerHomeButton.addEventListener("click", () => {
-  state.activeTab = "home";
-  state.cardMode = "closed";
+  state.usageOpen = false;
+  state.usageExpandedItems = [];
+  state.clozeTipOpen = false;
   render();
 });
 
@@ -1250,7 +1509,14 @@ elements.retryButton.addEventListener("click", () => {
 elements.backToSetupButton.addEventListener("click", () => {
   state.activeTab = "home";
   state.cardMode = "closed";
+  state.usageOpen = false;
+  state.usageExpandedItems = [];
+  state.clozeTipOpen = false;
   render();
+});
+
+elements.scrollTopButton.addEventListener("click", () => {
+  elements.lessonScroll.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 elements.showHintButton.addEventListener("click", revealHint);
