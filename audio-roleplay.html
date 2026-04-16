@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eimari Audio Roleplay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./audio-roleplay.css" />
+  </head>
+  <body>
+    <div class="audio-app">
+      <main class="audio-shell">
+        <div class="audio-phone-camera"></div>
+        <section class="audio-hero">
+          <div class="audio-hero-image-wrap">
+            <img class="audio-hero-image" src="./Eimari Thumbnail.png" alt="" />
+          </div>
+          <section class="audio-controls">
+            <div class="audio-control-row">
+              <button id="playAllButton" class="primary-button icon-button" type="button" aria-label="Play all" title="Play all">▶</button>
+              <button id="pauseStopButton" class="secondary-button icon-button" type="button" aria-label="Pause" title="Pause">⏸</button>
+              <button id="repeatButton" class="secondary-button icon-button" type="button" aria-label="Repeat" title="Repeat">↻</button>
+            </div>
+            <div class="audio-meta-row">
+              <label class="speed-control" for="intervalSelect">
+                <span>Interval</span>
+                <select id="intervalSelect">
+                  <option value="3000" selected>3秒</option>
+                  <option value="5000">5秒</option>
+                  <option value="7000">7秒</option>
+                  <option value="10000">10秒</option>
+                </select>
+              </label>
+              <label class="speed-control" for="speedSelect">
+                <span>Speed</span>
+                <select id="speedSelect">
+                  <option value="0.25">0.25x</option>
+                  <option value="0.5">0.5x</option>
+                  <option value="0.75">0.75x</option>
+                  <option value="1" selected>1.0x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2.0x</option>
+                </select>
+              </label>
+            </div>
+          </section>
+          <div class="audio-hero-copy">
+            <p id="heroEyebrowText" class="audio-eyebrow">Audio Player</p>
+            <h1 id="heroTitleText">Roleplay Audio</h1>
+            <p id="heroSubtitleText" class="audio-summary">再生中のセリフがここに表示されます。</p>
+          </div>
+        </section>
+        <div class="audio-scroll-content">
+          <section class="audio-list-wrap">
+            <div id="audioList" class="audio-list"></div>
+          </section>
+        </div>
+        <button id="listToggleButton" class="list-toggle-button" type="button">
+          <span>リストすべてを表示</span>
+          <span id="listToggleIcon" class="list-toggle-icon" aria-hidden="true">＋</span>
+        </button>
+      </main>
+    </div>
+
+    <audio id="player" preload="auto"></audio>
+    <script src="./audio-roleplay.js"></script>
+  </body>
+</html>
