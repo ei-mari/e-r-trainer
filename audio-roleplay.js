@@ -38,7 +38,7 @@ const lines = [
   { speaker: "detective", text: "What did you say?", file: "What did you say?.mp3" },
   { speaker: "suspect", text: "I asked if she got home safe.", file: "I asked if she got home safe.mp3" },
   { speaker: "detective", text: "Did she reply?", file: "Did she reply?.mp3" },
-  { speaker: "suspect", text: "No.", file: "No 4.mp3" },
+  { speaker: "suspect", text: "No.", file: "NO 5.mp3" },
   { speaker: "detective", text: "Okay. That gives me a timeline.", file: "Okay. That gives me a timeline.mp3" },
   { speaker: "suspect", text: "Okay.", file: "Okay 2.mp3" },
   { speaker: "detective", text: "Alex, I need you to listen carefully. We have a record of an outgoing call to Maria at 9:12 from your phone.", file: "Alex, I need you to listen carefully. We have a record of an outgoing call to Maria at 9:12 from your phone.mp3" },
@@ -66,6 +66,8 @@ const lines = [
   { speaker: "detective", text: "That is different from what you told me earlier.", file: "That is different from what you told me earlier.mp3" },
   { speaker: "suspect", text: "I know. I panicked.", file: "I know. I panicked.mp3" },
   { speaker: "detective", text: "One last question. Did you see anyone with Maria that night?", file: "One last question. Did you see anyone with Maria that night?.mp3" },
+  { speaker: "suspect", text: "No.", file: "No 4.mp3" },
+  { speaker: "detective", text: "I can’t help you if you don’t tell me the truth.", file: "I can’t help you if you don’t tell me the truth..mp3" },
   { speaker: "suspect", text: "Okay. I’ll tell you the truth. I did not kill Maria.", file: "Okay. I’ll tell you the truth. I did not kill Maria.mp3" },
 ];
 
