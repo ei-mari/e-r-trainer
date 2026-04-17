@@ -1,0 +1,91 @@
+.part-page-topbar {
+  display: grid;
+  gap: 6px;
+  padding: 2px 2px 8px;
+}
+
+.part-back-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.part-page-kicker {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.part-page-title {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.02;
+}
+
+.part-mission-view {
+  display: grid;
+  gap: 12px;
+  padding-bottom: 76px;
+}
+
+.part-mission-intro {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.62;
+  padding: 4px 4px 8px;
+}
+
+.mission-line-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.mission-line-button {
+  min-width: 36px;
+  min-height: 36px;
+  border: 1px solid rgba(25, 49, 30, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--green-deep);
+  cursor: pointer;
+}
+
+.part-role-footer {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 10px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.part-role-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: rgba(250, 252, 247, 0.94);
+  font-weight: 600;
+}
+
+.part-role-tab.active:first-child {
+  background: rgba(224, 241, 255, 0.9);
+}
+
+.part-role-tab.active:last-child {
+  background: rgba(255, 241, 228, 0.92);
+}

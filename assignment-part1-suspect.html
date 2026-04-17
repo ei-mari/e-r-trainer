@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 1 Suspect Mission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260417b" />
+    <link rel="stylesheet" href="./part1-mission.css?v=20260417b" />
+  </head>
+  <body data-role="suspect">
+    <div class="app-stage">
+      <div class="phone-shell">
+        <div class="phone-camera"></div>
+
+        <section class="screen lesson-screen">
+          <div class="screen-scroll lesson-scroll">
+            <section class="panel lesson-panel">
+              <div class="page-thumbnail" aria-hidden="true">
+                <img class="page-thumbnail-image" src="./Eimari Thumbnail.png" alt="" />
+              </div>
+              <div class="page-thumbnail-divider"></div>
+
+              <div class="part-page-topbar">
+                <a class="part-back-link" href="./assignment.html">← Part 一覧へ</a>
+                <p class="part-page-kicker">Part 1</p>
+                <h1 class="part-page-title">Suspect</h1>
+              </div>
+
+              <section id="partMissionView" class="cloze-view part-mission-view"></section>
+            </section>
+          </div>
+        </section>
+
+        <nav class="part-role-footer">
+          <a class="part-role-tab" href="./assignment-part1-detective.html">Detective</a>
+          <a class="part-role-tab active" href="./assignment-part1-suspect.html">Suspect</a>
+        </nav>
+        <button class="scroll-top-button" type="button" aria-label="一番上に戻る">↑</button>
+      </div>
+    </div>
+
+    <script src="./part1-mission.js?v=20260417b"></script>
+    <script>
+      const part1SuspectScroll = document.querySelector(".screen-scroll");
+      const part1SuspectScrollTop = document.querySelector(".scroll-top-button");
+      part1SuspectScrollTop?.addEventListener("click", () => {
+        part1SuspectScroll?.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

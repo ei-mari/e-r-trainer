@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eimari Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assignment.css" />
+  </head>
+  <body>
+    <div class="assignment-app">
+      <main class="assignment-shell">
+        <div class="assignment-phone-camera"></div>
+        <div class="assignment-scroll">
+          <header class="assignment-hero">
+            <div class="assignment-hero-image-wrap">
+              <img class="assignment-hero-image" src="./Eimari Thumbnail.png" alt="" />
+            </div>
+            <div class="assignment-hero-copy">
+              <p class="assignment-eyebrow">Homework</p>
+              <h1>Eimari Roleplay Assignment</h1>
+              <p class="assignment-summary">
+                練習したい <strong>Part</strong> を選んでください。自分が指定されたパートのみの練習でOKです！
+              </p>
+            </div>
+          </header>
+
+          <section class="assignment-card is-focus">
+            <div class="assignment-card-head">
+              <div>
+                <p class="assignment-part-label">Available Now</p>
+                <h2>Part 1</h2>
+              </div>
+              <span class="assignment-badge">11 exchanges</span>
+            </div>
+            <p class="assignment-note">導入から「Did she say who?」まで。</p>
+            <div class="assignment-link-grid">
+              <a class="assignment-link-card detective" href="./assignment-part1-detective.html">
+                <span class="assignment-link-label">Detective</span>
+                <span class="assignment-link-copy">刑事側の Mission と台本を見る</span>
+              </a>
+              <a class="assignment-link-card suspect" href="./assignment-part1-suspect.html">
+                <span class="assignment-link-label">Suspect</span>
+                <span class="assignment-link-copy">容疑者側の Mission と台本を見る</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="assignment-card">
+            <div class="assignment-card-head">
+              <div>
+                <p class="assignment-part-label">Available Now</p>
+                <h2>Part 2</h2>
+              </div>
+              <span class="assignment-badge">10 exchanges</span>
+            </div>
+            <p class="assignment-note">カフェを出た後の流れから、タイムライン確認まで。</p>
+            <div class="assignment-link-grid">
+              <a class="assignment-link-card detective" href="./assignment-part2-detective.html">
+                <span class="assignment-link-label">Detective</span>
+                <span class="assignment-link-copy">刑事側の Mission と台本を見る</span>
+              </a>
+              <a class="assignment-link-card suspect" href="./assignment-part2-suspect.html">
+                <span class="assignment-link-label">Suspect</span>
+                <span class="assignment-link-copy">容疑者側の Mission と台本を見る</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="assignment-card">
+            <div class="assignment-card-head">
+              <div>
+                <p class="assignment-part-label">Available Now</p>
+                <h2>Part 3</h2>
+              </div>
+              <span class="assignment-badge">14 exchanges</span>
+            </div>
+            <p class="assignment-note">証拠提示から最後の追及まで。</p>
+            <div class="assignment-link-grid">
+              <a class="assignment-link-card detective" href="./assignment-part3-detective.html">
+                <span class="assignment-link-label">Detective</span>
+                <span class="assignment-link-copy">刑事側の Mission と台本を見る</span>
+              </a>
+              <a class="assignment-link-card suspect" href="./assignment-part3-suspect.html">
+                <span class="assignment-link-label">Suspect</span>
+                <span class="assignment-link-copy">容疑者側の Mission と台本を見る</span>
+              </a>
+            </div>
+          </section>
+        </div>
+        <button class="assignment-scroll-top" type="button" aria-label="一番上に戻る">↑</button>
+      </main>
+    </div>
+    <script>
+      const assignmentScroll = document.querySelector(".assignment-scroll");
+      const assignmentScrollTop = document.querySelector(".assignment-scroll-top");
+      assignmentScrollTop?.addEventListener("click", () => {
+        assignmentScroll?.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
