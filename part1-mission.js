@@ -4,8 +4,10 @@ const part1Cards = [
   {
     id: 1,
     detectiveEnglish: "Thanks for coming in, Alex. Have a seat.",
+    detectiveIpa: "/θæŋks fɚ ˈkʌmɪŋ ɪn, ˈælɪks. hæv ə sit./",
     detectiveJapanese: "Alex、来てくれてありがとう。座ってください。",
     suspectEnglish: "Okay.",
+    suspectIpa: "/oʊˈkeɪ./",
     suspectJapanese: "分かりました。",
     detectiveAudio: "Thanks for coming in, Alex. Have a seat.mp3",
     suspectAudio: "Okay.mp3",
@@ -15,8 +17,10 @@ const part1Cards = [
   {
     id: 2,
     detectiveEnglish: "This interview is being recorded. Do you understand?",
+    detectiveIpa: "/ðɪs ˈɪnɚˌvju ɪz ˈbiɪŋ rɪˈkɔrdɪd. du ju ˌʌndɚˈstænd?/",
     detectiveJapanese: "この取調べは録音されます。分かりますね。",
     suspectEnglish: "Yes.",
+    suspectIpa: "/jɛs./",
     suspectJapanese: "はい。",
     detectiveAudio: "This interview is being recorded. Do you understand?.mp3",
     suspectAudio: "Yes.mp3",
@@ -26,8 +30,10 @@ const part1Cards = [
   {
     id: 3,
     detectiveEnglish: "State your full name for the record.",
+    detectiveIpa: "/steɪt jɚ fʊl neɪm fɚ ðə ˈrɛkɚd./",
     detectiveJapanese: "記録のためフルネームを。",
     suspectEnglish: "Alex Parker.",
+    suspectIpa: "/ˈælɪks ˈpɑrkɚ./",
     suspectJapanese: "アレックス パーカー。",
     detectiveAudio: "State your full name for the record.mp3",
     suspectAudio: "Alex Parker.mp3",
@@ -38,8 +44,10 @@ const part1Cards = [
   {
     id: 4,
     detectiveEnglish: "How do you know Maria O’Brian?",
+    detectiveIpa: "/haʊ du ju noʊ məˈriə oʊˈbraɪən?/",
     detectiveJapanese: "マリアオブライアンとはどういう関係？",
     suspectEnglish: "We were friends. We worked together.",
+    suspectIpa: "/wi wɚ frɛndz. wi wɝkt təˈɡɛðɚ./",
     suspectJapanese: "友人です。以前一緒に働きました。",
     detectiveAudio: "How do you know Maria O’Brian?.mp3",
     suspectAudio: "We were friends. We worked together.mp3",
@@ -49,8 +57,10 @@ const part1Cards = [
   {
     id: 5,
     detectiveEnglish: "When was the last time you saw Maria?",
+    detectiveIpa: "/wɛn wəz ðə læst taɪm ju sɔ məˈriə?/",
     detectiveJapanese: "最後にマリアに会ったのはいつ？",
     suspectEnglish: "Yesterday evening.",
+    suspectIpa: "/ˈjɛstɚdeɪ ˈivnɪŋ./",
     suspectJapanese: "昨日の夕方です。",
     detectiveAudio: "When was the last time you saw Maria?.mp3",
     suspectAudio: "Yesterday evening.mp3",
@@ -60,8 +70,10 @@ const part1Cards = [
   {
     id: 6,
     detectiveEnglish: "Where?",
+    detectiveIpa: "/wɛr?/",
     detectiveJapanese: "どこで？",
     suspectEnglish: "A cafe on Main Street.",
+    suspectIpa: "/ə kæˈfeɪ ɑn meɪn strit./",
     suspectJapanese: "メインストリートのカフェです。",
     detectiveAudio: "Where?.mp3",
     suspectAudio: "A cafe on Main Street.mp3",
@@ -71,8 +83,10 @@ const part1Cards = [
   {
     id: 7,
     detectiveEnglish: "Start from the beginning. What time did you get there?",
+    detectiveIpa: "/stɑrt frəm ðə bɪˈɡɪnɪŋ. wʌt taɪm dɪd ju ɡɛt ðɛr?/",
     detectiveJapanese: "最初から。何時に着いた？",
     suspectEnglish: "Around seven ten.",
+    suspectIpa: "/əˈraʊnd ˈsɛvən tɛn./",
     suspectJapanese: "7時10分くらい。",
     detectiveAudio: "Start from the beginning. What time did you get there?.mp3",
     suspectAudio: "Around seven ten.mp3",
@@ -82,8 +96,10 @@ const part1Cards = [
   {
     id: 8,
     detectiveEnglish: "What did you two talk about?",
+    detectiveIpa: "/wʌt dɪd ju tu tɔk əˈbaʊt?/",
     detectiveJapanese: "何を話した？",
     suspectEnglish: "Work stuff. Life stuff. Nothing big.",
+    suspectIpa: "/wɝk stʌf. laɪf stʌf. ˈnʌθɪŋ bɪɡ./",
     suspectJapanese: "仕事のこと、生活のこと。大した話は。",
     detectiveAudio: "What did you two talk about?.mp3",
     suspectAudio: "Work stuff. Life stuff. Nothing big.mp3",
@@ -93,8 +109,10 @@ const part1Cards = [
   {
     id: 9,
     detectiveEnglish: "Any argument? Any tension?",
+    detectiveIpa: "/ˌɛni ˈɑrɡjəmənt? ˌɛni ˈtɛnʃən?/",
     detectiveJapanese: "何か口論は？ ピリつきは？",
     suspectEnglish: "No.",
+    suspectIpa: "/noʊ./",
     suspectJapanese: "ないです。",
     detectiveAudio: "Any argument? Any tension?.mp3",
     suspectAudio: "No.mp3",
@@ -104,8 +122,10 @@ const part1Cards = [
   {
     id: 10,
     detectiveEnglish: "Did Maria mention meeting someone later?",
+    detectiveIpa: "/dɪd məˈriə ˈmɛnʃən ˈmitɪŋ ˈsʌmwʌn ˈleɪtɚ?/",
     detectiveJapanese: "後で誰かと会うって言ってた？",
     suspectEnglish: "She said she was waiting for someone.",
+    suspectIpa: "/ʃi sɛd ʃi wəz ˈweɪtɪŋ fɚ ˈsʌmwʌn./",
     suspectJapanese: "誰かを待ってると言ってました。",
     detectiveAudio: "Did Maria mention meeting someone later?.mp3",
     suspectAudio: "She said she was waiting for someone.mp3",
@@ -115,8 +135,10 @@ const part1Cards = [
   {
     id: 11,
     detectiveEnglish: "Did she say who?",
+    detectiveIpa: "/dɪd ʃi seɪ hu?/",
     detectiveJapanese: "誰か言ってた？",
     suspectEnglish: "No.",
+    suspectIpa: "/noʊ./",
     suspectJapanese: "言っていません。",
     detectiveAudio: "Did she say who?.mp3",
     suspectAudio: "No 2.mp3",
@@ -186,7 +208,7 @@ function maskText(text) {
 }
 
 function getCardUiState(cardId) {
-  return clozeState[cardId] ?? { hint: false, translation: false, answer: false };
+  return clozeState[cardId] ?? { hint: false, ipa: false, translation: false, answer: false };
 }
 
 function getHints(text) {
@@ -205,6 +227,7 @@ function getLines(card) {
       secondText: card.suspectEnglish,
       secondAudio: card.suspectAudio,
       answerText: card.detectiveEnglish,
+      ipaText: card.detectiveIpa,
       translationText: card.detectiveJapanese,
       answerNote: "",
       missions: card.detectiveMission,
@@ -220,6 +243,7 @@ function getLines(card) {
     secondText: maskText(card.suspectEnglish),
     secondAudio: card.suspectAudio,
     answerText: card.suspectEnglish,
+    ipaText: card.suspectIpa,
     translationText: card.suspectJapanese,
     answerNote: card.suspectNote ?? "",
     missions: card.suspectMission,
@@ -234,7 +258,7 @@ function audioPath(file) {
 function render() {
   root.innerHTML = `
     <p class="part-mission-intro">
-      MISSIONを見てスムーズにセリフが言えるように練習しましょう！ヒントや日本語訳を使ってもOK！
+      MISSIONを見てスムーズにセリフが言えるように練習しましょう！ヒントや日本語訳、発音記号を使ってもOK！
     </p>
     ${part1Cards
       .map((card) => {
@@ -247,7 +271,8 @@ function render() {
           role === "detective"
             ? `<button class="list-pill ${uiState.hint ? "active" : ""}" type="button" data-hint-card="${card.id}">Hint</button>`
             : "";
-        const translationControl = `<button class="list-pill ${uiState.translation ? "active" : ""}" type="button" data-translation-card="${card.id}">日本語訳</button>`;
+        const ipaControl = `<button class="list-pill ${uiState.ipa ? "active" : ""}" type="button" data-ipa-card="${card.id}">発音記号</button>`;
+        const translationControl = `<button class="list-pill ${uiState.translation ? "active" : ""}" type="button" data-translation-card="${card.id}">訳</button>`;
         const hintPanel =
           role === "detective"
             ? `<div class="list-panel ${uiState.hint ? "" : "is-hidden"}">
@@ -258,6 +283,12 @@ function render() {
               <div class="cloze-answer">
                 <p class="cloze-answer-label">Japanese</p>
                 <p class="cloze-answer-text">${escapeHtml(lines.translationText)}</p>
+              </div>
+            </div>`;
+        const ipaPanel = `<div class="list-panel ${uiState.ipa ? "" : "is-hidden"}">
+              <div class="cloze-answer">
+                <p class="cloze-answer-label">IPA</p>
+                <p class="cloze-answer-text ipa-text">${escapeHtml(lines.ipaText)}</p>
               </div>
             </div>`;
         return `
@@ -282,15 +313,17 @@ function render() {
             <div class="list-pill-row">
               ${hintControls}
               ${translationControl}
-              <button class="list-pill ${uiState.answer ? "active" : ""}" type="button" data-answer-card="${card.id}">Answer</button>
+              <button class="list-pill ${uiState.answer ? "active" : ""}" type="button" data-answer-card="${card.id}">答え</button>
+              ${ipaControl}
             </div>
             ${hintPanel}
             ${translationPanel}
             <div class="cloze-answer ${uiState.answer ? "" : "is-hidden"}">
-              <p class="cloze-answer-label">Answer</p>
+              <p class="cloze-answer-label">答え</p>
               <p class="cloze-answer-text">${escapeHtml(lines.answerText)}</p>
               ${lines.answerNote ? `<p class="cloze-answer-note">${escapeHtml(lines.answerNote)}</p>` : ""}
             </div>
+            ${ipaPanel}
           </article>
         `;
       })
@@ -304,6 +337,15 @@ root.addEventListener("click", (event) => {
     const cardId = Number(hintButton.dataset.hintCard);
     const current = getCardUiState(cardId);
     clozeState[cardId] = { ...current, hint: !current.hint };
+    render();
+    return;
+  }
+
+  const ipaButton = event.target.closest("[data-ipa-card]");
+  if (ipaButton) {
+    const cardId = Number(ipaButton.dataset.ipaCard);
+    const current = getCardUiState(cardId);
+    clozeState[cardId] = { ...current, ipa: !current.ipa };
     render();
     return;
   }

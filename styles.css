@@ -942,6 +942,14 @@ h1 {
   color: var(--muted);
 }
 
+.ipa-text {
+  font-family: "Arimo", "Outfit", sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
 .scroll-top-button {
   position: absolute;
   right: 18px;

@@ -4,8 +4,10 @@ const part2Cards = [
   {
     id: 12,
     detectiveEnglish: "What time did you leave the cafe?",
+    detectiveIpa: "/wʌt taɪm dɪd ju liv ðə kæˈfeɪ?/",
     detectiveJapanese: "何時にカフェを出た？",
     suspectEnglish: "Around eight twenty five.",
+    suspectIpa: "/əˈraʊnd eɪt ˌtwɛnti ˈfaɪv./",
     suspectJapanese: "8時25分くらい。",
     detectiveAudio: "What time did you leave the cafe?.mp3",
     suspectAudio: "Around eight twenty five.mp3",
@@ -15,8 +17,10 @@ const part2Cards = [
   {
     id: 13,
     detectiveEnglish: "Did Maria leave with you?",
+    detectiveIpa: "/dɪd məˈriə liv wɪð ju?/",
     detectiveJapanese: "マリアは一緒に出た？",
     suspectEnglish: "No. She stayed.",
+    suspectIpa: "/noʊ. ʃi steɪd./",
     suspectJapanese: "いいえ。彼女は残りました。",
     detectiveAudio: "Did Maria leave with you?.mp3",
     suspectAudio: "No. She stayed.mp3",
@@ -26,8 +30,10 @@ const part2Cards = [
   {
     id: 14,
     detectiveEnglish: "After you left, what did you do?",
+    detectiveIpa: "/ˈæftɚ ju lɛft, wʌt dɪd ju du?/",
     detectiveJapanese: "出た後は何をした？",
     suspectEnglish: "I drove straight home.",
+    suspectIpa: "/aɪ droʊv streɪt hoʊm./",
     suspectJapanese: "まっすぐ車で帰宅しました。",
     detectiveAudio: "After you left, what did you do?.mp3",
     suspectAudio: "I drove straight home.mp3",
@@ -37,8 +43,10 @@ const part2Cards = [
   {
     id: 15,
     detectiveEnglish: "Did you stop anywhere? Gas station, store, anything?",
+    detectiveIpa: "/dɪd ju stɑp ˈɛniˌwɛr? ˈɡæs ˌsteɪʃən, stɔr, ˈɛnɪˌθɪŋ?/",
     detectiveJapanese: "どこか寄った？ ガソリンスタンド、店、何でも。",
     suspectEnglish: "No.",
+    suspectIpa: "/noʊ./",
     suspectJapanese: "いいえ。",
     detectiveAudio: "Did you stop anywhere? Gas station, store, anything?.mp3",
     suspectAudio: "No 3.mp3",
@@ -48,8 +56,10 @@ const part2Cards = [
   {
     id: 16,
     detectiveEnglish: "What time did you get home?",
+    detectiveIpa: "/wʌt taɪm dɪd ju ɡɛt hoʊm?/",
     detectiveJapanese: "何時に家に着いた？",
     suspectEnglish: "Around eight forty five.",
+    suspectIpa: "/əˈraʊnd eɪt ˌfɔrti ˈfaɪv./",
     suspectJapanese: "8時45分くらい。",
     detectiveAudio: "What time did you get home?.mp3",
     suspectAudio: "Around eight forty five.mp3",
@@ -59,8 +69,10 @@ const part2Cards = [
   {
     id: 17,
     detectiveEnglish: "Who was home with you?",
+    detectiveIpa: "/hu wəz hoʊm wɪð ju?/",
     detectiveJapanese: "家には誰といた？",
     suspectEnglish: "My husband. / My wife.",
+    suspectIpa: "/maɪ ˈhʌzbənd./ /maɪ waɪf./",
     suspectJapanese: "夫です / 妻です。",
     detectiveAudio: "Who was home with you?.mp3",
     suspectAudio: "My husband.mp3",
@@ -71,8 +83,10 @@ const part2Cards = [
   {
     id: 18,
     detectiveEnglish: "Did you text Maria after you left?",
+    detectiveIpa: "/dɪd ju tɛkst məˈriə ˈæftɚ ju lɛft?/",
     detectiveJapanese: "出た後マリアにメッセージした？",
     suspectEnglish: "Yes. Just one text.",
+    suspectIpa: "/jɛs. dʒʌst wʌn tɛkst./",
     suspectJapanese: "はい。1回だけ。",
     detectiveAudio: "Did you text Maria after you left?.mp3",
     suspectAudio: "Yes. Just one text.mp3",
@@ -82,8 +96,10 @@ const part2Cards = [
   {
     id: 19,
     detectiveEnglish: "What did you say?",
+    detectiveIpa: "/wʌt dɪd ju seɪ?/",
     detectiveJapanese: "何て送った？",
     suspectEnglish: "I asked if she got home safe.",
+    suspectIpa: "/aɪ æskt ɪf ʃi ɡɑt hoʊm seɪf./",
     suspectJapanese: "無事に帰れたか確認しました。",
     detectiveAudio: "What did you say?.mp3",
     suspectAudio: "I asked if she got home safe.mp3",
@@ -93,8 +109,10 @@ const part2Cards = [
   {
     id: 20,
     detectiveEnglish: "Did she reply?",
+    detectiveIpa: "/dɪd ʃi rɪˈplaɪ?/",
     detectiveJapanese: "返信は？",
     suspectEnglish: "No.",
+    suspectIpa: "/noʊ./",
     suspectJapanese: "ありません。",
     detectiveAudio: "Did she reply?.mp3",
     suspectAudio: "NO 5.mp3",
@@ -104,8 +122,10 @@ const part2Cards = [
   {
     id: 21,
     detectiveEnglish: "Okay. That gives me a timeline.",
+    detectiveIpa: "/oʊˈkeɪ. ðæt ɡɪvz mi ə ˈtaɪmˌlaɪn./",
     detectiveJapanese: "分かった。タイムラインは一応できた。",
     suspectEnglish: "Okay.",
+    suspectIpa: "/oʊˈkeɪ./",
     suspectJapanese: "はい。",
     detectiveAudio: "Okay. That gives me a timeline.mp3",
     suspectAudio: "Okay 2.mp3",
@@ -173,7 +193,7 @@ function maskText(text) {
 }
 
 function getCardUiState(cardId) {
-  return clozeState[cardId] ?? { hint: false, translation: false, answer: false };
+  return clozeState[cardId] ?? { hint: false, ipa: false, translation: false, answer: false };
 }
 
 function getHints(text) {
@@ -192,6 +212,7 @@ function getLines(card) {
       secondText: card.suspectEnglish,
       secondAudio: card.suspectAudio,
       answerText: card.detectiveEnglish,
+      ipaText: card.detectiveIpa,
       translationText: card.detectiveJapanese,
       answerNote: "",
       missions: card.detectiveMission,
@@ -207,6 +228,7 @@ function getLines(card) {
     secondText: maskText(card.suspectEnglish),
     secondAudio: card.suspectAudio,
     answerText: card.suspectEnglish,
+    ipaText: card.suspectIpa,
     translationText: card.suspectJapanese,
     answerNote: card.suspectNote ?? "",
     missions: card.suspectMission,
@@ -221,7 +243,7 @@ function audioPath(file) {
 function render() {
   root.innerHTML = `
     <p class="part-mission-intro">
-      MISSIONを見てスムーズにセリフが言えるように練習しましょう！ヒントや日本語訳を使ってもOK！
+      MISSIONを見てスムーズにセリフが言えるように練習しましょう！ヒントや日本語訳、発音記号を使ってもOK！
     </p>
     ${part2Cards
       .map((card) => {
@@ -234,7 +256,8 @@ function render() {
           role === "detective"
             ? `<button class="list-pill ${uiState.hint ? "active" : ""}" type="button" data-hint-card="${card.id}">Hint</button>`
             : "";
-        const translationControl = `<button class="list-pill ${uiState.translation ? "active" : ""}" type="button" data-translation-card="${card.id}">日本語訳</button>`;
+        const ipaControl = `<button class="list-pill ${uiState.ipa ? "active" : ""}" type="button" data-ipa-card="${card.id}">発音記号</button>`;
+        const translationControl = `<button class="list-pill ${uiState.translation ? "active" : ""}" type="button" data-translation-card="${card.id}">訳</button>`;
         const hintPanel =
           role === "detective"
             ? `<div class="list-panel ${uiState.hint ? "" : "is-hidden"}">
@@ -245,6 +268,12 @@ function render() {
               <div class="cloze-answer">
                 <p class="cloze-answer-label">Japanese</p>
                 <p class="cloze-answer-text">${escapeHtml(lines.translationText)}</p>
+              </div>
+            </div>`;
+        const ipaPanel = `<div class="list-panel ${uiState.ipa ? "" : "is-hidden"}">
+              <div class="cloze-answer">
+                <p class="cloze-answer-label">IPA</p>
+                <p class="cloze-answer-text ipa-text">${escapeHtml(lines.ipaText)}</p>
               </div>
             </div>`;
         return `
@@ -269,15 +298,17 @@ function render() {
             <div class="list-pill-row">
               ${hintControls}
               ${translationControl}
-              <button class="list-pill ${uiState.answer ? "active" : ""}" type="button" data-answer-card="${card.id}">Answer</button>
+              <button class="list-pill ${uiState.answer ? "active" : ""}" type="button" data-answer-card="${card.id}">答え</button>
+              ${ipaControl}
             </div>
             ${hintPanel}
             ${translationPanel}
             <div class="cloze-answer ${uiState.answer ? "" : "is-hidden"}">
-              <p class="cloze-answer-label">Answer</p>
+              <p class="cloze-answer-label">答え</p>
               <p class="cloze-answer-text">${escapeHtml(lines.answerText)}</p>
               ${lines.answerNote ? `<p class="cloze-answer-note">${escapeHtml(lines.answerNote)}</p>` : ""}
             </div>
+            ${ipaPanel}
           </article>
         `;
       })
@@ -291,6 +322,15 @@ root.addEventListener("click", (event) => {
     const cardId = Number(hintButton.dataset.hintCard);
     const current = getCardUiState(cardId);
     clozeState[cardId] = { ...current, hint: !current.hint };
+    render();
+    return;
+  }
+
+  const ipaButton = event.target.closest("[data-ipa-card]");
+  if (ipaButton) {
+    const cardId = Number(ipaButton.dataset.ipaCard);
+    const current = getCardUiState(cardId);
+    clozeState[cardId] = { ...current, ipa: !current.ipa };
     render();
     return;
   }
