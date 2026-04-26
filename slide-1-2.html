@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1-2 | Slide Share</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5efe4;
+        --bg-deep: #e8dcc7;
+        --panel: rgba(255, 251, 245, 0.8);
+        --ink: #1f1a17;
+        --muted: #6c6258;
+        --accent: #d96c3d;
+        --accent-deep: #b65127;
+        --line: rgba(31, 26, 23, 0.1);
+        --shadow: 0 28px 70px rgba(99, 68, 39, 0.15);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Manrope", "Noto Sans JP", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(217, 108, 61, 0.16), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(135, 98, 55, 0.16), transparent 30%),
+          linear-gradient(180deg, var(--bg), var(--bg-deep));
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 40px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 28px;
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent-deep);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 1rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: #fff7f1;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.55);
+        border-color: var(--line);
+      }
+
+      .frame-wrap {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.44);
+        border: 1px solid rgba(255, 255, 255, 0.46);
+        box-shadow: var(--shadow);
+      }
+
+      .frame-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .frame-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .frame-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .frame-shell {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        overflow: hidden;
+        border-radius: 22px;
+        background: #f4ede3;
+        border: 1px solid var(--line);
+      }
+
+      iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .footer-note {
+        margin: 14px 4px 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100% - 20px, 1160px);
+          padding-top: 14px;
+          padding-bottom: 24px;
+        }
+
+        .hero,
+        .frame-wrap {
+          padding: 16px;
+          border-radius: 22px;
+        }
+
+        .frame-header {
+          display: grid;
+        }
+
+        .frame-shell {
+          padding-top: 68%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Slide Share</p>
+        <div>
+          <h1>1-2</h1>
+        </div>
+        <p class="lead">
+          Canvaスライドをそのまま閲覧できる共有ページです。ページ内で見ることも、新しいタブでCanvaを開くこともできます。
+        </p>
+        <div class="actions">
+          <a
+            class="button primary"
+            href="https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Canvaで開く
+          </a>
+          <a class="button secondary" href="#slide-frame">このページで見る</a>
+        </div>
+      </section>
+
+      <section class="frame-wrap" id="slide-frame">
+        <div class="frame-header">
+          <div>
+            <p class="frame-title">Presentation Preview</p>
+            <p class="frame-note">埋め込みが表示されない場合は上のボタンからCanvaを開いてください。</p>
+          </div>
+        </div>
+        <div class="frame-shell">
+          <iframe
+            loading="lazy"
+            src="https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view?embed"
+            allowfullscreen="allowfullscreen"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+        <p class="footer-note">
+          Share link:
+          <a href="https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view" target="_blank" rel="noreferrer">
+            https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view
+          </a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

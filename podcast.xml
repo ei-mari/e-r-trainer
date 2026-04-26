@@ -3,27 +3,26 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Eimari Roleplay Private Podcast</title>
+    <title>Eimari Roleplay Podcast</title>
     <link>https://ei-mari.github.io/e-r-trainer/podcast.html</link>
     <language>en-us</language>
     <copyright>2026 Eimari</copyright>
-    <description>Private roleplay audio practice feed for Eimari lessons.</description>
+    <description>Audio-roleplay practice feed for Eimari lessons.</description>
     <itunes:author>Eimari</itunes:author>
-    <itunes:summary>Private roleplay audio practice feed for Eimari lessons.</itunes:summary>
+    <itunes:summary>Audio-roleplay practice feed for Eimari lessons.</itunes:summary>
     <itunes:owner>
       <itunes:name>Eimari</itunes:name>
-      <itunes:email>noreply@example.com</itunes:email>
+      <itunes:email>info@ei-mari.com</itunes:email>
     </itunes:owner>
     <itunes:image href="https://ei-mari.github.io/e-r-trainer/Eimari%20Thumbnail.png" />
     <itunes:category text="Education">
       <itunes:category text="Language Learning" />
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:block>Yes</itunes:block>
     <item>
       <title>Part 1: Opening Questions</title>
-      <description>Opening roleplay practice from the greeting through the first timeline questions.</description>
-      <content:encoded><![CDATA[Opening roleplay practice from the greeting through the first timeline questions.]]></content:encoded>
+      <description>Audio-roleplay practice for exchanges 1-11.</description>
+      <content:encoded><![CDATA[Audio-roleplay practice for exchanges 1-11.]]></content:encoded>
       <pubDate>Sat, 18 Apr 2026 09:00:00 +0900</pubDate>
       <guid isPermaLink="false">https://ei-mari.github.io/e-r-trainer/podcast/part-1-opening-questions</guid>
       <enclosure url="https://ei-mari.github.io/e-r-trainer/podcast/part-1-opening-questions.mp3" length="609572" type="audio/mpeg" />
@@ -32,8 +31,8 @@
     </item>
     <item>
       <title>Part 2: After the Cafe</title>
-      <description>Cafe departure, return home, text message, and timeline practice.</description>
-      <content:encoded><![CDATA[Cafe departure, return home, text message, and timeline practice.]]></content:encoded>
+      <description>Audio-roleplay practice for exchanges 12-21.</description>
+      <content:encoded><![CDATA[Audio-roleplay practice for exchanges 12-21.]]></content:encoded>
       <pubDate>Sat, 18 Apr 2026 09:10:00 +0900</pubDate>
       <guid isPermaLink="false">https://ei-mari.github.io/e-r-trainer/podcast/part-2-after-the-cafe</guid>
       <enclosure url="https://ei-mari.github.io/e-r-trainer/podcast/part-2-after-the-cafe.mp3" length="518340" type="audio/mpeg" />
@@ -42,8 +41,8 @@
     </item>
     <item>
       <title>Part 3: Serious Scene</title>
-      <description>Evidence, contradiction, and final pressure scene practice.</description>
-      <content:encoded><![CDATA[Evidence, contradiction, and final pressure scene practice.]]></content:encoded>
+      <description>Audio-roleplay practice for exchanges 22-35.</description>
+      <content:encoded><![CDATA[Audio-roleplay practice for exchanges 22-35.]]></content:encoded>
       <pubDate>Sat, 18 Apr 2026 09:20:00 +0900</pubDate>
       <guid isPermaLink="false">https://ei-mari.github.io/e-r-trainer/podcast/part-3-serious-scene</guid>
       <enclosure url="https://ei-mari.github.io/e-r-trainer/podcast/part-3-serious-scene.mp3" length="999356" type="audio/mpeg" />

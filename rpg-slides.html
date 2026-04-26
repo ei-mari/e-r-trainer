@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG Slides | EiMARi</title>
+    <meta
+      name="description"
+      content="RPGレッスン用のスライド共有ページです。見たいスライドを選んでCanvaで開けます。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f0e8;
+        --paper: #fffdf9;
+        --ink: #171411;
+        --muted: #61584f;
+        --line: #171717;
+        --accent: #ec6f2d;
+        --accent-soft: #fff0df;
+        --glow: #ffd26b;
+        --phone-width: 430px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top right, rgba(236, 111, 45, 0.18), transparent 24%),
+          radial-gradient(circle at bottom left, rgba(255, 210, 107, 0.18), transparent 28%),
+          linear-gradient(180deg, #fffaf3 0%, var(--bg) 100%);
+      }
+
+      body {
+        padding: 0 0 6rem;
+      }
+
+      .page {
+        width: min(var(--phone-width), calc(100% - 1rem));
+        margin: 0 auto;
+        padding-top: 0.5rem;
+      }
+
+      section {
+        margin-top: 0.95rem;
+      }
+
+      .card {
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        background: var(--paper);
+        padding: 1rem;
+        box-shadow: 6px 6px 0 var(--glow);
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: -28px;
+        top: -24px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 210, 107, 0.45), rgba(255, 210, 107, 0));
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.22rem 0.55rem;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        background: var(--accent-soft);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+      }
+
+      h1 {
+        margin-top: 0.85rem;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.94rem;
+        line-height: 1.08;
+      }
+
+      .status,
+      .unit-note,
+      .footer-bar p {
+        color: var(--muted);
+        line-height: 1.72;
+      }
+
+      .status {
+        margin-top: 0.85rem;
+      }
+
+      .unit-grid {
+        display: grid;
+        gap: 0.7rem;
+      }
+
+      .unit-card {
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .unit-head {
+        padding: 0.9rem 0.9rem 0;
+      }
+
+      .unit-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 0.2rem 0.75rem;
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        background: var(--accent-soft);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.98rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .unit-body {
+        padding: 0.9rem;
+      }
+
+      .unit-note {
+        margin: 0 0 0.7rem;
+        font-size: 0.9rem;
+      }
+
+      .slide-shell {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 2px solid var(--line);
+        border-radius: 14px;
+        background:
+          linear-gradient(135deg, rgba(236, 111, 45, 0.1), rgba(255, 210, 107, 0.2)),
+          #fff8f1;
+      }
+
+      .slide-shell iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .unit-actions {
+        display: grid;
+        gap: 0.65rem;
+        margin-top: 0.85rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+        padding: 0.8rem 1rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        background: var(--accent);
+        color: #fff;
+        border: 2px solid var(--line);
+      }
+
+      .button.secondary {
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .footer-bar {
+        position: fixed;
+        left: 50%;
+        bottom: 0.75rem;
+        transform: translateX(-50%);
+        width: min(var(--phone-width), calc(100% - 1rem));
+        padding: 0.8rem 0.95rem;
+        border: 2px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 253, 249, 0.96);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 24px rgba(23, 23, 23, 0.08);
+      }
+
+      .footer-bar p {
+        margin: 0;
+        font-size: 0.82rem;
+        text-align: left;
+      }
+
+      @media (max-width: 480px) {
+        .page,
+        .footer-bar {
+          width: calc(100% - 1rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card hero">
+        <span class="eyebrow">SLIDES</span>
+        <h1>RPGスライド一覧</h1>
+        <p class="status">見たい番号の下にあるボタンを押してご確認ください。Canvaで直接開くリンクと、このサイト内で見るページの両方を用意しています。</p>
+      </section>
+
+      <section class="card">
+        <div class="unit-grid">
+          <article class="unit-card">
+            <div class="unit-head">
+              <div class="unit-label">1-1</div>
+            </div>
+            <div class="unit-body">
+              <p class="unit-note">1-1 のスライドです。このページ内でそのまま見られます。表示がうまくいかない場合だけCanvaを直接開いてください。</p>
+              <div class="slide-shell">
+                <iframe
+                  loading="lazy"
+                  src="https://www.canva.com/design/DAHGHTtKFvg/i3qWz_YL0Nt1NHyoGhsu_w/view?embed"
+                  allowfullscreen="allowfullscreen"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+              <div class="unit-actions">
+                <a class="button" href="https://www.canva.com/design/DAHGHTtKFvg/i3qWz_YL0Nt1NHyoGhsu_w/view" target="_blank" rel="noopener noreferrer">Canvaで開く</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-head">
+              <div class="unit-label">1-2</div>
+            </div>
+            <div class="unit-body">
+              <p class="unit-note">1-2 のスライドです。このページ内でそのまま見られます。表示がうまくいかない場合だけCanvaを直接開いてください。</p>
+              <div class="slide-shell">
+                <iframe
+                  loading="lazy"
+                  src="https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view?embed"
+                  allowfullscreen="allowfullscreen"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+              <div class="unit-actions">
+                <a class="button" href="https://www.canva.com/design/DAHGKMPLNTM/fau-YO_fMuDIBHgRGZi74Q/view" target="_blank" rel="noopener noreferrer">Canvaで開く</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-head">
+              <div class="unit-label">1-3</div>
+            </div>
+            <div class="unit-body">
+              <p class="unit-note">1-3 のスライドです。このページ内でそのまま見られます。表示がうまくいかない場合だけCanvaを直接開いてください。</p>
+              <div class="slide-shell">
+                <iframe
+                  loading="lazy"
+                  src="https://www.canva.com/design/DAHGKoDzheQ/VsXjJsxLC_dEOkz3AO_rxw/view?embed"
+                  allowfullscreen="allowfullscreen"
+                  allow="fullscreen"
+                ></iframe>
+              </div>
+              <div class="unit-actions">
+                <a class="button" href="https://www.canva.com/design/DAHGKoDzheQ/VsXjJsxLC_dEOkz3AO_rxw/view" target="_blank" rel="noopener noreferrer">Canvaで開く</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-bar">
+      <p>このページ内でそのまま確認できます。追加分も同じレイアウトでそのまま増やせます。</p>
+    </div>
+  </body>
+</html>

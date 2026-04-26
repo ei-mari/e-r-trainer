@@ -29,21 +29,21 @@ const parts = [
     title: "Part 1: Opening Questions",
     slug: "part-1-opening-questions",
     lines: sandbox.lines.slice(0, 22),
-    description: "Opening roleplay practice from the greeting through the first timeline questions.",
+    description: "Audio-roleplay practice for exchanges 1-11.",
     pubDate: "Sat, 18 Apr 2026 09:00:00 +0900",
   },
   {
     title: "Part 2: After the Cafe",
     slug: "part-2-after-the-cafe",
     lines: sandbox.lines.slice(22, 42),
-    description: "Cafe departure, return home, text message, and timeline practice.",
+    description: "Audio-roleplay practice for exchanges 12-21.",
     pubDate: "Sat, 18 Apr 2026 09:10:00 +0900",
   },
   {
     title: "Part 3: Serious Scene",
     slug: "part-3-serious-scene",
-    lines: sandbox.lines.slice(42),
-    description: "Evidence, contradiction, and final pressure scene practice.",
+    lines: sandbox.lines.slice(42, 70),
+    description: "Audio-roleplay practice for exchanges 22-35.",
     pubDate: "Sat, 18 Apr 2026 09:20:00 +0900",
   },
 ];
@@ -147,23 +147,22 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Eimari Roleplay Private Podcast</title>
+    <title>Eimari Roleplay Podcast</title>
     <link>${publicBaseUrl}/podcast.html</link>
     <language>en-us</language>
     <copyright>2026 Eimari</copyright>
-    <description>Private roleplay audio practice feed for Eimari lessons.</description>
+    <description>Audio-roleplay practice feed for Eimari lessons.</description>
     <itunes:author>Eimari</itunes:author>
-    <itunes:summary>Private roleplay audio practice feed for Eimari lessons.</itunes:summary>
+    <itunes:summary>Audio-roleplay practice feed for Eimari lessons.</itunes:summary>
     <itunes:owner>
       <itunes:name>Eimari</itunes:name>
-      <itunes:email>noreply@example.com</itunes:email>
+      <itunes:email>info@ei-mari.com</itunes:email>
     </itunes:owner>
     <itunes:image href="${artworkPath}" />
     <itunes:category text="Education">
       <itunes:category text="Language Learning" />
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-    <itunes:block>Yes</itunes:block>
 ${episodes
   .map((episode) => `    <item>
       <title>${escapeXml(episode.title)}</title>
@@ -182,83 +181,69 @@ ${episodes
 
 writeFileSync(join(repoRoot, "podcast.xml"), feed);
 
+const episodeCards = episodes
+  .map((episode, index) => `<article class="audio-line podcast-episode">
+                <div class="audio-line-head">
+                  <div class="audio-line-main">
+                    <div class="audio-line-meta">
+                      <span class="audio-line-index">${String(index + 1).padStart(2, "0")}</span>
+                      <span class="speaker-badge ${index % 2 === 0 ? "detective" : "suspect"}">${escapeXml(`Part ${index + 1}`)}</span>
+                    </div>
+                    <p class="audio-line-text">${escapeXml(episode.title.replace(/^Part \d+:\s*/, ""))}</p>
+                  </div>
+                </div>
+                <audio class="podcast-audio" controls preload="metadata" src="./podcast/${escapeXml(`${episode.slug}.mp3`)}"></audio>
+              </article>`)
+  .join("\n              ");
+
 const subscribePage = `<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eimari Private Podcast</title>
-    <link rel="stylesheet" href="./assignment.css" />
-    <style>
-      .podcast-url {
-        word-break: break-all;
-        padding: 12px;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(25, 49, 30, 0.08);
-        color: var(--ink);
-        line-height: 1.5;
-      }
-      .podcast-actions {
-        display: grid;
-        gap: 10px;
-      }
-      .podcast-action {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        padding: 10px 12px;
-        border-radius: 14px;
-        background: rgba(97, 192, 70, 0.14);
-        color: #2d6f26;
-        text-decoration: none;
-        font-weight: 700;
-      }
-    </style>
+    <title>Eimari Podcast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./audio-roleplay.css" />
   </head>
   <body>
-    <div class="assignment-app">
-      <main class="assignment-shell">
-        <div class="assignment-phone-camera"></div>
-        <div class="assignment-scroll">
-          <header class="assignment-hero">
-            <div class="assignment-hero-image-wrap">
-              <img class="assignment-hero-image" src="./Eimari Thumbnail.png" alt="" />
-            </div>
-            <div class="assignment-hero-copy">
-              <p class="assignment-eyebrow">Private Podcast</p>
-              <h1>Eimari Roleplay Audio</h1>
-              <p class="assignment-summary">Apple Podcasts や Pocket Casts でURLを追加すると、Part 1〜3を音声エピソードとして練習できます。</p>
-            </div>
-          </header>
-
-          <section class="assignment-card is-focus">
-            <div class="assignment-card-head">
-              <div>
-                <p class="assignment-part-label">RSS Feed</p>
-                <h2>Podcast URL</h2>
-              </div>
+    <div class="audio-app">
+      <main class="audio-shell podcast-shell">
+        <div class="audio-phone-camera"></div>
+        <section class="audio-hero podcast-hero">
+          <div class="audio-hero-image-wrap">
+            <img class="audio-hero-image" src="./Eimari Thumbnail.png" alt="" />
+          </div>
+          <section class="audio-controls podcast-controls">
+            <div class="podcast-actions">
+              <a class="primary-button podcast-action" href="https://pocketcasts.com/submit/">Pocket Castsに登録</a>
+              <a class="secondary-button podcast-action" href="${publicBaseUrl}/podcast.xml">RSSを開く</a>
             </div>
             <p class="podcast-url">${publicBaseUrl}/podcast.xml</p>
-            <div class="podcast-actions">
-              <a class="podcast-action" href="${publicBaseUrl}/podcast.xml">RSSを開く</a>
-              <a class="podcast-action" href="./audio-roleplay.html">音声プレイヤーを開く</a>
-            </div>
           </section>
+          <div class="audio-hero-copy">
+            <p class="audio-eyebrow">Podcast Feed</p>
+            <h1>Eimari Roleplay Audio</h1>
+            <p class="audio-summary">audio-roleplay の音声をPart 1〜3でPodcast形式にまとめています。</p>
+          </div>
+        </section>
 
-          <section class="assignment-card">
-            <div class="assignment-card-head">
-              <div>
-                <p class="assignment-part-label">Episodes</p>
-                <h2>配信内容</h2>
-              </div>
+        <div class="audio-scroll-content podcast-scroll-content">
+          <section class="audio-list-wrap podcast-list-wrap">
+            <div class="audio-list">
+              ${episodeCards}
             </div>
-            ${episodes
-              .map((episode) => `<p class="assignment-note"><strong>${escapeXml(episode.title)}</strong><br />${escapeXml(episode.duration)}</p>`)
-              .join("\n            ")}
           </section>
         </div>
+
+        <a class="list-toggle-button podcast-back-link" href="./audio-roleplay.html">
+          <span>通常プレイヤーを開く</span>
+          <span class="list-toggle-icon" aria-hidden="true">→</span>
+        </a>
       </main>
     </div>
   </body>

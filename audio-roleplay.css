@@ -192,6 +192,59 @@ h1 {
   display: none;
 }
 
+.podcast-shell .audio-list-wrap.is-hidden {
+  display: block;
+}
+
+.podcast-hero {
+  gap: 12px;
+}
+
+.podcast-controls {
+  gap: 8px;
+}
+
+.podcast-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.podcast-action {
+  min-height: 40px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.podcast-url {
+  margin: 0;
+  word-break: break-all;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.podcast-scroll-content {
+  top: 508px;
+  bottom: 76px;
+}
+
+.podcast-list-wrap {
+  display: block;
+}
+
+.podcast-episode {
+  gap: 10px;
+}
+
+.podcast-audio {
+  width: 100%;
+}
+
+.podcast-back-link {
+  text-decoration: none;
+}
+
 .audio-control-row,
 .audio-meta-row {
   display: flex;
