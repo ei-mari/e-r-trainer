@@ -29,8 +29,11 @@ const grammarRules = [
   { words: ["No"], className: "interjection", label: "間投詞" },
   { words: ["Jesus"], className: "interjection", label: "間投詞" },
   { words: ["just", "today", "again", "together", "hopefully", "probably", "ever", "anywhere", "then", "Then", "home", "enough"], className: "adv", label: "副詞" },
-  { words: ["a", "an", "the", "The"], className: "det", label: "冠詞（限定詞）" },
-  { words: ["my", "your", "Your", "every", "enough", "one", "all", "this", "that", "some", "any"], className: "det", label: "限定詞" },
+  { words: ["a", "an", "the", "The"], className: "det", label: "冠詞" },
+  { words: ["my", "your", "Your", "his", "His", "her", "Her", "our", "Our", "their", "Their"], className: "det", label: "代名詞（所有格）" },
+  { words: ["every", "enough", "all", "some", "any"], className: "adj", label: "形容詞" },
+  { words: ["this", "that"], className: "det", label: "指示代名詞（形容詞用法）" },
+  { words: ["one"], className: "number", label: "数詞" },
 ];
 
 const phraseNotes = [
@@ -107,7 +110,7 @@ const lineOverrides = {
     waking: ["gerund", "動詞（-ing形）"],
     up: ["particle", "副詞（句動詞の一部）"],
     to: ["prep", "前置詞"],
-    a: ["det", "冠詞（限定詞）"],
+    a: ["det", "冠詞"],
     dirty: ["adj", "形容詞"],
     kitchen: ["noun", "名詞"],
   },
@@ -124,17 +127,17 @@ const lineOverrides = {
   "I busted my ass all day cleaning this house and then cooking that meal. And I worked today. It would be nice if you said thank you and helped me with the dishes.": {
     I: ["pronoun", "代名詞"],
     busted: ["verb", "動詞"],
-    my: ["det", "限定詞"],
+    my: ["det", "代名詞（所有格）"],
     ass: ["noun", "名詞"],
-    all: ["det", "限定詞"],
+    all: ["adj", "形容詞"],
     day: ["noun", "名詞"],
     cleaning: ["participle", "動詞（-ing形）"],
-    this: ["det", "限定詞"],
+    this: ["det", "指示代名詞（形容詞用法）"],
     house: ["noun", "名詞"],
     and: ["conj", "接続詞"],
     then: ["adv", "副詞"],
     cooking: ["participle", "動詞（-ing形）"],
-    that: ["det", "限定詞"],
+    that: ["det", "指示代名詞（形容詞用法）"],
     meal: ["noun", "名詞"],
     And: ["conj", "接続詞"],
     worked: ["verb", "動詞"],
@@ -150,7 +153,7 @@ const lineOverrides = {
     helped: ["verb", "動詞"],
     me: ["pronoun", "代名詞"],
     with: ["prep", "前置詞"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     dishes: ["noun", "名詞"],
   },
   "Fine. I'll help you do the damn dishes.": {
@@ -159,7 +162,7 @@ const lineOverrides = {
     help: ["verb", "動詞"],
     you: ["pronoun", "代名詞"],
     do: ["verb", "動詞"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     damn: ["adj", "形容詞"],
     dishes: ["noun", "名詞"],
   },
@@ -183,7 +186,7 @@ const lineOverrides = {
   "See, that's my whole point.": {
     See: ["interjection", "間投詞"],
     "that's": ["aux", "指示代名詞 + 動詞（be動詞）"],
-    my: ["det", "限定詞"],
+    my: ["det", "代名詞（所有格）"],
     whole: ["adj", "形容詞"],
     point: ["noun", "名詞"],
   },
@@ -206,7 +209,7 @@ const lineOverrides = {
     I: ["pronoun", "代名詞"],
     "don't": ["aux", "助動詞 + not"],
     have: ["verb", "動詞"],
-    a: ["det", "冠詞（限定詞）"],
+    a: ["det", "冠詞"],
     strong: ["adj", "形容詞"],
     desire: ["noun", "名詞"],
     to: ["infinitive", "不定詞マーカー"],
@@ -221,13 +224,13 @@ const lineOverrides = {
     you: ["pronoun", "代名詞"],
     "don't": ["aux", "助動詞 + not"],
     have: ["verb", "動詞"],
-    a: ["det", "冠詞（限定詞）"],
+    a: ["det", "冠詞"],
     strong: ["adj", "形容詞"],
     desire: ["noun", "名詞"],
     to: ["infinitive", "不定詞マーカー"],
     offer: ["verb", "動詞"],
     do: ["verb", "動詞"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     dishes: ["noun", "名詞"],
   },
   "Jesus, Brooke, you're acting crazy again.": {
@@ -275,7 +278,7 @@ const lineOverrides = {
     To: ["prep", "前置詞"],
     Ann: ["proper-noun", "名詞（固有名詞）"],
     Arbor: ["proper-noun", "名詞（固有名詞）"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     Michigan: ["proper-noun", "名詞（固有名詞）"],
     Notre: ["proper-noun", "名詞（固有名詞）"],
     Dame: ["proper-noun", "名詞（固有名詞）"],
@@ -315,9 +318,9 @@ const lineOverrides = {
     "I'm": ["aux", "代名詞 + 動詞（be動詞）"],
     up: ["adv", "副詞"],
     on: ["prep", "前置詞"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     bus: ["noun", "名詞"],
-    every: ["det", "限定詞"],
+    every: ["adj", "形容詞"],
     goddamn: ["adj", "形容詞"],
     day: ["noun", "名詞"],
     for: ["prep", "前置詞"],
@@ -330,11 +333,11 @@ const lineOverrides = {
   "I'm busting my ass to be the best tour guide in the damn city, so I can make enough money to support both of us and hopefully you won't have to work one day.": {
     "I'm": ["aux", "代名詞 + 助動詞"],
     busting: ["progressive", "動詞（-ing形）"],
-    my: ["det", "限定詞"],
+    my: ["det", "代名詞（所有格）"],
     ass: ["noun", "名詞"],
     to: ["infinitive", "不定詞マーカー"],
     be: ["verb", "動詞（be動詞）"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     best: ["adj", "形容詞"],
     tour: ["noun", "名詞"],
     guide: ["noun", "名詞"],
@@ -345,7 +348,7 @@ const lineOverrides = {
     I: ["pronoun", "代名詞"],
     can: ["aux", "助動詞"],
     make: ["verb", "動詞"],
-    enough: ["det", "限定詞"],
+    enough: ["adj", "形容詞"],
     money: ["noun", "名詞"],
     support: ["verb", "動詞"],
     both: ["pronoun", "代名詞"],
@@ -355,9 +358,8 @@ const lineOverrides = {
     hopefully: ["adv", "副詞"],
     you: ["pronoun", "代名詞"],
     "won't": ["aux", "助動詞 + not"],
-    have: ["aux", "助動詞相当（have to の一部）"],
     work: ["verb", "動詞"],
-    one: ["det", "限定詞"],
+    one: ["number", "数詞"],
     day: ["noun", "名詞"],
   },
   "I want to work.": {
@@ -375,7 +377,7 @@ const lineOverrides = {
     that: ["conj", "接続詞"],
     you: ["pronoun", "代名詞"],
     show: ["verb", "動詞"],
-    a: ["det", "冠詞（限定詞）"],
+    a: ["det", "冠詞"],
     little: ["adj", "形容詞"],
     bit: ["noun", "名詞"],
     of: ["prep", "前置詞"],
@@ -401,7 +403,7 @@ const lineOverrides = {
     questions: ["noun", "名詞"],
     and: ["conj", "接続詞"],
     nagged: ["past-participle", "動詞（過去分詞・受け身）"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     whole: ["adj", "形容詞"],
     damn: ["adj", "形容詞"],
     time: ["noun", "名詞"],
@@ -437,7 +439,7 @@ const lineOverrides = {
     to: ["infinitive", "不定詞マーカー"],
     be: ["aux", "助動詞"],
     left: ["past-participle", "動詞（過去分詞・受け身）"],
-    the: ["det", "冠詞（限定詞）"],
+    the: ["det", "冠詞"],
     hell: ["noun", "名詞"],
     alone: ["adj", "形容詞"],
   },
@@ -500,7 +502,7 @@ function classify(token, tokens = [], index = -1, line = "") {
   }
 
   if (lower === "that") {
-    if (next === "meal") return { className: "det", label: "冠詞（限定詞）" };
+    if (next === "meal") return { className: "det", label: "指示代名詞（形容詞用法）" };
     if (["said", "telling", "is"].includes(previous)) return { className: "conj", label: "接続詞" };
     return { className: "pronoun", label: "代名詞" };
   }
@@ -524,17 +526,34 @@ function tokenize(line) {
   return line.match(/[A-Za-z]+(?:['’][A-Za-z]+)?|[0-9]+|[.,!?;:()"]/g) ?? [];
 }
 
+function isHaveToPhrase(tokens, index) {
+  const current = normalizeToken(tokens[index]).toLowerCase();
+  const next = index < tokens.length - 1 ? normalizeToken(tokens[index + 1]).toLowerCase() : "";
+  const afterNext = index < tokens.length - 2 ? normalizeToken(tokens[index + 2]).toLowerCase() : "";
+  return current === "have" && next === "to" && afterNext === "work";
+}
+
 function renderTokens(line) {
   const tokens = tokenize(line);
-  return tokens
-    .map((token, index) => {
+  const rendered = [];
+
+  tokens.forEach((token, index) => {
+      if (index > 0 && normalizeToken(tokens[index - 1]).toLowerCase() === "have" && normalizeToken(token).toLowerCase() === "to" && isHaveToPhrase(tokens, index - 1)) {
+        return;
+      }
       if (/^[.,!?;:()"]$/.test(token)) {
-        return `<span class="plain">${escapeHtml(token)}</span>`;
+        rendered.push(`<span class="plain">${escapeHtml(token)}</span>`);
+        return;
+      }
+      if (isHaveToPhrase(tokens, index)) {
+        rendered.push(`<span class="token aux" title="助動詞相当">${escapeHtml("have to")}</span>`);
+        return;
       }
       const rule = classify(token, tokens, index, line);
-      return `<span class="token ${rule.className}" title="${escapeHtml(rule.label)}">${escapeHtml(token)}</span>`;
-    })
-    .join("");
+      rendered.push(`<span class="token ${rule.className}" title="${escapeHtml(rule.label)}">${escapeHtml(token)}</span>`);
+    });
+
+  return rendered.join("");
 }
 
 function getNotes(line) {
@@ -550,13 +569,23 @@ function getNotes(line) {
 
 function getTokenRows(line) {
   const tokens = tokenize(line);
-  return tokens
-    .map((token, index) => ({ token, index }))
-    .filter(({ token }) => !/^[.,!?;:()"]$/.test(token))
-    .map(({ token, index }) => {
-      const rule = classify(token, tokens, index, line);
-      return { token, rule };
-    });
+  const rows = [];
+
+  tokens.forEach((token, index) => {
+    if (/^[.,!?;:()"]$/.test(token)) return;
+    if (index > 0 && normalizeToken(tokens[index - 1]).toLowerCase() === "have" && normalizeToken(token).toLowerCase() === "to" && isHaveToPhrase(tokens, index - 1)) {
+      return;
+    }
+    if (isHaveToPhrase(tokens, index)) {
+      rows.push({ token: "have to", rule: { className: "aux", label: "助動詞相当" } });
+      return;
+    }
+
+    const rule = classify(token, tokens, index, line);
+    rows.push({ token, rule });
+  });
+
+  return rows;
 }
 
 function renderGrammarTable(line) {
