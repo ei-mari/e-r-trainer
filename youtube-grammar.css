@@ -420,6 +420,47 @@ iframe {
   border-bottom: 0;
 }
 
+.audio-practice {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(72, 175, 57, 0.16);
+  border-radius: 18px;
+  background: rgba(250, 253, 246, 0.86);
+}
+
+.audio-practice audio {
+  width: 100%;
+  height: 34px;
+}
+
+.speed-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.speed-btn {
+  appearance: none;
+  min-width: 0;
+  border: 1px solid rgba(72, 175, 57, 0.22);
+  border-radius: 999px;
+  padding: 7px 0;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.speed-btn.is-active {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
 .mini-token {
   display: inline-flex;
   align-items: center;

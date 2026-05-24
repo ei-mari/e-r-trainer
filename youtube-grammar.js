@@ -610,6 +610,25 @@ function renderGrammarTable(line) {
   </table>`;
 }
 
+function renderAudioPlayer(index) {
+  const audioNumber = String(index + 1).padStart(2, "0");
+  const speeds = [
+    { value: 0.25, label: "0.25" },
+    { value: 0.5, label: "0.5" },
+    { value: 0.75, label: "0.75" },
+    { value: 1.0, label: "1.0" },
+  ];
+
+  return `<div class="audio-practice" data-audio-player>
+    <audio controls preload="metadata" src="./breakup-audio/line-${audioNumber}.mp3"></audio>
+    <div class="speed-row" aria-label="再生速度">
+      ${speeds
+        .map((speed) => `<button class="speed-btn ${speed.value === 1.0 ? "is-active" : ""}" type="button" data-speed="${speed.value}">${speed.label}</button>`)
+        .join("")}
+    </div>
+  </div>`;
+}
+
 function renderLine([speaker, text], index) {
   const emoji = speaker === "woman" ? "👩‍🦳" : "👨";
   return `<article class="line-card ${speaker}">
@@ -621,6 +640,7 @@ function renderLine([speaker, text], index) {
     <div class="breakdown">
       ${renderGrammarTable(text)}
     </div>
+    ${renderAudioPlayer(index)}
   </article>`;
 }
 
@@ -643,4 +663,17 @@ renderSegment("#dialogueList", [...segmentOne, ...segmentTwo]);
 const scrollArea = document.querySelector(".scroll");
 document.querySelector(".back-top")?.addEventListener("click", () => {
   scrollArea?.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-speed]");
+  if (!button) return;
+
+  const player = button.closest("[data-audio-player]");
+  const audio = player?.querySelector("audio");
+  if (!audio) return;
+
+  audio.playbackRate = Number(button.dataset.speed);
+  player.querySelectorAll("[data-speed]").forEach((item) => item.classList.remove("is-active"));
+  button.classList.add("is-active");
 });
