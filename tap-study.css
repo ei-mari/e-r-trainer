@@ -1,0 +1,499 @@
+:root {
+  --bg: #f4f7ef;
+  --paper: #fffdf8;
+  --paper-strong: #ffffff;
+  --ink: #1d271d;
+  --muted: #637062;
+  --line: rgba(29, 39, 29, 0.12);
+  --green: #58b54b;
+  --green-deep: #35852f;
+  --mint: #dcefd5;
+  --yellow: #f3ce5d;
+  --coral: #df7b63;
+  --blue: #6c8fc9;
+  --shadow: 0 18px 46px rgba(57, 88, 53, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(243, 206, 93, 0.18), transparent 30%),
+    linear-gradient(225deg, rgba(108, 143, 201, 0.14), transparent 32%),
+    var(--bg);
+}
+
+button {
+  font: inherit;
+}
+
+.study-app {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-content: start;
+}
+
+.hero {
+  display: block;
+}
+
+.hero-copy,
+.toolbar,
+.focus-panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 16px 18px;
+  display: grid;
+  align-content: center;
+  gap: 0;
+}
+
+.eyebrow,
+.focus-topic,
+.side-label,
+.card-meta {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4.4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 1.55rem;
+}
+
+.summary {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.toolbar {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  backdrop-filter: blur(16px);
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #eef3e7;
+}
+
+.segment,
+.secondary-action,
+.primary-action,
+.sound-action,
+.icon-control {
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: transform 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+
+.segment {
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.segment.active {
+  color: var(--ink);
+  background: var(--paper-strong);
+  border-color: rgba(53, 133, 47, 0.24);
+}
+
+.focus-panel {
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.focus-topline,
+.focus-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.icon-control {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  color: var(--ink);
+  background: #eef3e7;
+  border-color: var(--line);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.focus-card {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid rgba(29, 39, 29, 0.14);
+  border-radius: 10px;
+  padding: clamp(18px, 4vw, 28px);
+  background:
+    linear-gradient(135deg, rgba(88, 181, 75, 0.1), transparent 42%),
+    var(--paper-strong);
+  cursor: pointer;
+  text-align: left;
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+
+.focus-card.answer-side {
+  background:
+    linear-gradient(135deg, rgba(108, 143, 201, 0.14), transparent 44%),
+    var(--paper-strong);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.focus-text {
+  white-space: pre-line;
+  font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  font-size: clamp(1.12rem, 2.6vw, 1.58rem);
+  line-height: 1.52;
+  font-weight: 600;
+}
+
+.ipa-text,
+.card-ipa {
+  white-space: pre-line;
+  color: #435a80;
+  font-family: "Arial Unicode MS", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.ipa-text {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(108, 143, 201, 0.12);
+  font-size: clamp(0.98rem, 2vw, 1.12rem);
+}
+
+.tap-hint {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.focus-actions {
+  display: grid;
+  grid-template-columns: 82px 1fr 1fr;
+  gap: 10px;
+}
+
+.secondary-action,
+.primary-action,
+.sound-action {
+  padding: 0 16px;
+  font-weight: 700;
+}
+
+.sound-action {
+  min-width: 82px;
+  color: #ffffff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.sound-action:disabled {
+  color: rgba(29, 39, 29, 0.36);
+  background: #e5eadf;
+  border-color: var(--line);
+  cursor: not-allowed;
+}
+
+.secondary-action {
+  color: var(--ink);
+  background: #eef3e7;
+  border-color: var(--line);
+}
+
+.primary-action {
+  color: #ffffff;
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.study-card {
+  min-height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  background: var(--paper);
+  box-shadow: 0 10px 24px rgba(57, 88, 53, 0.07);
+  cursor: pointer;
+  text-align: left;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.study-card:focus-visible,
+.card-sound-button:focus-visible,
+.sound-action:focus-visible {
+  outline: 3px solid rgba(108, 143, 201, 0.38);
+  outline-offset: 2px;
+}
+
+.study-card.answer-side {
+  border-color: rgba(108, 143, 201, 0.38);
+  background: #f8fbff;
+}
+
+.card-question {
+  white-space: pre-line;
+  color: var(--ink);
+  font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.58;
+  font-weight: 600;
+}
+
+.card-ipa {
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(108, 143, 201, 0.1);
+  font-size: 0.9rem;
+}
+
+.card-status {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-sound-button {
+  min-width: 82px;
+  height: 42px;
+  flex: 0 0 auto;
+  padding: 0 12px;
+  border: 1px solid rgba(108, 143, 201, 0.25);
+  border-radius: 7px;
+  color: #ffffff;
+  background: var(--blue);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.segment:hover,
+.secondary-action:hover,
+.primary-action:hover,
+.sound-action:not(:disabled):hover,
+.card-sound-button:hover,
+.icon-control:hover,
+.study-card:hover,
+.focus-card:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  body {
+    background:
+      linear-gradient(150deg, rgba(243, 206, 93, 0.16), transparent 28%),
+      var(--bg);
+  }
+
+  .study-app {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .hero-copy {
+    padding: 13px 14px;
+    gap: 0;
+  }
+
+  .eyebrow,
+  .focus-topic,
+  .side-label,
+  .card-meta {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.28rem;
+  }
+
+  .summary {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .toolbar,
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .segmented {
+    gap: 4px;
+    padding: 3px;
+  }
+
+  .segment {
+    min-height: 38px;
+    font-size: 0.86rem;
+  }
+
+  .meter {
+    gap: 5px;
+    font-size: 0.78rem;
+  }
+
+  .meter-track {
+    height: 6px;
+  }
+
+  .focus-panel {
+    padding: 10px;
+  }
+
+  .focus-topline {
+    gap: 8px;
+  }
+
+  .icon-control {
+    width: 40px;
+    height: 40px;
+    font-size: 1.75rem;
+  }
+
+  .focus-card {
+    min-height: 185px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .focus-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .ipa-text {
+    padding: 10px;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .tap-hint {
+    font-size: 0.78rem;
+  }
+
+  .focus-actions {
+    display: grid;
+    grid-template-columns: 82px 1fr 1fr;
+    gap: 8px;
+  }
+
+  .secondary-action,
+  .primary-action,
+  .sound-action {
+    min-height: 44px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  .study-card {
+    min-height: 0;
+    padding: 13px;
+    gap: 9px;
+  }
+
+  .card-question {
+    font-size: 0.96rem;
+    line-height: 1.56;
+  }
+
+  .card-ipa {
+    padding: 9px;
+    font-size: 0.82rem;
+    line-height: 1.62;
+  }
+
+  .card-footer {
+    gap: 8px;
+  }
+
+  .card-sound-button {
+    min-width: 78px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 0.86rem;
+  }
+}

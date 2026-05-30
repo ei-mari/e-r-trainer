@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tap Study Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./tap-study.css" />
+  </head>
+  <body>
+    <main class="study-app">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>Speaking Practice</h1>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Study controls">
+        <div class="segmented" id="topicTabs">
+          <button class="segment active" type="button" data-topic="all">All</button>
+          <button class="segment" type="button" data-topic="hobbies">Hobbies</button>
+          <button class="segment" type="button" data-topic="transport">Transport</button>
+        </div>
+      </section>
+
+      <section class="focus-panel" aria-label="Focused question">
+        <div class="focus-topline">
+          <button id="prevButton" class="icon-control" type="button" aria-label="Previous question" title="Previous question">‹</button>
+          <div>
+            <p id="focusTopic" class="focus-topic">Hobbies</p>
+            <h2 id="focusNumber">Q5</h2>
+          </div>
+          <button id="nextButton" class="icon-control" type="button" aria-label="Next question" title="Next question">›</button>
+        </div>
+        <button id="focusCard" class="focus-card" type="button" aria-live="polite">
+          <span id="focusSide" class="side-label">Question</span>
+          <span id="focusText" class="focus-text">What are your hobbies, and how many hours a week do you spend on them?</span>
+          <span id="focusIpa" class="ipa-text is-hidden"></span>
+          <span id="tapHint" class="tap-hint">カードをタップして答えを見る</span>
+        </button>
+        <div class="focus-actions">
+          <button id="speakButton" class="sound-action" type="button" aria-label="Play answer audio" title="Play answer audio">▶ 再生</button>
+          <button id="prevQuestionButton" class="primary-action" type="button">前の問題へ</button>
+          <button id="nextQuestionButton" class="secondary-action" type="button">次の問題へ</button>
+        </div>
+      </section>
+
+      <section class="card-list" id="cardList" aria-label="All study cards"></section>
+    </main>
+
+    <script src="./tap-study.js"></script>
+  </body>
+</html>
