@@ -28,6 +28,8 @@ body {
     linear-gradient(135deg, rgba(243, 206, 93, 0.18), transparent 30%),
     linear-gradient(225deg, rgba(108, 143, 201, 0.14), transparent 32%),
     var(--bg);
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -35,12 +37,12 @@ button {
 }
 
 .study-app {
-  width: min(980px, 100%);
+  width: min(430px, 100%);
   margin: 0 auto;
-  padding: 18px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   align-content: start;
 }
 
@@ -58,7 +60,7 @@ button {
 }
 
 .hero-copy {
-  padding: 16px 18px;
+  padding: 13px 14px;
   display: grid;
   align-content: center;
   gap: 0;
@@ -83,13 +85,13 @@ p {
 }
 
 h1 {
-  font-size: clamp(1.8rem, 4.4vw, 2.8rem);
+  font-size: 1.7rem;
   line-height: 1;
   letter-spacing: 0;
 }
 
 h2 {
-  font-size: 1.55rem;
+  font-size: 1.28rem;
 }
 
 .summary {
@@ -100,10 +102,10 @@ h2 {
 }
 
 .toolbar {
-  padding: 10px;
+  padding: 8px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
   position: sticky;
   top: 0;
@@ -114,8 +116,8 @@ h2 {
 .segmented {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  padding: 4px;
+  gap: 4px;
+  padding: 3px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #eef3e7;
@@ -137,6 +139,8 @@ h2 {
   background: transparent;
   color: var(--muted);
   font-weight: 700;
+  min-height: 38px;
+  font-size: 0.86rem;
 }
 
 .segment.active {
@@ -146,7 +150,7 @@ h2 {
 }
 
 .focus-panel {
-  padding: 14px;
+  padding: 10px;
   display: grid;
   gap: 10px;
 }
@@ -156,33 +160,33 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
 }
 
 .icon-control {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   color: var(--ink);
   background: #eef3e7;
   border-color: var(--line);
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1;
 }
 
 .focus-card {
   width: 100%;
-  min-height: 180px;
+  min-height: 185px;
   border: 1px solid rgba(29, 39, 29, 0.14);
   border-radius: 10px;
-  padding: clamp(18px, 4vw, 28px);
+  padding: 16px;
   background:
     linear-gradient(135deg, rgba(88, 181, 75, 0.1), transparent 42%),
     var(--paper-strong);
   cursor: pointer;
   text-align: left;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   align-content: center;
 }
 
@@ -199,9 +203,74 @@ h2 {
 .focus-text {
   white-space: pre-line;
   font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-  font-size: clamp(1.12rem, 2.6vw, 1.58rem);
-  line-height: 1.52;
+  font-size: 1.1rem;
+  line-height: 1.55;
   font-weight: 600;
+}
+
+.answer-line-list {
+  display: grid;
+  gap: 9px;
+}
+
+.answer-line {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: start;
+  padding: 10px;
+  border: 1px solid rgba(108, 143, 201, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.answer-line-copy {
+  display: grid;
+  gap: 0;
+}
+
+.answer-line-text {
+  color: var(--ink);
+  line-height: 1.58;
+}
+
+.answer-line-ipa {
+  color: #435a80;
+  font-family: "Arial Unicode MS", "Lucida Grande", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.audio-control-group {
+  display: grid;
+  gap: 6px;
+}
+
+.audio-label {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.audio-speed-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.audio-speed-button {
+  min-height: 38px;
+  padding: 0 6px;
+  border: 1px solid rgba(108, 143, 201, 0.28);
+  border-radius: 7px;
+  color: #ffffff;
+  background: var(--blue);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
 }
 
 .ipa-text,
@@ -222,21 +291,23 @@ h2 {
 
 .tap-hint {
   color: var(--muted);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
 .focus-actions {
   display: grid;
-  grid-template-columns: 82px 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 8px;
 }
 
 .secondary-action,
 .primary-action,
 .sound-action {
-  padding: 0 16px;
+  min-height: 44px;
+  padding: 0 8px;
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .sound-action {
@@ -267,15 +338,15 @@ h2 {
 
 .card-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
 .study-card {
-  min-height: 170px;
+  min-height: 0;
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 14px;
+  padding: 13px;
   background: var(--paper);
   box-shadow: 0 10px 24px rgba(57, 88, 53, 0.07);
   cursor: pointer;
@@ -287,6 +358,7 @@ h2 {
 
 .study-card:focus-visible,
 .card-sound-button:focus-visible,
+.audio-speed-button:focus-visible,
 .sound-action:focus-visible {
   outline: 3px solid rgba(108, 143, 201, 0.38);
   outline-offset: 2px;
@@ -301,8 +373,8 @@ h2 {
   white-space: pre-line;
   color: var(--ink);
   font-family: "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-  font-size: 0.98rem;
-  line-height: 1.58;
+  font-size: 0.96rem;
+  line-height: 1.56;
   font-weight: 600;
 }
 
@@ -322,10 +394,8 @@ h2 {
 
 .card-footer {
   margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  display: grid;
+  gap: 8px;
 }
 
 .card-sound-button {
@@ -347,6 +417,7 @@ h2 {
 .primary-action:hover,
 .sound-action:not(:disabled):hover,
 .card-sound-button:hover,
+.audio-speed-button:hover,
 .icon-control:hover,
 .study-card:hover,
 .focus-card:hover {
@@ -445,6 +516,27 @@ h2 {
     line-height: 1.55;
   }
 
+  .answer-line {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 9px;
+  }
+
+  .answer-line-ipa {
+    font-size: 0.82rem;
+  }
+
+  .audio-speed-buttons {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .audio-speed-button {
+    min-height: 36px;
+    padding: 0 6px;
+    font-size: 0.76rem;
+  }
+
   .ipa-text {
     padding: 10px;
     font-size: 0.9rem;
@@ -457,7 +549,7 @@ h2 {
 
   .focus-actions {
     display: grid;
-    grid-template-columns: 82px 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 

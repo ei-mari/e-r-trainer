@@ -8,7 +8,11 @@ const cards = [
     questionIpa: "/wʌt ər jər ˈhɑbiz, ən haʊ ˈmɛni ˈaʊərz ə wik də jə spɛnd ɑn ðəm?/",
     answer:
       "One of my hobbies is watching shows on Netflix.\nI spend a lot of time watching them at home, probably around 35 hours a week.\nIt's fun, and it also helps me practice English.",
-    answerAudio: "./tap-study-audio/hobbies-q5-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/hobbies-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/hobbies-q5-answer-line-2.wav",
+      "./tap-study-audio/lines/hobbies-q5-answer-line-3.wav",
+    ],
     answerIpa:
       "/wʌn əv maɪ ˈhɑbiz ɪz ˈwɑtʃɪŋ ʃoʊz ɑn ˈnɛtflɪks/\n/aɪ spɛnd ə lɑt əv taɪm ˈwɑtʃɪŋ ðəm ət hoʊm, ˈprɑbəbli əˈraʊnd ˈθɜrti faɪv ˈaʊərz ə wik/\n/ɪts fʌn, ən ɪt ˈɔlsoʊ hɛlps mi ˈpræktɪs ˈɪŋɡlɪʃ/",
   },
@@ -21,9 +25,14 @@ const cards = [
     questionIpa: "/wəd jə ˌrɛkəˈmɛnd jər ˈhɑbiz tə jər frɛndz? waɪ ər waɪ nɑt?/",
     answer:
       "Yes, I would.\nWatching shows on Netflix is fun.\nI especially enjoy shows like Stranger Things.\nIt's really exciting.",
-    answerAudio: "./tap-study-audio/hobbies-q6-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/hobbies-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/hobbies-q6-answer-line-2.wav",
+      "./tap-study-audio/lines/hobbies-q6-answer-line-3.wav",
+      "./tap-study-audio/lines/hobbies-q6-answer-line-4.wav",
+    ],
     answerIpa:
-      "/jɛs, aɪ wəd/\n/ˈwɑtʃɪŋ ʃoʊz ɑn ˈnɛtflɪks ɪz fʌn/\n/aɪ əˈspɛʃəli ɛnˈdʒɔɪ ʃoʊz laɪk ˈstreɪndʒər θɪŋz/\n/ɪts ˈrɪli ɪkˈsaɪtɪŋ/",
+      "/jɛs, aɪ wʊd/\n/ˈwɑtʃɪŋ ʃoʊz ɑn ˈnɛtflɪks ɪz fʌn/\n/aɪ əˈspɛʃəli ɛnˈdʒɔɪ ʃoʊz laɪk ˈstreɪndʒər θɪŋz/\n/ɪts ˈrɪli ɪkˈsaɪtɪŋ/",
   },
   {
     id: "hobbies-q7",
@@ -34,7 +43,12 @@ const cards = [
     questionIpa: "/ɪf jə wər tə stɑrt ə nu ˈhɑbi, wɪtʃ wəd jə laɪk tə lɜrn?/",
     answer:
       "I would like to learn a new language, especially German.\nI want to travel to Europe someday, so I think it would be useful.\nI'm also interested in German culture and food.\nI think learning a new language is a great way to understand other countries and cultures.",
-    answerAudio: "./tap-study-audio/hobbies-q7-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/hobbies-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/hobbies-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/hobbies-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/hobbies-q7-answer-line-4.wav",
+    ],
     answerIpa:
       "/aɪ wəd laɪk tə lɜrn ə nu ˈlæŋɡwɪdʒ, əˈspɛʃəli ˈdʒɜrmən/\n/aɪ wɑnt tə ˈtrævəl tə ˈjʊrəp ˈsʌmˌdeɪ, soʊ aɪ θɪŋk ɪt wəd bi ˈjusfəl/\n/aɪm ˈɔlsoʊ ˈɪntrəstəd ɪn ˈdʒɜrmən ˈkʌltʃər ən fud/\n/aɪ θɪŋk ˈlɜrnɪŋ ə nu ˈlæŋɡwɪdʒ ɪz ə ɡreɪt weɪ tə ˌʌndərˈstænd ˈʌðər ˈkʌntriz ən ˈkʌltʃərz/",
   },
@@ -46,7 +60,10 @@ const cards = [
     question: "When was the last time you used public transportation, and where did you go?",
     questionIpa: "/wɛn wəz ðə læst taɪm jə juzd ˈpʌblɪk ˌtrænspərˈteɪʃən, ən wɛr dɪd jə ɡoʊ?/",
     answer: "The last time I used public transportation was yesterday.\nI took the train to Shibuya for work.",
-    answerAudio: "./tap-study-audio/transport-q5-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/transport-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/transport-q5-answer-line-2.wav",
+    ],
     answerIpa:
       "/ðə læst taɪm aɪ juzd ˈpʌblɪk ˌtrænspərˈteɪʃən wəz ˈjɛstərˌdeɪ/\n/aɪ tʊk ðə treɪn tə ʃɪˈbuːjə fər wɜrk/",
   },
@@ -59,7 +76,10 @@ const cards = [
     questionIpa: "/həv jə ˈɛvər ˈɡɑtən lɔst wɛn ˈjuzɪŋ ˈpʌblɪk ˌtrænspərˈteɪʃən? wʌt dɪd jə du ðɛn?/",
     answer:
       "No, I haven't.\nI usually check Google Maps before I go somewhere, so public transportation is not too difficult for me.",
-    answerAudio: "./tap-study-audio/transport-q6-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/transport-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/transport-q6-answer-line-2.wav",
+    ],
     answerIpa:
       "/noʊ, aɪ ˈhævənt/\n/aɪ ˈjuʒuəli tʃɛk ˈɡuɡəl mæps bɪˈfɔr aɪ ɡoʊ ˈsʌmˌwɛr, soʊ ˈpʌblɪk ˌtrænspərˈteɪʃən ɪz nɑt tə ˈdɪfəkəlt fər mi/",
   },
@@ -74,7 +94,14 @@ const cards = [
       "/də jə θɪŋk ði əˈnaʊnsmənts ɪnˈsaɪd ˈsteɪʃənz ən treɪnz ʃəd bi meɪd ɪn ˈdɪfərənt ˈlæŋɡwɪdʒɪz? waɪ?/",
     answer:
       "Yes, I do.\nRecently, many tourists have been visiting Japan.\nAnnouncements in different languages are very helpful for them.\nI have also seen some people get lost.\nJapan's train systems may be more complicated than those in other countries.\nSo, I think multilingual announcements are very important in Japan.",
-    answerAudio: "./tap-study-audio/transport-q7-answer.wav",
+    answerLineAudios: [
+      "./tap-study-audio/lines/transport-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/transport-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/transport-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/transport-q7-answer-line-4.wav",
+      "./tap-study-audio/lines/transport-q7-answer-line-5.wav",
+      "./tap-study-audio/lines/transport-q7-answer-line-6.wav",
+    ],
     answerIpa:
       "/jɛs, aɪ du/\n/ˈrisəntli, ˈmɛni ˈtʊrɪsts həv bən ˈvɪzɪtɪŋ dʒəˈpæn/\n/əˈnaʊnsmənts ɪn ˈdɪfərənt ˈlæŋɡwɪdʒɪz ər ˈvɛri ˈhɛlpfəl fər ðəm/\n/aɪ həv ˈɔlsoʊ sin sʌm ˈpipəl ɡɛt lɔst/\n/dʒəˈpænz treɪn ˈsɪstəmz meɪ bi mɔr ˈkɑmpləˌkeɪtəd ðən ðoʊz ɪn ˈʌðər ˈkʌntriz/\n/soʊ, aɪ θɪŋk ˌmʌltiˈlɪŋɡwəl əˈnaʊnsmənts ər ˈvɛri ɪmˈpɔrtənt ɪn dʒəˈpæn/",
   },
@@ -96,30 +123,78 @@ const focusSide = document.querySelector("#focusSide");
 const focusText = document.querySelector("#focusText");
 const focusIpa = document.querySelector("#focusIpa");
 const tapHint = document.querySelector("#tapHint");
-const speakButton = document.querySelector("#speakButton");
 const prevQuestionButton = document.querySelector("#prevQuestionButton");
 const nextQuestionButton = document.querySelector("#nextQuestionButton");
 const prevButton = document.querySelector("#prevButton");
 const nextButton = document.querySelector("#nextButton");
 const answerPlayer = new Audio();
 
-function playAnswerAudio(card, showAnswer) {
-  if (!showAnswer) {
-    alert("答えを表示してから音声を再生してください。");
-    return;
-  }
-
-  if (!card.answerAudio) {
-    alert("この答えの音声ファイルがまだありません。");
+function playAudioSource(src, speed = 1) {
+  if (!src) {
+    alert("この行の音声ファイルがまだありません。");
     return;
   }
 
   answerPlayer.pause();
   answerPlayer.currentTime = 0;
-  answerPlayer.src = card.answerAudio;
+  answerPlayer.src = src;
+  answerPlayer.playbackRate = speed;
   answerPlayer.play().catch(() => {
     alert("音声を再生できませんでした。ページを再読み込みしてもう一度お試しください。");
   });
+}
+
+function answerLines(card) {
+  const textLines = card.answer.split("\n");
+  const ipaLines = card.answerIpa.split("\n");
+
+  return textLines.map((text, index) => ({
+    audio: card.answerLineAudios?.[index] || "",
+    ipa: ipaLines[index] || "",
+    text,
+  }));
+}
+
+function audioSpeedButtons({ cardId, lineIndex = "", type }) {
+  const speeds = [
+    { label: "0.25x", value: "0.25" },
+    { label: "0.5x", value: "0.5" },
+    { label: "0.75x", value: "0.75" },
+    { label: "1.0x", value: "1" },
+  ];
+
+  return `
+    <div class="audio-control-group" aria-label="Playback speeds">
+      <span class="audio-label">音声</span>
+      <div class="audio-speed-buttons">
+        ${speeds
+          .map(
+            (speed) => `
+              <button class="audio-speed-button" type="button" data-audio-type="${type}" data-card-id="${cardId}" data-line-index="${lineIndex}" data-audio-speed="${speed.value}" aria-label="Play at ${speed.label}">${speed.label}</button>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderAnswerLines(card, scope) {
+  const lines = answerLines(card)
+    .map(
+      (line, index) => `
+        <div class="answer-line">
+          <div class="answer-line-copy">
+            <span class="answer-line-text">${line.text}</span>
+            <span class="answer-line-ipa">${line.ipa}</span>
+          </div>
+          ${audioSpeedButtons({ cardId: card.id, lineIndex: index, type: "line" })}
+        </div>
+      `
+    )
+    .join("");
+
+  return `<div class="answer-line-list">${lines}</div>`;
 }
 
 function visibleCards() {
@@ -141,13 +216,11 @@ function renderFocus() {
   focusTopic.textContent = card.topicLabel;
   focusNumber.textContent = card.number;
   focusSide.textContent = state.showAnswer ? "Answer" : "Question";
-  focusText.textContent = state.showAnswer ? card.answer : card.question;
-  focusIpa.textContent = state.showAnswer ? card.answerIpa : "";
-  focusIpa.classList.toggle("is-hidden", !state.showAnswer);
+  focusText.innerHTML = state.showAnswer ? renderAnswerLines(card, "focus") : card.question;
+  focusIpa.textContent = "";
+  focusIpa.classList.add("is-hidden");
   tapHint.textContent = state.showAnswer ? "カードをタップして問題を見る" : "カードをタップして答えを見る";
   focusCard.classList.toggle("answer-side", state.showAnswer);
-  speakButton.disabled = !state.showAnswer;
-  speakButton.title = state.showAnswer ? "Play answer audio" : "答えを表示すると再生できます";
 }
 
 function renderTabs() {
@@ -172,12 +245,10 @@ function renderList() {
     button.innerHTML = `
       <span class="card-meta">${card.topicLabel} ${card.number}</span>
       <span class="side-label">${isAnswer ? "Answer" : "Question"}</span>
-      <span class="card-question">${isAnswer ? card.answer : card.question}</span>
-      ${isAnswer ? `<span class="card-ipa">${card.answerIpa}</span>` : ""}
-      <span class="card-footer">
+      <div class="card-question">${isAnswer ? renderAnswerLines(card, "list") : card.question}</div>
+      <div class="card-footer">
         <span class="card-status">${isAnswer ? "タップで問題を見る" : "タップで答えを見る"}</span>
-        ${isAnswer ? `<button class="card-sound-button" type="button" data-speak-card-id="${card.id}" aria-label="Play ${card.topicLabel} ${card.number} answer audio" title="Play answer audio">▶ 再生</button>` : ""}
-      </span>
+      </div>
     `;
 
     cardList.appendChild(button);
@@ -207,18 +278,39 @@ topicTabs.addEventListener("click", (event) => {
   render();
 });
 
-focusCard.addEventListener("click", () => {
+focusCard.addEventListener("click", (event) => {
+  if (event.target.closest("button[data-audio-type]")) {
+    return;
+  }
+
   state.showAnswer = !state.showAnswer;
   renderFocus();
-
-  if (state.showAnswer) {
-    playAnswerAudio(currentCard(), true);
-  }
 });
 
-speakButton.addEventListener("click", () => {
+focusCard.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") {
+    return;
+  }
+
+  if (event.target.closest("button[data-audio-type]")) {
+    return;
+  }
+
+  event.preventDefault();
+  focusCard.click();
+});
+
+focusCard.addEventListener("click", (event) => {
+  const audioButton = event.target.closest("button[data-audio-type]");
+  if (!audioButton) {
+    return;
+  }
+
+  event.stopPropagation();
   const card = currentCard();
-  playAnswerAudio(card, state.showAnswer);
+  const speed = Number(audioButton.dataset.audioSpeed);
+
+  playAudioSource(card.answerLineAudios?.[Number(audioButton.dataset.lineIndex)], speed);
 });
 
 prevQuestionButton.addEventListener("click", () => moveFocus(-1));
@@ -227,12 +319,14 @@ prevButton.addEventListener("click", () => moveFocus(-1));
 nextButton.addEventListener("click", () => moveFocus(1));
 
 cardList.addEventListener("click", (event) => {
-  const speakTarget = event.target.closest("button[data-speak-card-id]");
-  if (speakTarget) {
+  const audioButton = event.target.closest("button[data-audio-type]");
+  if (audioButton) {
     event.stopPropagation();
-    const card = cards.find((item) => item.id === speakTarget.dataset.speakCardId);
+    const card = cards.find((item) => item.id === audioButton.dataset.cardId);
+    const speed = Number(audioButton.dataset.audioSpeed);
+
     if (card) {
-      playAnswerAudio(card, state.flippedCards.has(card.id));
+      playAudioSource(card.answerLineAudios?.[Number(audioButton.dataset.lineIndex)], speed);
     }
     return;
   }
@@ -258,7 +352,7 @@ cardList.addEventListener("keydown", (event) => {
   }
 
   const card = event.target.closest("[data-card-id]");
-  if (!card || event.target.closest("button[data-speak-card-id]")) {
+  if (!card || event.target.closest("button[data-audio-type]")) {
     return;
   }
 

@@ -37,14 +37,13 @@
           </div>
           <button id="nextButton" class="icon-control" type="button" aria-label="Next question" title="Next question">›</button>
         </div>
-        <button id="focusCard" class="focus-card" type="button" aria-live="polite">
+        <article id="focusCard" class="focus-card" role="button" tabindex="0" aria-live="polite">
           <span id="focusSide" class="side-label">Question</span>
-          <span id="focusText" class="focus-text">What are your hobbies, and how many hours a week do you spend on them?</span>
+          <div id="focusText" class="focus-text">What are your hobbies, and how many hours a week do you spend on them?</div>
           <span id="focusIpa" class="ipa-text is-hidden"></span>
           <span id="tapHint" class="tap-hint">カードをタップして答えを見る</span>
-        </button>
+        </article>
         <div class="focus-actions">
-          <button id="speakButton" class="sound-action" type="button" aria-label="Play answer audio" title="Play answer audio">▶ 再生</button>
           <button id="prevQuestionButton" class="primary-action" type="button">前の問題へ</button>
           <button id="nextQuestionButton" class="secondary-action" type="button">次の問題へ</button>
         </div>
