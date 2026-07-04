@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17130f"/><stop offset=".55" stop-color="#252018"/><stop offset="1" stop-color="#33221d"/></linearGradient>
+    <style>
+      .base{font-family:Avenir Next,Arial,sans-serif;font-size:42px;fill:#d6dddc}
+      .stress{fill:#8fdc7d;font-weight:800}
+      .soft{fill:#8c9798}
+      .note{font-family:Avenir Next,Arial,sans-serif;fill:#fff7df}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="92" y="104" font-family="Avenir Next, Arial" font-size="25" letter-spacing="4" fill="#f0904f">BURRITO ANALYSIS</text>
+  <text x="92" y="174" font-family="Georgia, serif" font-size="64" fill="#fff7df">What did the scene do?</text>
+  <g transform="translate(1240 88)">
+    <path d="M28 82c22-50 93-76 170-53 77 24 126 88 104 138-22 50-94 75-171 52C54 196 6 132 28 82Z" fill="#d9904c"/>
+    <path d="M72 70c48-29 135-5 183 51" fill="none" stroke="#ffe0a4" stroke-width="30" stroke-linecap="round"/>
+    <path d="M63 119c65 7 116 27 176 70" fill="none" stroke="#70411f" stroke-width="15" stroke-linecap="round" opacity=".45"/>
+    <circle cx="120" cy="118" r="9" fill="#22312a"/><circle cx="182" cy="136" r="9" fill="#22312a"/>
+    <path d="M125 159q25 18 56 5" stroke="#22312a" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+  <g class="base">
+    <text x="120" y="318"><tspan class="soft">G:</tspan> <tspan class="soft">Who</tspan> <tspan class="stress">cares?</tspan></text>
+    <text x="120" y="402"><tspan class="soft">B:</tspan> <tspan class="stress">I care!</tspan> <tspan class="stress">All right?</tspan> <tspan class="stress">I care!</tspan></text>
+    <text x="120" y="486"><tspan class="soft">I</tspan> <tspan class="stress">bust</tspan><tspan>ed my </tspan><tspan class="stress">ass</tspan> <tspan class="stress">all day</tspan> <tspan class="stress">clean</tspan><tspan>ing this </tspan><tspan class="stress">house</tspan></text>
+    <text x="120" y="570"><tspan>and then </tspan><tspan class="stress">cook</tspan><tspan>ing </tspan><tspan class="stress">that meal.</tspan></text>
+    <text x="120" y="654"><tspan>And I </tspan><tspan class="stress">worked</tspan><tspan class="soft"> today.</tspan></text>
+    <text x="120" y="738"><tspan>It would be </tspan><tspan class="stress">nice</tspan><tspan> if you </tspan><tspan class="stress">said thank</tspan><tspan> you and </tspan><tspan class="stress">helped</tspan><tspan> me</tspan></text>
+    <text x="120" y="812"><tspan>with the </tspan><tspan class="stress">dish</tspan><tspan>es.</tspan></text>
+  </g>
+</svg>

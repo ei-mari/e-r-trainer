@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <filter id="deepShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity=".72"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="#000000" flood-opacity=".9"/>
+    </filter>
+    <filter id="glowYellow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#ffe600" flood-opacity=".55"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".6"/>
+    </filter>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity=".68"/>
+      <stop offset=".46" stop-color="#000000" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171717" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#2c2215" stop-opacity=".9"/>
+    </linearGradient>
+    <style>
+      .sans{font-family:Avenir Next, Montserrat, Arial, sans-serif}
+      .serif{font-family:Georgia, 'Times New Roman', serif}
+      .jp{font-family:Hiragino Sans, Yu Gothic, Meiryo, Avenir Next, Arial, sans-serif}
+    </style>
+  </defs>
+  <image href="rhythm-challenge-keyvisual.png" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1600" height="900" fill="url(#shade)"/>
+  <rect x="0" y="0" width="1600" height="900" fill="#000" opacity=".08"/>
+
+  <g transform="translate(70 46)">
+    <rect x="0" y="0" width="310" height="72" rx="36" fill="#111111" opacity=".92"/>
+    <rect x="8" y="8" width="294" height="56" rx="28" fill="none" stroke="#f4df3d" stroke-width="3" opacity=".7"/>
+    <text x="30" y="47" class="sans" font-size="28" font-weight="900" fill="#f4df3d" letter-spacing="2">LESSON 01</text>
+  </g>
+
+  <g filter="url(#deepShadow)">
+    <text x="68" y="202" class="jp" font-size="44" font-weight="900" fill="#ffffff">クイズ形式で復習</text>
+    <text x="66" y="314" class="sans" font-size="104" font-weight="1000" fill="#ffffff" letter-spacing="-1">FUNCTION</text>
+    <text x="66" y="420" class="sans" font-size="104" font-weight="1000" fill="#ffe21f" letter-spacing="-1">WORDS?</text>
+  </g>
+
+  <g transform="translate(72 472)" filter="url(#deepShadow)">
+    <path d="M0 0H765Q802 0 802 37V223Q802 260 765 260H118L63 318V260H37Q0 260 0 223V37Q0 0 37 0Z" fill="url(#card)" stroke="#f7d64a" stroke-width="3"/>
+    <text x="38" y="68" class="jp" font-size="38" font-weight="900" fill="#ffffff">機能語ってなんだっけ？</text>
+    <text x="42" y="122" class="jp" font-size="25" font-weight="700" fill="#d7d7d7">まずは答えてもらう</text>
+    <rect x="42" y="154" width="642" height="58" rx="29" fill="#f4df3d"/>
+    <text x="72" y="193" class="jp" font-size="27" font-weight="900" fill="#141414">答え：強勢を受けにくい語</text>
+  </g>
+
+  <g transform="translate(950 506)">
+    <rect x="0" y="0" width="515" height="178" rx="22" fill="#101010" opacity=".9"/>
+    <rect x="14" y="14" width="487" height="150" rx="16" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="2"/>
+    <text x="34" y="56" class="jp" font-size="26" font-weight="900" fill="#ffffff">品詞が不安でもOK</text>
+    <text x="34" y="101" class="jp" font-size="24" font-weight="800" fill="#f4df3d">Eightさんの魔法の書を配ります</text>
+    <text x="34" y="139" class="sans" font-size="19" font-weight="800" fill="#cfcfcf">ei-mari.github.io/e-r-trainer/...</text>
+  </g>
+
+  <g transform="translate(1068 705)" filter="url(#glowYellow)">
+    <path d="M20 0H432Q452 0 452 20V82Q452 102 432 102H20Q0 102 0 82V20Q0 0 20 0Z" fill="#111111"/>
+    <text x="33" y="64" class="jp" font-size="31" font-weight="1000" fill="#ffe21f">出たよ、品詞だよ</text>
+    <text x="354" y="65" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="34">💩</text>
+  </g>
+
+  <g transform="translate(72 822)">
+    <text x="0" y="0" class="sans" font-size="24" font-weight="900" fill="#ffffff">NEXT:</text>
+    <text x="84" y="0" class="sans" font-size="24" font-weight="900" fill="#ffe21f">I told him I was gonna take him to the hospital.</text>
+  </g>
+</svg>

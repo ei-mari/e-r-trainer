@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chelsea Fire Listening</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #647080;
+      --line: #d9e1e8;
+      --paper: #f7f9fb;
+      --panel: #ffffff;
+      --accent: #0d6b68;
+      --accent-soft: #dff2ef;
+      --warn: #a63f2b;
+      --highlight: #fff0a8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #d8e1e8;
+      line-height: 1.65;
+    }
+
+    header {
+      background: transparent;
+    }
+
+    .wrap {
+      width: min(430px, 100%);
+      margin: 0 auto;
+      background: var(--paper);
+    }
+
+    header .wrap {
+      background: #111820;
+    }
+
+    h1 {
+      margin: 8px 0 0;
+      color: #ffffff;
+      font-size: 2.05rem;
+      letter-spacing: 0;
+      line-height: 1.08;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      background: #101820;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(16, 24, 32, 0.04) 0%, rgba(16, 24, 32, 0.24) 42%, rgba(16, 24, 32, 0.94) 100%),
+        linear-gradient(90deg, rgba(16, 24, 32, 0.7) 0%, rgba(16, 24, 32, 0.08) 48%, rgba(16, 24, 32, 0.32) 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 0;
+      z-index: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.26);
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 0 18px 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .lead {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .source-note {
+      margin: 14px 0 0;
+      padding: 12px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.82);
+      background: rgba(10, 18, 25, 0.56);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      backdrop-filter: blur(12px);
+    }
+
+    .source-note a {
+      display: inline-block;
+      margin-top: 2px;
+      color: #a9f3e8;
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .thumbnail {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #111820;
+      position: absolute;
+      inset: 0;
+    }
+
+    main {
+      padding: 18px 14px 42px;
+    }
+
+    .sentence {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(20, 35, 50, 0.04);
+    }
+
+    audio {
+      width: 100%;
+      display: block;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .sentence {
+      padding: 14px;
+    }
+
+    .sentence-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .num {
+      display: inline-grid;
+      place-items: center;
+      min-width: 2.1rem;
+      height: 2.1rem;
+      padding: 0 7px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .english {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .voice-pair {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .voice-player {
+      display: grid;
+      gap: 6px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+
+    .voice-label {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    mark {
+      padding: 0 0.12em;
+      border-radius: 0.22em;
+      background: var(--highlight);
+      color: inherit;
+      font-weight: 700;
+    }
+
+    mark.prep-focus {
+      background: #c9f4d3;
+      box-shadow: inset 0 -0.42em 0 rgba(42, 175, 91, 0.28);
+    }
+
+    details {
+      margin-top: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 9px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 700;
+      user-select: none;
+    }
+
+    .note {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .ipa {
+      font-family: "Charis SIL", "Doulos SIL", "Times New Roman", serif;
+      color: var(--warn);
+      overflow-wrap: anywhere;
+    }
+
+    .wordbook {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .word-card {
+      display: grid;
+      gap: 7px;
+      padding: 10px;
+      border: 1px solid #dfe7ed;
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+
+    .word-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .word-term {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .word-pos {
+      flex: 0 0 auto;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .word-meaning {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .word-ipa {
+      color: var(--warn);
+      font-family: "Charis SIL", "Doulos SIL", "Times New Roman", serif;
+      font-size: 0.94rem;
+      overflow-wrap: anywhere;
+    }
+
+    @media (min-width: 431px) {
+      body {
+        padding: 18px 0;
+      }
+
+      .wrap {
+        box-shadow: 0 18px 42px rgba(24, 32, 42, 0.16);
+      }
+
+      header .wrap {
+        border-radius: 12px 12px 0 0;
+      }
+
+      .hero {
+        border-radius: 12px 12px 0 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .sentence-head {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <section class="hero" aria-label="Chelsea Fire Listening">
+        <img class="thumbnail" src="fire-chelsea-audio/images/chelsea-fire-thumbnail.png" alt="Chelsea apartment building fire with firefighters on scene">
+        <div class="hero-content">
+          <span class="eyebrow">News Listening</span>
+          <h1>Chelsea Fire Listening</h1>
+          <p class="lead">文の意味を理解した後、内容語を見つけよう。</p>
+          <p class="source-note">今回はこちらのニュース記事を活用した課題となります。<br><a href="https://abc7ny.com/post/chelsea-fire-flames-engulf-vacant-apartment-building-manhattan-nyc/18874767/" target="_blank" rel="noopener">ABC7 New Yorkの記事</a></p>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="list" aria-label="Sentence clips">
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">1</span>
+          <p class="english"><mark>Firefighters</mark> <mark>battled</mark> a <mark>massive</mark> <mark>fire</mark> that <mark>erupted</mark> at an <mark>apartment</mark> <mark>building</mark> in <mark>Manhattan</mark> on <mark>Sunday</mark> <mark>morning</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-01.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-01.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">マンハッタンのチェルシーで、日曜の朝、アパート建物で発生した大規模火災に消防士たちが対応しました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">2</span>
+          <p class="english">The <mark>fire</mark> <mark>broke out</mark> around <mark>6 a.m.</mark> at a <mark>six-story</mark> <mark>building</mark> on <mark>7th Avenue</mark> between <mark>West 22nd</mark> and <mark>23rd streets</mark> in <mark>Chelsea</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-02.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-02.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">火災は午前6時ごろ、チェルシーの7番街、西22丁目と23丁目の間にある6階建ての建物で発生しました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">3</span>
+          <p class="english"><mark>According</mark> to the <mark>FDNY</mark>, the <mark>building</mark> where the <mark>fire</mark> <mark>started</mark> is <mark>vacant</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-03.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-03.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">FDNYによると、火元となった建物は空き家です。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">4</span>
+          <p class="english"><mark>Heavy</mark> <mark>fire</mark> was <mark>reported</mark> on the <mark>first</mark>, <mark>fifth</mark> and <mark>sixth</mark> <mark>floors</mark> of the <mark>building</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-04.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-04.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">建物の1階、5階、6階で激しい火災が報告されました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">5</span>
+          <p class="english"><mark>Video</mark> <mark>captures</mark> <mark>heavy</mark> <mark>flames</mark> <mark>engulfing</mark> and <mark>thick</mark>, <mark>black</mark> <mark>smoke</mark> <mark>billowing</mark> from the <mark>structure</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-05.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-05.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">映像には、激しい炎が建物を包み込み、濃い黒煙が立ち上る様子が映っています。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">6</span>
+          <p class="english"><mark>Eyewitness News</mark> was on <mark>scene</mark> as <mark>firefighters</mark> <mark>try</mark> to <mark>get</mark> the <mark>fire</mark> under <mark>control</mark> and <mark>extinguish</mark> <mark>hotspots</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-06.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-06.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">消防士たちが火災を鎮圧し、残り火を消そうとする中、Eyewitness Newsは現場にいました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">7</span>
+          <p class="english"><mark>Officials</mark> <mark>say</mark> the <mark>building</mark> is <mark>unsafe</mark> for <mark>firefighters</mark> to <mark>walk</mark> <mark class="prep-focus">on</mark> to, so the <mark>FDNY</mark> <mark>conducted</mark> <mark>searches</mark> from the <mark>tower ladders</mark> <mark>looking</mark> into the <mark>building</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-07.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-07.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">当局によると、建物は消防士が中に入るには危険な状態のため、FDNYははしご車から建物内をのぞき込む形で捜索を行いました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">8</span>
+          <p class="english">"They were <mark>able</mark> to do a <mark>search</mark> from the <mark>ladders</mark>."</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-08.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-08.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">「彼らははしごから捜索を行うことができました。」</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">9</span>
+          <p class="english">"<mark>Right now</mark>, the <mark>way</mark> that the <mark>construction</mark> is after the <mark>fire</mark>, it's <mark>unsafe</mark> for us to <mark>do</mark> a <mark>full</mark> <mark>search</mark>," <mark>said</mark> an <mark>FDNY</mark> <mark>Deputy Chief</mark> during a <mark>Sunday</mark> <mark>morning</mark> <mark>press conference</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-09.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-09.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">「現在、火災後の建物の状態から、私たちが全面的な捜索を行うのは危険です」と、FDNYの副署長が日曜朝の記者会見で述べました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">10</span>
+          <p class="english">"So from the <mark>windows</mark>, from the <mark>buckets</mark> of the <mark>tower ladders</mark>, we <mark>determined</mark> that at this <mark>time</mark>, <mark>nobody</mark> is in the <mark>building</mark>."</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-10.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-10.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">「そのため、窓やはしご車のバケットから確認した結果、現時点では建物内に誰もいないと判断しました。」</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">11</span>
+          <p class="english"><mark>Two</mark> <mark>firefighters</mark> <mark>suffered</mark> <mark>minor</mark> <mark>injuries</mark> during the <mark>emergency</mark> <mark>response</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-11.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-11.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">緊急対応中に消防士2人が軽傷を負いました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">12</span>
+          <p class="english"><mark>Resident</mark> <mark>Brianna Ferguson</mark>, who <mark>lives</mark> in the <mark>neighborhood</mark>, <mark>described</mark> to <mark>Eyewitness News</mark> what she <mark>saw</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-12.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-12.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">近隣に住む住民のブリアナ・ファーガソンさんは、目撃したことをEyewitness Newsに語りました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">13</span>
+          <p class="english">"Around <mark>6:15 a.m.</mark>, I <mark>heard</mark> the <mark>fire department</mark> or the <mark>fire trucks</mark> <mark>pulling up</mark> <mark>outside</mark>, and I <mark>looked</mark> out my <mark>window</mark> and <mark>saw</mark> a <mark>bunch</mark> of <mark>smoke</mark> so I <mark>ran</mark> <mark>down</mark> and <mark>saw</mark> that <mark>building</mark> was on <mark>fire</mark>."</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-13.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-13.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">「午前6時15分ごろ、消防署か消防車が外に到着する音が聞こえて、窓の外を見ると煙がたくさん見えたので下に走って行き、その建物が燃えているのを見ました。」</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">14</span>
+          <p class="english">"They <mark>evacuated</mark> us <mark>probably</mark> <mark>5</mark>, <mark>10 minutes</mark> after <mark>that</mark>," <mark>Ferguson</mark> <mark>said</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-14.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-14.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">「その5分か10分後くらいに、私たちは避難させられました」とファーガソンさんは話しました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">15</span>
+          <p class="english">An <mark>evacuation</mark> <mark>order</mark> for the <mark>neighboring</mark> <mark>building</mark> is <mark>currently</mark> in <mark>effect</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-15.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-15.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">隣接する建物には現在、避難命令が出されています。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">16</span>
+          <p class="english"><mark>Nearly</mark> <mark>200</mark> <mark>fire</mark> and <mark>EMS personnel</mark> <mark>responded</mark> to the <mark>scene</mark> to <mark>help</mark> <mark>battle</mark> the <mark>fire</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-16.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-16.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">火災対応を支援するため、消防と救急医療の職員およそ200人が現場に出動しました。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+
+      <article class="sentence">
+        <div class="sentence-head">
+          <span class="num">17</span>
+          <p class="english">The <mark>cause</mark> of the <mark>fire</mark> <mark>remains</mark> under <mark>investigation</mark>.</p>
+        </div>
+        <div class="voice-pair">
+          <div class="voice-player">
+            <span class="voice-label">🎧 女性</span>
+            <audio controls src="fire-chelsea-audio/numbered/female-17.mp3"></audio>
+          </div>
+          <div class="voice-player">
+            <span class="voice-label">🎧 男性</span>
+            <audio controls src="fire-chelsea-audio/numbered/male-17.mp3"></audio>
+          </div>
+        </div>
+        <details>
+          <summary>日本語</summary>
+          <p class="note">火災の原因は現在も調査中です。</p>
+        </details>
+        <details class="content-words">
+          <summary>内容語</summary>
+          <div class="wordbook"></div>
+        </details>
+      </article>
+    </section>
+  </main>
+  <script>
+    const contentWordData = {
+      "Firefighters": { pos: "名詞", meaning: "消防士たち", ipa: "/ˈfaɪərˌfaɪtərz/" },
+      "battled": { pos: "動詞", meaning: "戦った、対応した", ipa: "/ˈbætəld/" },
+      "massive": { pos: "形容詞", meaning: "大規模な、非常に大きい", ipa: "/ˈmæsɪv/" },
+      "fire": { pos: "名詞", meaning: "火災、火", ipa: "/ˈfaɪər/" },
+      "erupted": { pos: "動詞", meaning: "突然発生した、噴き出した", ipa: "/ɪˈrʌptɪd/" },
+      "apartment": { pos: "名詞", meaning: "アパート、集合住宅", ipa: "/əˈpɑrtmənt/" },
+      "building": { pos: "名詞", meaning: "建物", ipa: "/ˈbɪldɪŋ/" },
+      "Manhattan": { pos: "固有名詞", meaning: "マンハッタン", ipa: "/mænˈhætən/" },
+      "Sunday": { pos: "名詞", meaning: "日曜日", ipa: "/ˈsʌndeɪ/" },
+      "morning": { pos: "名詞", meaning: "朝", ipa: "/ˈmɔrnɪŋ/" },
+      "broke out": { pos: "句動詞", meaning: "発生した、勃発した", ipa: "/broʊk aʊt/" },
+      "6 a.m.": { pos: "時刻表現", meaning: "午前6時", ipa: "/sɪks eɪ ˈɛm/" },
+      "six-story": { pos: "形容詞", meaning: "6階建ての", ipa: "/sɪks ˈstɔri/" },
+      "7th Avenue": { pos: "固有名詞", meaning: "7番街", ipa: "/ˈsɛvənθ ˈævənu/" },
+      "West 22nd": { pos: "固有名詞", meaning: "西22丁目", ipa: "/wɛst ˈtwɛnti ˈsɛkənd/" },
+      "23rd streets": { pos: "名詞句", meaning: "23丁目", ipa: "/ˈtwɛnti θɝd strits/" },
+      "Chelsea": { pos: "固有名詞", meaning: "チェルシー地区", ipa: "/ˈtʃɛlsi/" },
+      "According": { pos: "表現", meaning: "according toで「〜によると」", ipa: "/əˈkɔrdɪŋ/" },
+      "FDNY": { pos: "固有名詞", meaning: "ニューヨーク市消防局", ipa: "/ˌɛf di ɛn ˈwaɪ/" },
+      "started": { pos: "動詞", meaning: "始まった、発生した", ipa: "/ˈstɑrtɪd/" },
+      "vacant": { pos: "形容詞", meaning: "空きの、使われていない", ipa: "/ˈveɪkənt/" },
+      "Heavy": { pos: "形容詞", meaning: "激しい、大量の", ipa: "/ˈhɛvi/" },
+      "reported": { pos: "動詞", meaning: "報告された", ipa: "/rɪˈpɔrtɪd/" },
+      "first": { pos: "序数", meaning: "1階、1番目", ipa: "/fɝst/" },
+      "fifth": { pos: "序数", meaning: "5階、5番目", ipa: "/fɪfθ/" },
+      "sixth": { pos: "序数", meaning: "6階、6番目", ipa: "/sɪksθ/" },
+      "floors": { pos: "名詞", meaning: "階、床", ipa: "/flɔrz/" },
+      "Video": { pos: "名詞", meaning: "映像、動画", ipa: "/ˈvɪdioʊ/" },
+      "captures": { pos: "動詞", meaning: "捉える、記録する", ipa: "/ˈkæptʃərz/" },
+      "heavy": { pos: "形容詞", meaning: "激しい、大量の", ipa: "/ˈhɛvi/" },
+      "flames": { pos: "名詞", meaning: "炎", ipa: "/fleɪmz/" },
+      "engulfing": { pos: "動詞", meaning: "包み込む、飲み込む", ipa: "/ɪnˈɡʌlfɪŋ/" },
+      "thick": { pos: "形容詞", meaning: "濃い、厚い", ipa: "/θɪk/" },
+      "black": { pos: "形容詞", meaning: "黒い", ipa: "/blæk/" },
+      "smoke": { pos: "名詞", meaning: "煙", ipa: "/smoʊk/" },
+      "billowing": { pos: "動詞", meaning: "もうもうと立ち上る", ipa: "/ˈbɪloʊɪŋ/" },
+      "structure": { pos: "名詞", meaning: "建造物、構造物", ipa: "/ˈstrʌktʃər/" },
+      "Eyewitness News": { pos: "固有名詞", meaning: "番組名、ニュース名", ipa: "/ˈaɪˌwɪtnəs nuz/" },
+      "scene": { pos: "名詞", meaning: "現場", ipa: "/sin/" },
+      "firefighters": { pos: "名詞", meaning: "消防士たち", ipa: "/ˈfaɪərˌfaɪtərz/" },
+      "try": { pos: "動詞", meaning: "試みる、しようとする", ipa: "/traɪ/" },
+      "get": { pos: "動詞", meaning: "得る、ある状態にする", ipa: "/ɡɛt/" },
+      "control": { pos: "名詞", meaning: "制御、鎮圧", ipa: "/kənˈtroʊl/" },
+      "extinguish": { pos: "動詞", meaning: "消火する、消す", ipa: "/ɪkˈstɪŋɡwɪʃ/" },
+      "hotspots": { pos: "名詞", meaning: "火点、燃え残りの箇所", ipa: "/ˈhɑtˌspɑts/" },
+      "Officials": { pos: "名詞", meaning: "当局者、関係者", ipa: "/əˈfɪʃəlz/" },
+      "say": { pos: "動詞", meaning: "述べる、言う", ipa: "/seɪ/" },
+      "unsafe": { pos: "形容詞", meaning: "危険な、安全でない", ipa: "/ʌnˈseɪf/" },
+      "walk": { pos: "動詞", meaning: "歩く、立ち入る", ipa: "/wɔk/" },
+      "on": { pos: "前置詞", meaning: "上に。機能語だが、この文ではwalk on toの流れで目立つ", ipa: "/ɑn/" },
+      "conducted": { pos: "動詞", meaning: "実施した、行った", ipa: "/kənˈdʌktɪd/" },
+      "searches": { pos: "名詞", meaning: "捜索", ipa: "/ˈsɝtʃɪz/" },
+      "tower ladders": { pos: "名詞句", meaning: "はしご車のはしご", ipa: "/ˈtaʊər ˈlædərz/" },
+      "looking": { pos: "動詞", meaning: "見る、のぞき込む", ipa: "/ˈlʊkɪŋ/" },
+      "able": { pos: "形容詞", meaning: "できる、可能である", ipa: "/ˈeɪbəl/" },
+      "search": { pos: "名詞", meaning: "捜索", ipa: "/sɝtʃ/" },
+      "ladders": { pos: "名詞", meaning: "はしご", ipa: "/ˈlædərz/" },
+      "Right now": { pos: "副詞句", meaning: "今現在、ちょうど今", ipa: "/raɪt naʊ/" },
+      "way": { pos: "名詞", meaning: "状態、あり方", ipa: "/weɪ/" },
+      "construction": { pos: "名詞", meaning: "構造、建築状態", ipa: "/kənˈstrʌkʃən/" },
+      "do": { pos: "動詞", meaning: "行う、する", ipa: "/du/" },
+      "full": { pos: "形容詞", meaning: "全面的な、完全な", ipa: "/fʊl/" },
+      "said": { pos: "動詞", meaning: "述べた、言った", ipa: "/sɛd/" },
+      "Deputy Chief": { pos: "名詞句", meaning: "副署長、副隊長", ipa: "/ˈdɛpjəti tʃif/" },
+      "press conference": { pos: "名詞句", meaning: "記者会見", ipa: "/prɛs ˈkɑnfərəns/" },
+      "windows": { pos: "名詞", meaning: "窓", ipa: "/ˈwɪndoʊz/" },
+      "buckets": { pos: "名詞", meaning: "バケット、作業かご", ipa: "/ˈbʌkɪts/" },
+      "determined": { pos: "動詞", meaning: "判断した、確認した", ipa: "/dɪˈtɝmənd/" },
+      "time": { pos: "名詞", meaning: "時点、時間", ipa: "/taɪm/" },
+      "nobody": { pos: "代名詞", meaning: "誰もいない、誰も〜ない", ipa: "/ˈnoʊˌbɑdi/" },
+      "Two": { pos: "数詞", meaning: "2人の、2つの", ipa: "/tu/" },
+      "suffered": { pos: "動詞", meaning: "負った、被った", ipa: "/ˈsʌfərd/" },
+      "minor": { pos: "形容詞", meaning: "軽い、小さな", ipa: "/ˈmaɪnər/" },
+      "injuries": { pos: "名詞", meaning: "けが、負傷", ipa: "/ˈɪndʒəriz/" },
+      "emergency": { pos: "名詞", meaning: "緊急事態、緊急の", ipa: "/ɪˈmɝdʒənsi/" },
+      "response": { pos: "名詞", meaning: "対応、反応", ipa: "/rɪˈspɑns/" },
+      "Resident": { pos: "名詞", meaning: "住民", ipa: "/ˈrɛzɪdənt/" },
+      "Brianna Ferguson": { pos: "固有名詞", meaning: "ブリアナ・ファーガソンさん", ipa: "/briˈænə ˈfɝɡəsən/" },
+      "lives": { pos: "動詞", meaning: "住んでいる", ipa: "/lɪvz/" },
+      "neighborhood": { pos: "名詞", meaning: "近隣、地域", ipa: "/ˈneɪbərˌhʊd/" },
+      "described": { pos: "動詞", meaning: "説明した、描写した", ipa: "/dɪˈskraɪbd/" },
+      "saw": { pos: "動詞", meaning: "見た", ipa: "/sɔ/" },
+      "6:15 a.m.": { pos: "時刻表現", meaning: "午前6時15分", ipa: "/sɪks fɪfˈtin eɪ ˈɛm/" },
+      "heard": { pos: "動詞", meaning: "聞いた", ipa: "/hɝd/" },
+      "fire department": { pos: "名詞句", meaning: "消防署、消防機関", ipa: "/ˈfaɪər dɪˌpɑrtmənt/" },
+      "fire trucks": { pos: "名詞句", meaning: "消防車", ipa: "/ˈfaɪər trʌks/" },
+      "pulling up": { pos: "句動詞", meaning: "到着する、車で乗りつける", ipa: "/ˈpʊlɪŋ ʌp/" },
+      "outside": { pos: "副詞", meaning: "外で、外に", ipa: "/aʊtˈsaɪd/" },
+      "looked": { pos: "動詞", meaning: "見た", ipa: "/lʊkt/" },
+      "window": { pos: "名詞", meaning: "窓", ipa: "/ˈwɪndoʊ/" },
+      "bunch": { pos: "名詞", meaning: "たくさん、多数", ipa: "/bʌntʃ/" },
+      "ran": { pos: "動詞", meaning: "走った", ipa: "/ræn/" },
+      "down": { pos: "副詞", meaning: "下へ、下の方へ", ipa: "/daʊn/" },
+      "evacuated": { pos: "動詞", meaning: "避難させた、避難した", ipa: "/ɪˈvækjuˌeɪtɪd/" },
+      "probably": { pos: "副詞", meaning: "おそらく、たぶん", ipa: "/ˈprɑbəbli/" },
+      "5": { pos: "数詞", meaning: "5（分）", ipa: "/faɪv/" },
+      "10 minutes": { pos: "名詞句", meaning: "10分", ipa: "/tɛn ˈmɪnɪts/" },
+      "that": { pos: "代名詞", meaning: "それ、そのこと", ipa: "/ðæt/" },
+      "Ferguson": { pos: "固有名詞", meaning: "ファーガソンさん", ipa: "/ˈfɝɡəsən/" },
+      "evacuation": { pos: "名詞", meaning: "避難", ipa: "/ɪˌvækjuˈeɪʃən/" },
+      "order": { pos: "名詞", meaning: "命令、指示", ipa: "/ˈɔrdər/" },
+      "neighboring": { pos: "形容詞", meaning: "隣接する、近隣の", ipa: "/ˈneɪbərɪŋ/" },
+      "currently": { pos: "副詞", meaning: "現在、今のところ", ipa: "/ˈkɝrəntli/" },
+      "effect": { pos: "名詞", meaning: "効力、実施状態", ipa: "/ɪˈfɛkt/" },
+      "Nearly": { pos: "副詞", meaning: "ほぼ、およそ", ipa: "/ˈnɪrli/" },
+      "200": { pos: "数詞", meaning: "200（人）", ipa: "/tu ˈhʌndrəd/" },
+      "EMS personnel": { pos: "名詞句", meaning: "救急医療職員", ipa: "/ˌi ɛm ˈɛs ˌpɝsəˈnɛl/" },
+      "responded": { pos: "動詞", meaning: "出動した、対応した", ipa: "/rɪˈspɑndɪd/" },
+      "help": { pos: "動詞", meaning: "助ける、支援する", ipa: "/hɛlp/" },
+      "battle": { pos: "動詞", meaning: "戦う、対応する", ipa: "/ˈbætəl/" },
+      "cause": { pos: "名詞", meaning: "原因", ipa: "/kɔz/" },
+      "remains": { pos: "動詞", meaning: "〜のままである、残っている", ipa: "/rɪˈmeɪnz/" },
+      "investigation": { pos: "名詞", meaning: "調査", ipa: "/ɪnˌvɛstəˈɡeɪʃən/" }
+    };
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    document.querySelectorAll(".sentence").forEach((sentence) => {
+      const seen = new Set();
+      const words = [...sentence.querySelectorAll(".english mark")]
+        .map((mark) => mark.textContent.trim())
+        .filter((term) => {
+          if (seen.has(term)) return false;
+          seen.add(term);
+          return true;
+        });
+      const wordbook = sentence.querySelector(".wordbook");
+      if (!wordbook) return;
+      wordbook.innerHTML = words.map((term) => {
+        const item = contentWordData[term] || { pos: "内容語", meaning: "意味を確認しよう", ipa: "" };
+        return `
+          <div class="word-card">
+            <div class="word-top">
+              <span class="word-term">${escapeHtml(term)}</span>
+              <span class="word-pos">${escapeHtml(item.pos)}</span>
+            </div>
+            <p class="word-meaning">${escapeHtml(item.meaning)}</p>
+            <div class="word-ipa">${escapeHtml(item.ipa)}</div>
+          </div>
+        `;
+      }).join("");
+    });
+  </script>
+</body>
+</html>

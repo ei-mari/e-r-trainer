@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="leftWash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#050505" stop-opacity=".86"/>
+      <stop offset=".47" stop-color="#050505" stop-opacity=".62"/>
+      <stop offset=".72" stop-color="#050505" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#050505" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="hardShadow"><feDropShadow dx="0" dy="10" stdDeviation="5" flood-color="#000" flood-opacity=".86"/></filter>
+    <filter id="softGlow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ffe21f" flood-opacity=".45"/></filter>
+    <style>.jp{font-family:Hiragino Sans,Yu Gothic,Meiryo,Avenir Next,Arial,sans-serif}.sans{font-family:Avenir Next,Montserrat,Arial,sans-serif}</style>
+  </defs>
+  <image href="bg-quiz-question.png" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1920" height="1080" fill="url(#leftWash)"/>
+  <g transform="translate(86 68)">
+    <rect width="318" height="70" rx="35" fill="#101010" opacity=".94"/>
+    <rect x="8" y="8" width="302" height="54" rx="27" fill="none" stroke="#ffe21f" stroke-width="3"/>
+    <text x="32" y="47" class="sans" font-size="27" font-weight="1000" fill="#ffe21f" letter-spacing="2">LESSON 01</text>
+  </g>
+  <g filter="url(#hardShadow)">
+    <text x="92" y="232" class="sans" font-size="38" font-weight="1000" fill="#ffe21f" letter-spacing="4">QUIZ REVIEW</text>
+    <text x="90" y="372" class="jp" font-size="76" font-weight="1000" fill="#fff">機能語って</text>
+    <text x="90" y="476" class="jp" font-size="92" font-weight="1000" fill="#ffe21f">なんだっけ？</text>
+  </g>
+  <g transform="translate(96 590)" filter="url(#hardShadow)">
+    <path d="M0 0H566Q600 0 600 34V136Q600 170 566 170H104L54 228V170H34Q0 170 0 136V34Q0 0 34 0Z" fill="#0d0d0d" opacity=".92" stroke="#fff" stroke-opacity=".24" stroke-width="2"/>
+    <text x="42" y="72" class="jp" font-size="42" font-weight="1000" fill="#fff">何それ？</text>
+    <text x="42" y="124" class="jp" font-size="30" font-weight="900" fill="#d9d9d9">答えてもらう</text>
+  </g>
+  <g transform="translate(1225 112)" filter="url(#softGlow)">
+    <text x="0" y="0" class="sans" font-size="116" font-weight="1000" fill="#ffe21f">?</text>
+    <text x="146" y="74" class="sans" font-size="78" font-weight="1000" fill="#fff">?</text>
+  </g>
+</svg>

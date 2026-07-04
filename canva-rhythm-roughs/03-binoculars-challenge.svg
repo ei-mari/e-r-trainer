@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0f171d"/><stop offset="1" stop-color="#172922"/></linearGradient>
+    <radialGradient id="beam" cx="50%" cy="48%" r="48%"><stop stop-color="#8fdc7d" stop-opacity=".14"/><stop offset="1" stop-color="#8fdc7d" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#beam)"/>
+  <text x="92" y="104" font-family="Avenir Next, Arial" font-size="25" letter-spacing="4" fill="#8fdc7d">PART 1 / BINOCULARS CHALLENGE</text>
+  <text x="92" y="174" font-family="Georgia, serif" font-size="64" fill="#fff7df">Where does the stress land?</text>
+  <text x="94" y="228" font-family="Avenir Next, Arial" font-size="27" fill="#aeb9bb">強勢がありそうなところに印をつけてね</text>
+  <g transform="translate(1164 78)">
+    <circle cx="74" cy="68" r="54" fill="none" stroke="#8fdc7d" stroke-width="12"/><circle cx="178" cy="68" r="54" fill="none" stroke="#8fdc7d" stroke-width="12"/>
+    <rect x="102" y="54" width="48" height="26" rx="13" fill="#8fdc7d"/>
+    <path d="M49 119 20 170M202 119l30 51" stroke="#8fdc7d" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g font-family="Avenir Next, Arial" font-size="38" fill="#fff7df">
+    <text x="150" y="342">G: Who cares?</text>
+    <text x="150" y="415">B: I care! All right? I care!</text>
+    <text x="150" y="488">I busted my ass all day cleaning this house</text>
+    <text x="150" y="561">and then cooking that meal.</text>
+    <text x="150" y="634">And I worked today.</text>
+    <text x="150" y="707">It would be nice if you said thank you</text>
+    <text x="150" y="780">and helped me with the dishes.</text>
+  </g>
+  <rect x="92" y="820" width="1416" height="1" fill="#fff" opacity=".16"/>
+</svg>

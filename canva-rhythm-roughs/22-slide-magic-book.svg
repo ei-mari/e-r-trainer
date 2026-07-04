@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="leftWash" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#050505" stop-opacity=".86"/><stop offset=".52" stop-color="#050505" stop-opacity=".64"/><stop offset=".76" stop-color="#050505" stop-opacity=".18"/><stop offset="1" stop-color="#050505" stop-opacity="0"/></linearGradient>
+    <filter id="hardShadow"><feDropShadow dx="0" dy="10" stdDeviation="5" flood-color="#000" flood-opacity=".86"/></filter>
+    <filter id="glow"><feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#ffe21f" flood-opacity=".56"/><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity=".7"/></filter>
+    <style>.jp{font-family:Hiragino Sans,Yu Gothic,Meiryo,Avenir Next,Arial,sans-serif}.sans{font-family:Avenir Next,Montserrat,Arial,sans-serif}</style>
+  </defs>
+  <image href="bg-magic-book.png" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1920" height="1080" fill="url(#leftWash)"/>
+  <g transform="translate(86 68)"><rect width="318" height="70" rx="35" fill="#101010" opacity=".94"/><rect x="8" y="8" width="302" height="54" rx="27" fill="none" stroke="#ffe21f" stroke-width="3"/><text x="32" y="47" class="sans" font-size="27" font-weight="1000" fill="#ffe21f" letter-spacing="2">LESSON 01</text></g>
+  <g filter="url(#hardShadow)">
+    <text x="92" y="222" class="sans" font-size="36" font-weight="1000" fill="#ffe21f" letter-spacing="4">MAGIC BOOK</text>
+    <text x="90" y="348" class="jp" font-size="62" font-weight="1000" fill="#fff">品詞が分からなくても</text>
+    <text x="90" y="448" class="jp" font-size="76" font-weight="1000" fill="#ffe21f">授業についていける</text>
+    <text x="90" y="540" class="jp" font-size="62" font-weight="1000" fill="#fff">魔法の書を配ります</text>
+  </g>
+  <g transform="translate(98 662)" filter="url(#glow)">
+    <rect width="760" height="140" rx="34" fill="#111" opacity=".95"/>
+    <text x="44" y="60" class="jp" font-size="33" font-weight="1000" fill="#fff">Slack / Zoom のチャット欄を</text>
+    <text x="44" y="106" class="jp" font-size="33" font-weight="1000" fill="#ffe21f">確認してね</text>
+  </g>
+</svg>

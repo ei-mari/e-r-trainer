@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#000" stop-opacity=".75"/><stop offset=".62" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity=".78"/><feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="#000" flood-opacity=".95"/></filter>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#ffe21f" flood-opacity=".48"/><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity=".65"/></filter>
+    <style>.jp{font-family:Hiragino Sans,Yu Gothic,Meiryo,Avenir Next,Arial,sans-serif}.sans{font-family:Avenir Next,Montserrat,Arial,sans-serif}</style>
+  </defs>
+  <image href="rhythm-challenge-keyvisual.png" width="1600" height="900" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1600" height="900" fill="url(#shade)"/>
+  <g transform="translate(72 52)">
+    <rect width="294" height="66" rx="33" fill="#111" opacity=".94"/><rect x="7" y="7" width="280" height="52" rx="26" fill="none" stroke="#ffe21f" stroke-width="3" opacity=".75"/>
+    <text x="28" y="43" class="sans" font-size="25" font-weight="900" fill="#ffe21f" letter-spacing="2">LESSON 01</text>
+  </g>
+  <g filter="url(#shadow)">
+    <text x="76" y="210" class="sans" font-size="34" font-weight="900" fill="#ffe21f" letter-spacing="3">FUNCTION WORDS</text>
+    <text x="72" y="330" class="jp" font-size="60" font-weight="1000" fill="#fff">機能語になりやすい品詞</text>
+  </g>
+  <g class="jp" font-size="34" font-weight="900" fill="#fff" filter="url(#shadow)">
+    <text x="88" y="430">冠詞</text>
+    <text x="250" y="430">関係詞</text>
+    <text x="448" y="430">接続詞</text>
+    <text x="88" y="505">前置詞</text>
+    <text x="250" y="505">人称代名詞</text>
+    <text x="520" y="505">助動詞</text>
+    <text x="88" y="580">など</text>
+  </g>
+  <g transform="translate(82 654)" filter="url(#glow)">
+    <path d="M22 0H664Q686 0 686 22V100Q686 122 664 122H22Q0 122 0 100V22Q0 0 22 0Z" fill="#111"/>
+    <text x="35" y="76" class="jp" font-size="42" font-weight="1000" fill="#ffe21f">出たよ、品詞だよ</text>
+    <text x="450" y="78" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="43">💩</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111820"/><stop offset=".58" stop-color="#202831"/><stop offset="1" stop-color="#203a38"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="96" y="125" font-family="Avenir Next, Montserrat, Arial, sans-serif" font-size="28" letter-spacing="4" fill="#f6d776">TODAY'S FLOW</text>
+  <text x="96" y="205" font-family="Georgia, serif" font-size="74" fill="#fff7df">Watch the rhythm move.</text>
+  <g transform="translate(96 312)" filter="url(#shadow)">
+    <rect width="330" height="330" rx="8" fill="#172229" stroke="#50636a"/>
+    <text x="32" y="70" font-size="58" font-family="Arial">🥽</text>
+    <text x="32" y="132" font-family="Avenir Next, Arial" font-size="31" fill="#8fdc7d" font-weight="700">Binoculars</text>
+    <text x="32" y="178" font-family="Avenir Next, Arial" font-size="26" fill="#fff7df">Predict the stress.</text>
+    <text x="32" y="246" font-family="Avenir Next, Arial" font-size="22" fill="#aeb9bb">どこが目立つか予想</text>
+  </g>
+  <g transform="translate(456 312)" filter="url(#shadow)">
+    <rect width="330" height="330" rx="8" fill="#241b18" stroke="#7d5841"/>
+    <text x="32" y="70" font-size="58" font-family="Arial">🌯</text>
+    <text x="32" y="132" font-family="Avenir Next, Arial" font-size="31" fill="#f0904f" font-weight="700">Burrito</text>
+    <text x="32" y="178" font-family="Avenir Next, Arial" font-size="26" fill="#fff7df">Check the scene.</text>
+    <text x="32" y="246" font-family="Avenir Next, Arial" font-size="22" fill="#aeb9bb">音声で答え合わせ</text>
+  </g>
+  <g transform="translate(816 312)" filter="url(#shadow)">
+    <rect width="330" height="330" rx="8" fill="#24220f" stroke="#8d7d33"/>
+    <text x="32" y="70" font-size="58" font-family="Arial">🐝</text>
+    <text x="32" y="132" font-family="Avenir Next, Arial" font-size="31" fill="#ffc857" font-weight="700">Bumble Bee</text>
+    <text x="32" y="178" font-family="Avenir Next, Arial" font-size="26" fill="#fff7df">Practice aloud.</text>
+    <text x="32" y="246" font-family="Avenir Next, Arial" font-size="22" fill="#aeb9bb">めっちゃ音読</text>
+  </g>
+  <g transform="translate(1176 312)" filter="url(#shadow)">
+    <rect width="330" height="330" rx="8" fill="#171d29" stroke="#53627d"/>
+    <text x="32" y="70" font-size="58" font-family="Arial">🎓</text>
+    <text x="32" y="132" font-family="Avenir Next, Arial" font-size="31" fill="#9fb9ff" font-weight="700">Presentation</text>
+    <text x="32" y="178" font-family="Avenir Next, Arial" font-size="26" fill="#fff7df">Perform it cleanly.</text>
+    <text x="32" y="246" font-family="Avenir Next, Arial" font-size="22" fill="#aeb9bb">リズムで発表</text>
+  </g>
+  <rect x="96" y="744" width="1408" height="1" fill="#ffffff" opacity=".22"/>
+  <text x="96" y="805" font-family="Avenir Next, Arial" font-size="31" fill="#fff7df">Review → Analyze → Deepen → Read aloud</text>
+</svg>
