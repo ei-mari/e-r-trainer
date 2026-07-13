@@ -148,34 +148,6 @@
       padding: 18px 14px 42px;
     }
 
-    .tab-switcher {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .tab-button {
-      min-height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: #ffffff;
-      font: inherit;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .tab-button[aria-selected="true"] {
-      border-color: rgba(13, 107, 104, 0.3);
-      color: #075350;
-      background: var(--accent-soft);
-    }
-
-    .tab-panel[hidden] {
-      display: none !important;
-    }
-
     .sentence {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -241,57 +213,6 @@
       line-height: 1.55;
       word-spacing: 0.12em;
       text-align: left;
-    }
-
-    .archive-panel {
-      display: grid;
-      gap: 12px;
-    }
-
-    .archive-note {
-      margin: 0;
-      padding: 12px 13px;
-      border: 1px solid rgba(13, 107, 104, 0.18);
-      border-radius: 8px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      font-size: 0.94rem;
-      font-weight: 800;
-      line-height: 1.5;
-    }
-
-    .archive-card {
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: 0 1px 2px rgba(20, 35, 50, 0.04);
-    }
-
-    .archive-title {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      font-weight: 800;
-    }
-
-    .vimeo-frame {
-      position: relative;
-      padding-top: 55.08%;
-      overflow: hidden;
-      border-radius: 8px;
-      background: #111820;
-    }
-
-    .vimeo-frame-tall {
-      padding-top: 75%;
-    }
-
-    .vimeo-frame iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
     }
 
     .sentence {
@@ -532,11 +453,7 @@
   </header>
 
   <main class="wrap">
-    <div class="tab-switcher" role="tablist" aria-label="課題とアーカイブ">
-      <button class="tab-button" id="task-tab" type="button" role="tab" aria-selected="true" aria-controls="task-panel">課題</button>
-      <button class="tab-button" id="archive-tab" type="button" role="tab" aria-selected="false" aria-controls="archive-panel">アーカイブ</button>
-    </div>
-    <section class="list tab-panel" id="task-panel" role="tabpanel" aria-labelledby="task-tab" aria-label="Sentence clips">
+    <section class="list" id="task-panel" aria-label="Sentence clips">
       <article class="sentence early-sentence">
         <div class="sentence-head">
           <span class="num">1</span>
@@ -975,23 +892,7 @@
       </article>
       </div>
     </section>
-    <section class="archive-panel tab-panel" id="archive-panel" role="tabpanel" aria-labelledby="archive-tab" hidden>
-      <p class="archive-note">アーカイブのパスワードは全て共有です。Slackをご確認ください。</p>
-      <article class="archive-card">
-        <h2 class="archive-title">GR1</h2>
-        <div class="vimeo-frame">
-          <iframe src="https://player.vimeo.com/video/1207947880?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="GR1"></iframe>
-        </div>
-      </article>
-      <article class="archive-card">
-        <h2 class="archive-title">GR2</h2>
-        <div class="vimeo-frame vimeo-frame-tall">
-          <iframe src="https://player.vimeo.com/video/1207950838?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="GR2"></iframe>
-        </div>
-      </article>
-    </section>
   </main>
-  <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
     const contentWordData = {
       "Firefighters": { pos: "名詞", meaning: "消防士たち", ipa: "/ˈfaɪərˌfaɪtərz/" },
@@ -1119,17 +1020,6 @@
         "'": "&#39;"
       }[char]));
     }
-
-    document.querySelectorAll(".tab-button").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        document.querySelectorAll(".tab-button").forEach((item) => {
-          item.setAttribute("aria-selected", String(item === tab));
-        });
-        document.querySelectorAll(".tab-panel").forEach((panel) => {
-          panel.hidden = panel.id !== tab.getAttribute("aria-controls");
-        });
-      });
-    });
 
     function createBlockComposites() {
       document.querySelectorAll(".block[data-block]").forEach((block) => {
