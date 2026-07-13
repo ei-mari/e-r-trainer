@@ -243,6 +243,21 @@
       text-align: left;
     }
 
+    .ipa-lines {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .ipa-line {
+      margin: 0;
+      color: var(--warn);
+      font-family: "Charis SIL", "Doulos SIL", "Times New Roman", serif;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
     .archive-panel {
       display: grid;
       gap: 12px;
@@ -1110,6 +1125,28 @@
       "investigation": { pos: "名詞", meaning: "調査", ipa: "/ɪnˌvɛstəˈɡeɪʃən/" }
     };
 
+    const blockIpaData = {
+      "1": [
+        "/əˈfɪʃəlz seɪ ðə ˈbɪldɪŋ ɪz ʌnˈseɪf fər ˈfaɪərˌfaɪtərz tə wɔk ˈɑntu, soʊ ði ˌɛf di ɛn ˈwaɪ kənˈdʌktɪd ˈsɝtʃɪz frəm ðə ˈtaʊər ˈlædərz ˈlʊkɪŋ ˈɪntu ðə ˈbɪldɪŋ/",
+        "/ðeɪ wər ˈeɪbəl tə du ə sɝtʃ frəm ðə ˈlædərz/",
+        "/raɪt naʊ, ðə weɪ ðæt ðə kənˈstrʌkʃən ɪz ˈæftər ðə ˈfaɪər, ɪts ʌnˈseɪf fər ʌs tə du ə fʊl sɝtʃ, sɛd ən ˌɛf di ɛn ˈwaɪ ˈdɛpjəti tʃif ˈdʊrɪŋ ə ˈsʌndeɪ ˈmɔrnɪŋ prɛs ˈkɑnfərəns/"
+      ],
+      "2": [
+        "/soʊ frəm ðə ˈwɪndoʊz, frəm ðə ˈbʌkɪts əv ðə ˈtaʊər ˈlædərz, wi dɪˈtɝmənd ðæt æt ðɪs taɪm, ˈnoʊˌbɑdi ɪz ɪn ðə ˈbɪldɪŋ/",
+        "/tu ˈfaɪərˌfaɪtərz ˈsʌfərd ˈmaɪnər ˈɪndʒəriz ˈdʊrɪŋ ði ɪˈmɝdʒənsi rɪˈspɑns/",
+        "/ˈrɛzɪdənt briˈænə ˈfɝɡəsən, hu lɪvz ɪn ðə ˈneɪbərˌhʊd, dɪˈskraɪbd tə ˈaɪˌwɪtnəs nuz wʌt ʃi sɔ/"
+      ],
+      "3": [
+        "/əˈraʊnd sɪks fɪfˈtin eɪ ˈɛm, aɪ hɝd ðə ˈfaɪər dɪˌpɑrtmənt ɔr ðə ˈfaɪər trʌks ˈpʊlɪŋ ʌp aʊtˈsaɪd, ænd aɪ lʊkt aʊt maɪ ˈwɪndoʊ ænd sɔ ə bʌntʃ əv smoʊk soʊ aɪ ræn daʊn ænd sɔ ðæt ˈbɪldɪŋ wəz ɑn faɪər/",
+        "/ðeɪ ɪˈvækjuˌeɪtɪd ʌs ˈprɑbəbli faɪv, tɛn ˈmɪnɪts ˈæftər ðæt, ˈfɝɡəsən sɛd/"
+      ],
+      "4": [
+        "/ən ɪˌvækjuˈeɪʃən ˈɔrdər fər ðə ˈneɪbərɪŋ ˈbɪldɪŋ ɪz ˈkɝrəntli ɪn ɪˈfɛkt/",
+        "/ˈnɪrli tu ˈhʌndrəd ˈfaɪər ənd ˌi ɛm ˈɛs ˌpɝsəˈnɛl rɪˈspɑndɪd tə ðə sin tə hɛlp ˈbætəl ðə ˈfaɪər/",
+        "/ðə kɔz əv ðə ˈfaɪər rɪˈmeɪnz ˈʌndər ɪnˌvɛstəˈɡeɪʃən/"
+      ]
+    };
+
     function escapeHtml(value) {
       return String(value).replace(/[&<>"']/g, (char) => ({
         "&": "&amp;",
@@ -1146,6 +1183,9 @@
           .filter(Boolean)
           .map((text) => `<p class="note">${text}</p>`)
           .join("");
+        const ipaLines = (blockIpaData[blockNumber] || [])
+          .map((ipa) => `<p class="ipa-line">${escapeHtml(ipa)}</p>`)
+          .join("");
 
         const composite = document.createElement("article");
         composite.className = "sentence block-composite";
@@ -1166,6 +1206,10 @@
           <details>
             <summary>日本語</summary>
             ${translations}
+          </details>
+          <details>
+            <summary>発音記号</summary>
+            <div class="ipa-lines">${ipaLines}</div>
           </details>
         `;
 
