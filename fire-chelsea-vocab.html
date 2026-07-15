@@ -255,6 +255,34 @@
       border: 0;
     }
 
+    .canva-frame {
+      position: relative;
+      overflow: hidden;
+      padding-top: 56.25%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(63, 69, 81, 0.16);
+    }
+
+    .canva-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .canva-link {
+      margin: 10px 0 0;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .canva-link a {
+      color: var(--accent);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
     .sentence {
       padding: 14px;
     }
@@ -940,7 +968,7 @@
       </article>
     </section>
     <section class="archive-panel tab-panel" id="pronunciation-archive-panel" role="tabpanel" aria-labelledby="pronunciation-archive-tab" hidden>
-      <p class="archive-note">アーカイブのパスワードは全て共有です。Slackをご確認ください。</p>
+      <p class="archive-note">アーカイブのパスワードは全て共有です。Slackをご確認ください。なおスライドもページの一番下にご用意しております。</p>
       <article class="archive-card">
         <h2 class="archive-title">SECTION 01</h2>
         <div class="vimeo-frame vimeo-frame-pronunciation">
@@ -958,6 +986,13 @@
         <div class="vimeo-frame vimeo-frame-pronunciation-qa">
           <iframe src="https://player.vimeo.com/video/1210055563?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="QA"></iframe>
         </div>
+      </article>
+      <article class="archive-card">
+        <h2 class="archive-title">スライド</h2>
+        <div class="canva-frame">
+          <iframe loading="lazy" src="https://www.canva.com/design/DAHPPMMVgqo/a5JkwhNtbvv6sb13VYSvJw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" title="音読会 20260714｜発音レッスン"></iframe>
+        </div>
+        <p class="canva-link"><a href="https://www.canva.com/design/DAHPPMMVgqo/a5JkwhNtbvv6sb13VYSvJw/view?utm_content=DAHPPMMVgqo&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">音読会 20260714｜発音レッスン</a> by えいまり</p>
       </article>
     </section>
   </main>
