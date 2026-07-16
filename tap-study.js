@@ -105,6 +105,56 @@ const cards = [
     answerIpa:
       "/jɛs, aɪ du/\n/ˈrisəntli, ˈmɛni ˈtʊrɪsts həv bən ˈvɪzɪtɪŋ dʒəˈpæn/\n/əˈnaʊnsmənts ɪn ˈdɪfərənt ˈlæŋɡwɪdʒɪz ər ˈvɛri ˈhɛlpfəl fər ðəm/\n/aɪ həv ˈɔlsoʊ sin sʌm ˈpipəl ɡɛt lɔst/\n/dʒəˈpænz treɪn ˈsɪstəmz meɪ bi mɔr ˈkɑmpləˌkeɪtəd ðən ðoʊz ɪn ˈʌðər ˈkʌntriz/\n/soʊ, aɪ θɪŋk ˌmʌltiˈlɪŋɡwəl əˈnaʊnsmənts ər ˈvɛri ɪmˈpɔrtənt ɪn dʒəˈpæn/",
   },
+  {
+    id: "online-shopping-q5",
+    topic: "online-shopping",
+    topicLabel: "Online Shopping",
+    number: "Q5",
+    question: "What online shopping site do you visit most often, and what do you usually buy?",
+    questionIpa: "/wʌt ˈɑnˌlaɪn ˈʃɑpɪŋ saɪt də jə ˈvɪzət moʊst ˈɔfən, ən wʌt də jə ˈjuʒuəli baɪ?/",
+    answer:
+      "I use Rakuten most often because it is convenient and I can earn points when I shop there.\nI usually buy groceries and cosmetics.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/online-shopping-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/online-shopping-q5-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪ juz ˈrɑkətɛn moʊst ˈɔfən bɪˈkəz ɪt ɪz kənˈvinjənt ən aɪ kən ɜrn pɔɪnts wɛn aɪ ʃɑp ðɛr/\n/aɪ ˈjuʒuəli baɪ ˈɡroʊsəriz ən kɑzˈmɛtɪks/",
+  },
+  {
+    id: "online-shopping-q6",
+    topic: "online-shopping",
+    topicLabel: "Online Shopping",
+    number: "Q6",
+    question: "Which device do you usually use when you shop online, and why?",
+    questionIpa: "/wɪtʃ dɪˈvaɪs də jə ˈjuʒuəli juz wɛn jə ʃɑp ˈɑnˌlaɪn, ən waɪ?/",
+    answer:
+      "I usually use my smartphone because I can shop anytime and anywhere.\nIt is also quick and easy to use, so it is very convenient.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/online-shopping-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/online-shopping-q6-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪ ˈjuʒuəli juz maɪ ˈsmɑrtˌfoʊn bɪˈkəz aɪ kən ʃɑp ˈɛniˌtaɪm ən ˈɛniˌwɛr/\n/ɪt ɪz ˈɔlsoʊ kwɪk ən ˈizi tə juz, soʊ ɪt ɪz ˈvɛri kənˈvinjənt/",
+  },
+  {
+    id: "online-shopping-q7",
+    topic: "online-shopping",
+    topicLabel: "Online Shopping",
+    number: "Q7",
+    question: "What are some of the potential dangers of online shopping?",
+    questionIpa: "/wʌt ər sʌm əv ðə pəˈtɛnʃəl ˈdeɪndʒərz əv ˈɑnˌlaɪn ˈʃɑpɪŋ?/",
+    answer:
+      "I think there are two potential dangers of online shopping.\nOne is buying clothes in the wrong size because you cannot try them on before you buy them.\nAnother danger is that personal information, such as credit card details, could be stolen.\nTherefore, we should be careful when shopping online.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/online-shopping-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/online-shopping-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/online-shopping-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/online-shopping-q7-answer-line-4.wav",
+    ],
+    answerIpa:
+      "/aɪ θɪŋk ðər ər tu pəˈtɛnʃəl ˈdeɪndʒərz əv ˈɑnˌlaɪn ˈʃɑpɪŋ/\n/wʌn ɪz ˈbaɪɪŋ kloʊðz ɪn ðə rɔŋ saɪz bɪˈkəz jə ˈkænɑt traɪ ðəm ɑn bɪˈfɔr jə baɪ ðəm/\n/əˈnʌðər ˈdeɪndʒər ɪz ðət ˈpɜrsənəl ˌɪnfərˈmeɪʃən, sʌtʃ əz ˈkrɛdət kɑrd ˈditelz, kəd bi stoʊl/\n/ˈðɛrˌfɔr, wi ʃəd bi ˈkɛrfəl wɛn ˈʃɑpɪŋ ˈɑnˌlaɪn/",
+  },
 ];
 
 const state = {
