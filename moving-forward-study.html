@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132a2c">
+  <title>Better Call Saul: Mike's Powerful Advice on Moving Forward</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152127;
+      --muted: #667279;
+      --line: #d9e2e1;
+      --paper: #eef3f2;
+      --panel: #ffffff;
+      --forest: #153d3e;
+      --teal: #087f78;
+      --teal-soft: #e0f2ef;
+      --gold: #c7952f;
+      --gold-soft: #fff4d6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #dfe8e6;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      width: min(100%, 430px);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--panel);
+      box-shadow: 0 24px 60px rgba(18, 43, 45, 0.2);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      background: var(--forest);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--gold), #d36c4c);
+    }
+
+    .hero-copy {
+      position: relative;
+      padding: 26px 22px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-copy::before {
+      content: "B";
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      display: grid;
+      place-items: center;
+      width: 35px;
+      height: 35px;
+      border: 1px solid rgba(240, 201, 108, 0.55);
+      color: #f0c96c;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #f0c96c;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      padding-right: 50px;
+      font-size: 1.9rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.08rem;
+      font-weight: 650;
+      line-height: 1.38;
+    }
+
+    .video-area {
+      padding: 18px 22px 24px;
+      background: #102c2e;
+    }
+
+    .video-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 10px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .video-label span:last-child {
+      color: #80ddd4;
+      letter-spacing: 0;
+    }
+
+    .video-frame {
+      width: min(100%, 300px);
+      margin: 0 auto;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      background: #0a1516;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    main {
+      padding: 12px 16px 44px;
+    }
+
+    .section {
+      padding: 22px 4px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:first-child {
+      border-top: 0;
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .step {
+      display: inline-grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--teal);
+      font-size: 0.72rem;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.18rem;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    audio {
+      display: block;
+      width: 100%;
+      height: 44px;
+    }
+
+    .audio-tools {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .speed-control {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      width: min(100%, 250px);
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #edf2f1;
+    }
+
+    .speed-button,
+    .restart-button {
+      min-height: 34px;
+      border: 0;
+      border-radius: 6px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .speed-button.active {
+      color: #ffffff;
+      background: var(--teal);
+      box-shadow: 0 2px 7px rgba(8, 127, 120, 0.22);
+    }
+
+    .restart-button {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      border: 1px solid var(--line);
+      color: var(--teal);
+      background: #ffffff;
+      font-size: 1.1rem;
+    }
+
+    .english-full {
+      margin: 0;
+      color: #14242a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.18rem;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .translation {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .translation > summary,
+    .phrase-translation > summary {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 10px 42px 10px 12px;
+      color: var(--teal);
+      background: #f8fbfa;
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .translation > summary::after,
+    .phrase-translation > summary::after {
+      content: "";
+      position: absolute;
+      right: 17px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-3px);
+      transition: transform 160ms ease;
+    }
+
+    .translation[open] > summary::after,
+    .phrase-translation[open] > summary::after {
+      transform: rotate(225deg) translate(-2px, -2px);
+    }
+
+    .jp-full,
+    .phrase-jp {
+      margin: 0;
+      padding: 14px;
+      border-top: 1px solid var(--line);
+      color: #36464b;
+      background: #ffffff;
+      font-size: 0.93rem;
+      line-height: 1.85;
+    }
+
+    .phrase-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .practice-intro {
+      margin: 0 0 14px;
+      padding: 12px 13px;
+      border-left: 4px solid var(--teal);
+      color: #355257;
+      background: #edf7f5;
+      font-size: 0.86rem;
+      font-weight: 650;
+      line-height: 1.75;
+    }
+
+    .phrase {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 7px 18px rgba(21, 61, 62, 0.07);
+    }
+
+    .phrase-en {
+      margin: 0;
+      padding: 14px 14px 9px;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .phrase-audio {
+      width: calc(100% - 20px);
+      height: 42px;
+      margin: 0 10px 10px;
+    }
+
+    .phrase-translation {
+      border-top: 1px solid var(--line);
+    }
+
+    .phrase-translation > summary {
+      min-height: 42px;
+      color: var(--teal);
+      background: #f7fbfa;
+      font-family: inherit;
+      font-size: 0.8rem;
+    }
+
+    .phrase-translation[open] > summary {
+      background: var(--teal-soft);
+    }
+
+    .practice-tip {
+      margin: 12px 0 0;
+      padding: 11px 12px;
+      border-left: 4px solid var(--gold);
+      color: #5f522f;
+      background: var(--gold-soft);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    @media (min-width: 480px) {
+      body {
+        padding: 24px 0;
+      }
+
+      .page {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      main {
+        padding: 14px 20px 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PREVIEW</p>
+        <h1>Better Call Saul:<span>Mike's Powerful Advice on Moving Forward</span></h1>
+      </div>
+      <div class="video-area">
+        <p class="video-label"><span>Scene clip</span><span>0:32</span></p>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/N7TzWUf8C70?rel=0&amp;playsinline=1"
+            title="Moving Forward - Better Call Saul scene"
+            loading="eager"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" aria-labelledby="listen-heading">
+        <p class="section-kicker"><span class="step">1</span> Listen</p>
+        <h2 id="listen-heading">まずは音声を聞こう</h2>
+        <audio id="lesson-audio" controls preload="metadata">
+          <source src="assets/moving-forward/moving-forward.mp3" type="audio/mpeg">
+        </audio>
+        <div class="audio-tools">
+          <div class="speed-control" aria-label="再生速度">
+            <button class="speed-button" type="button" data-speed="0.5">×0.5</button>
+            <button class="speed-button" type="button" data-speed="0.75">×0.75</button>
+            <button class="speed-button active" type="button" data-speed="1">×1.0</button>
+          </div>
+          <button class="restart-button" id="restart-audio" type="button" title="最初から再生" aria-label="最初から再生">↺</button>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="read-heading">
+        <p class="section-kicker"><span class="step">2</span> Read</p>
+        <h2 id="read-heading">英文を読んで意味をつかもう</h2>
+        <p class="english-full">One day... one day, you’re gonna wake up, eat your breakfast, brush your teeth, go about your business... And sooner or later, you’re gonna realize you haven’t thought about it. None of it. And that’s the moment you realize you can forget. When you know that’s possible, it all gets easier.</p>
+        <details class="translation">
+          <summary>日本語訳を確認</summary>
+          <p class="jp-full">いつか……いつか君は朝起きて、朝食を食べて、歯を磨いて、いつもどおり一日を過ごす。<br><br>そしてやがて、ふと気づくんだ。そのことを、まったく考えていなかったって。<br><br>その瞬間、君は「忘れることができるんだ」と分かる。<br><br>忘れられるんだと分かれば、すべてが少しずつ楽になっていく。</p>
+        </details>
+      </section>
+
+      <section class="section" aria-labelledby="practice-heading">
+        <p class="section-kicker"><span class="step">3</span> Practice</p>
+        <h2 id="practice-heading">意味のまとまりで練習しよう</h2>
+        <p class="practice-intro">レッスンではイントネーション（核）の話を取り扱います。どこが核で、何調なのかを考えて予習してお越しください。</p>
+        <div class="phrase-list">
+          <article class="phrase">
+            <p class="phrase-en">One day... one day, you’re gonna wake up,</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-01.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">いつか……いつか君は朝起きて、</p>
+            </details>
+          </article>
+          <article class="phrase">
+            <p class="phrase-en">eat your breakfast, brush your teeth, go about your business...</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-02.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">朝食を食べて、歯を磨いて、いつもどおり一日を過ごす。</p>
+            </details>
+          </article>
+          <article class="phrase">
+            <p class="phrase-en">And sooner or later, you’re gonna realize you haven’t thought about it.</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-03.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">そしてやがて、ふと気づくんだ。そのことを考えていなかったって。</p>
+            </details>
+          </article>
+          <article class="phrase">
+            <p class="phrase-en">None of it.</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-04.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">何ひとつ、まったく。</p>
+            </details>
+          </article>
+          <article class="phrase">
+            <p class="phrase-en">And that’s the moment you realize you can forget.</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-05.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">その瞬間、君は「忘れることができるんだ」と分かる。</p>
+            </details>
+          </article>
+          <article class="phrase">
+            <p class="phrase-en">When you know that’s possible, it all gets easier.</p>
+            <audio class="phrase-audio" controls preload="metadata" src="assets/moving-forward/phrase-06.mp3"></audio>
+            <details class="phrase-translation">
+              <summary>日本語を確認</summary>
+              <p class="phrase-jp">忘れられるんだと分かれば、すべてが少しずつ楽になっていく。</p>
+            </details>
+          </article>
+        </div>
+        <p class="practice-tip">発音ではない「英文」や「文法」に関するご質問がある場合はメッセージをBauer宛にお送りください。</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const audio = document.getElementById("lesson-audio");
+    const allAudio = document.querySelectorAll("audio");
+    const speedButtons = document.querySelectorAll(".speed-button");
+    const restartButton = document.getElementById("restart-audio");
+
+    speedButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const speed = Number(button.dataset.speed);
+        allAudio.forEach((player) => {
+          player.playbackRate = speed;
+        });
+        speedButtons.forEach((item) => item.classList.toggle("active", item === button));
+      });
+    });
+
+    restartButton.addEventListener("click", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+  </script>
+</body>
+</html>
