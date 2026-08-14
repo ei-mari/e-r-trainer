@@ -144,6 +144,39 @@ h2 {
   width: 0;
 }
 
+.assignment-section-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(25, 49, 30, 0.1);
+  border-radius: 14px;
+  background: rgba(232, 241, 226, 0.94);
+}
+
+.assignment-section-tab {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.assignment-section-tab:hover,
+.assignment-section-tab:focus-visible {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.assignment-section-tab.active {
+  color: #ffffff;
+  background: #327c2b;
+  box-shadow: 0 5px 12px rgba(50, 124, 43, 0.2);
+}
+
 .assignment-card {
   display: grid;
   gap: 12px;
