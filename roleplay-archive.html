@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIMARI ROLEPLAY | Archive</title>
+    <link rel="stylesheet" href="./roleplay-archive.css" />
+  </head>
+  <body class="roleplay-archive-page">
+    <main class="roleplay-shell">
+      <header class="roleplay-hero">
+        <img
+          class="roleplay-hero-image"
+          src="./assets/eimari-roleplay-briefing.png"
+          alt="EIMARI ROLEPLAY mission briefing"
+        />
+        <div class="roleplay-hero-overlay">
+          <div class="roleplay-title-block">
+            <p class="roleplay-kicker">MISSION ARCHIVE</p>
+            <h1>EIMARI ROLEPLAY</h1>
+            <p class="roleplay-lead">2026年4月28日に開催したロープレレッスンのアーカイブです。</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="roleplay-watch" aria-labelledby="currentEpisodeTitle">
+        <div class="roleplay-watch-head">
+          <p class="roleplay-kicker">NOW PLAYING</p>
+          <h2 id="currentEpisodeTitle">R-1</h2>
+          <p id="currentEpisodeMeta">Case file 01 / Presentation</p>
+        </div>
+        <div class="roleplay-player-frame">
+          <iframe
+            id="roleplayPlayer"
+            src="https://player.vimeo.com/video/1187595478?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            title="R-1"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="roleplay-playlist" aria-label="動画一覧">
+        <button
+          class="roleplay-episode active"
+          type="button"
+          data-title="R-1"
+          data-meta="Case file 01 / Presentation"
+          data-src="https://player.vimeo.com/video/1187595478?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        >
+          <span class="roleplay-episode-no">01</span>
+          <span>
+            <strong>R-1</strong>
+            <small>Presentation briefing</small>
+          </span>
+        </button>
+        <button
+          class="roleplay-episode"
+          type="button"
+          data-title="R-2"
+          data-meta="Case file 02 / Investigation"
+          data-src="https://player.vimeo.com/video/1187595479?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        >
+          <span class="roleplay-episode-no">02</span>
+          <span>
+            <strong>R-2</strong>
+            <small>Investigation and analysis</small>
+          </span>
+        </button>
+        <button
+          class="roleplay-episode"
+          type="button"
+          data-title="R-3"
+          data-meta="Case file 03 / Dictation / Listening"
+          data-src="https://player.vimeo.com/video/1187595477?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        >
+          <span class="roleplay-episode-no">03</span>
+          <span>
+            <strong>R-3</strong>
+            <small>Dictation / Listening</small>
+          </span>
+        </button>
+      </section>
+    </main>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="module" src="./roleplay-archive.js"></script>
+  </body>
+</html>
