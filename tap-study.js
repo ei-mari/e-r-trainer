@@ -153,7 +153,103 @@ const cards = [
       "./tap-study-audio/lines/online-shopping-q7-answer-line-4.wav",
     ],
     answerIpa:
-      "/aɪ θɪŋk ðər ər tu pəˈtɛnʃəl ˈdeɪndʒərz əv ˈɑnˌlaɪn ˈʃɑpɪŋ/\n/wʌn ɪz ˈbaɪɪŋ kloʊðz ɪn ðə rɔŋ saɪz bɪˈkəz jə ˈkænɑt traɪ ðəm ɑn bɪˈfɔr jə baɪ ðəm/\n/əˈnʌðər ˈdeɪndʒər ɪz ðət ˈpɜrsənəl ˌɪnfərˈmeɪʃən, sʌtʃ əz ˈkrɛdət kɑrd ˈditelz, kəd bi stoʊl/\n/ˈðɛrˌfɔr, wi ʃəd bi ˈkɛrfəl wɛn ˈʃɑpɪŋ ˈɑnˌlaɪn/",
+      "/aɪ θɪŋk ðər ər tu pəˈtɛnʃəl ˈdeɪndʒərz əv ˈɑnˌlaɪn ˈʃɑpɪŋ/\n/wʌn ɪz ˈbaɪɪŋ kloʊ(ð)z ɪn ðə rɔŋ saɪz bɪˈkəz jə ˈkænɑt traɪ ðəm ɑn bɪˈfɔr jə baɪ ðəm/\n/əˈnʌðər ˈdeɪndʒər ɪz ðət ˈpɜrsənəl ˌɪnfərˈmeɪʃən, sʌtʃ əz ˈkrɛdət kɑrd ˈditelz, kəd bi stoʊl/\n/ˈðɛrˌfɔr, wi ʃəd bi ˈkɛrfəl wɛn ˈʃɑpɪŋ ˈɑnˌlaɪn/",
+  },
+  {
+    id: "clothes-shopping-q5",
+    topic: "clothes-shopping",
+    topicLabel: "Clothes Shopping",
+    number: "Q5",
+    question: "Where is your favorite place to buy clothes? Why do you like that place?",
+    answer:
+      "I don't really have a favorite place to buy clothes.\nI usually shop online because it's easy and convenient.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/clothes-shopping-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/clothes-shopping-q5-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪ doʊnt ˈrɪli həv ə ˈfeɪvərət pleɪs tə baɪ kloʊ(ð)z/\n/aɪ ˈjuʒuəli ʃɑp ˈɑnˌlaɪn bɪkəz ɪts ˈizi ən kənˈvinjənt/",
+  },
+  {
+    id: "clothes-shopping-q6",
+    topic: "clothes-shopping",
+    topicLabel: "Clothes Shopping",
+    number: "Q6",
+    question: "Do you enjoy shopping for clothes for other people? Why or why not?",
+    answer:
+      "No, I don't.\nShopping for clothes for other people is very difficult.\nI might buy the wrong size, and they might not like what I choose.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/clothes-shopping-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/clothes-shopping-q6-answer-line-2.wav",
+      "./tap-study-audio/lines/clothes-shopping-q6-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/noʊ, aɪ doʊnt/\n/ˈʃɑpɪŋ fər kloʊ(ð)z fər ˈʌðər ˈpipəl ɪz ˈvɛri ˈdɪfəkəlt/\n/aɪ maɪt baɪ ðə rɔŋ saɪz, ən ðeɪ maɪt nɑt laɪk wʌt aɪ tʃuz/",
+  },
+  {
+    id: "clothes-shopping-q7",
+    topic: "clothes-shopping",
+    topicLabel: "Clothes Shopping",
+    number: "Q7",
+    question: "How do you feel about salespeople approaching you and helping you when you shop for clothes?",
+    answer:
+      "I think it depends on the shop.\nIf I know the salesperson and we're friendly, I don't mind talking with them or asking for help.\nBut if it's my first time at the shop, I prefer to look around by myself and take my time.\nSometimes I feel a little uncomfortable when salespeople approach me too much.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/clothes-shopping-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/clothes-shopping-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/clothes-shopping-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/clothes-shopping-q7-answer-line-4.wav",
+    ],
+    answerIpa:
+      "/aɪ θɪŋk ɪt dɪˈpɛndz ɑn ðə ʃɑp/\n/ɪf aɪ noʊ ðə ˈseɪlzˌpɜrsən ən wɪr ˈfrɛndli, aɪ doʊnt maɪnd ˈtɔkɪŋ wɪð ðəm ər ˈæskɪŋ fər hɛlp/\n/bət ɪf ɪts maɪ fɜrst taɪm ət ðə ʃɑp, aɪ prɪˈfɜr tə lʊk əˈraʊnd baɪ maɪˈsɛlf ən teɪk maɪ taɪm/\n/ˈsʌmˌtaɪmz aɪ fil ə ˈlɪtəl ʌnˈkʌmfərtəbəl wɛn ˈseɪlzˌpipəl əˈproʊtʃ mi tu mʌtʃ/",
+  },
+  {
+    id: "tourist-information-q1",
+    topic: "tourist-information",
+    topicLabel: "Tourist Information",
+    number: "Q1",
+    question: "Have you ever used a tourist information center? What did you ask about?",
+    answer:
+      "No, I haven't.\nI usually check information online before I go somewhere.\nFor example, I check public transportation and the places I want to visit before I leave home.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/tourist-information-q1-answer-line-1.wav",
+      "./tap-study-audio/lines/tourist-information-q1-answer-line-2.wav",
+      "./tap-study-audio/lines/tourist-information-q1-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/noʊ, aɪ ˈhævənt/\n/aɪ ˈjuʒuəli tʃɛk ˌɪnfərˈmeɪʃən ˈɑnˌlaɪn bɪˈfɔr aɪ ɡoʊ ˈsʌmˌwɛr/\n/fər ɪɡˈzæmpəl, aɪ tʃɛk ˈpʌblɪk ˌtrænspərˈteɪʃən ən ðə ˈpleɪsɪz aɪ wɑnt tə ˈvɪzət bɪˈfɔr aɪ liv hoʊm/",
+  },
+  {
+    id: "tourist-information-q2",
+    topic: "tourist-information",
+    topicLabel: "Tourist Information",
+    number: "Q2",
+    question: "What kind of information do you think tourist information centers should provide?",
+    answer:
+      "I'm not sure because I've never been to a tourist information center.\nBut I think they should provide information about public transportation in multiple languages, such as how to buy tickets and how to use buses and trains.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/tourist-information-q2-answer-line-1.wav",
+      "./tap-study-audio/lines/tourist-information-q2-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪm nɑt ʃʊr bɪˈkəz aɪv ˈnɛvər bɪn tə ə ˈtʊrɪst ˌɪnfərˈmeɪʃən ˈsɛntər/\n/bət aɪ θɪŋk ðeɪ ʃəd prəˈvaɪd ˌɪnfərˈmeɪʃən əˈbaʊt ˈpʌblɪk ˌtrænspərˈteɪʃən ɪn ˈmʌltəpəl ˈlæŋɡwɪdʒɪz, sʌtʃ əz haʊ tə baɪ ˈtɪkəts ən haʊ tə juz ˈbʌsɪz ən treɪnz/",
+  },
+  {
+    id: "tourist-information-q3",
+    topic: "tourist-information",
+    topicLabel: "Tourist Information",
+    number: "Q3",
+    question: "Do you think tourist information centers are still necessary now that people can use smartphones? Why or why not?",
+    answer:
+      "No, I don't.\nWe can check maps and a lot of information on our smartphones.\nBut I think public transportation can be difficult for foreigners to understand.\nSo transportation websites and apps should provide clear information about how to buy tickets and how to pay.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-1.wav",
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-2.wav",
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-3.wav",
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-4.wav",
+    ],
+    answerIpa:
+      "/noʊ, aɪ doʊnt/\n/wi kən tʃɛk mæps ən ə lɑt əv ˌɪnfərˈmeɪʃən ɑn aʊər ˈsmɑrtˌfoʊnz/\n/bət aɪ θɪŋk ˈpʌblɪk ˌtrænspərˈteɪʃən kən bi ˈdɪfəkəlt fər ˈfɔrənərz tə ˌʌndərˈstænd/\n/soʊ ˌtrænspərˈteɪʃən ˈwɛbˌsaɪts ən æps ʃəd prəˈvaɪd klɪr ˌɪnfərˈmeɪʃən əˈbaʊt haʊ tə baɪ ˈtɪkəts ən haʊ tə peɪ/",
   },
 ];
 
