@@ -251,6 +251,103 @@ const cards = [
     answerIpa:
       "/noʊ, aɪ doʊnt/\n/wi kən tʃɛk mæps ən ə lɑt əv ˌɪnfərˈmeɪʃən ɑn aʊər ˈsmɑrtˌfoʊnz/\n/bət aɪ θɪŋk ˈpʌblɪk ˌtrænspərˈteɪʃən kən bi ˈdɪfəkəlt fər ˈfɔrənərz tə ˌʌndərˈstænd/\n/soʊ ˌtrænspərˈteɪʃən ˈwɛbˌsaɪts ən æps ʃəd prəˈvaɪd klɪr ˌɪnfərˈmeɪʃən əˈbaʊt haʊ tə baɪ ˈtɪkəts ən haʊ tə peɪ/",
   },
+  {
+    id: "daily-routine-q5",
+    topic: "daily-routine",
+    topicLabel: "Daily Routine",
+    number: "Q5",
+    question: "How much time do you usually spend eating dinner? Where do you usually eat it?",
+    answer:
+      "I usually spend about 30 minutes eating dinner.\nI usually eat at home while watching Netflix.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/daily-routine-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/daily-routine-q5-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪ ˈjuʒuəli spɛnd əˈbaʊt ˈθɜrti ˈmɪnəts ˈitɪŋ ˈdɪnər/\n/aɪ ˈjuʒuəli it ət hoʊm waɪl ˈwɑtʃɪŋ ˈnɛtflɪks/",
+  },
+  {
+    id: "daily-routine-q6",
+    topic: "daily-routine",
+    topicLabel: "Daily Routine",
+    number: "Q6",
+    question: "Do you think adopting good sleeping habits is important? Why or why not?",
+    answer:
+      "Yes, I do.\nHaving good sleep habits keeps us healthy and helps us stay in good condition.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/daily-routine-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/daily-routine-q6-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/jɛs, aɪ du/\n/ˈhævɪŋ ɡʊd slip ˈhæbəts kips əs ˈhɛlθi ən hɛlps əs steɪ ɪn ɡʊd kənˈdɪʃən/",
+  },
+  {
+    id: "daily-routine-q7",
+    topic: "daily-routine",
+    topicLabel: "Daily Routine",
+    number: "Q7",
+    question: "Can you tell me about your daily morning routine before going to work or school?",
+    answer:
+      "I usually wake up at 7 a.m.\nThen, I stretch, wash my face, brush my teeth, and eat breakfast.\nI usually have granola for breakfast.\nAfter that, I brush my teeth again, get dressed, and put on makeup.\nThen, I start working at home.\nI usually start working around 9 a.m.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-4.wav",
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-5.wav",
+      "./tap-study-audio/lines/daily-routine-q7-answer-line-6.wav",
+    ],
+    answerIpa:
+      "/aɪ ˈjuʒuəli weɪk ʌp ət ˈsɛvən eɪ ˈɛm/\n/ðɛn, aɪ strɛtʃ, wɑʃ maɪ feɪs, brʌʃ maɪ tiθ, ən it ˈbrɛkfəst/\n/aɪ ˈjuʒuəli həv ɡrəˈnoʊlə fər ˈbrɛkfəst/\n/ˈæftər ðæt, aɪ brʌʃ maɪ tiθ əˈɡɛn, ɡɛt drɛst, ən pʊt ɑn ˈmeɪkˌʌp/\n/ðɛn, aɪ stɑrt ˈwɜrkɪŋ ət hoʊm/\n/aɪ ˈjuʒuəli stɑrt ˈwɜrkɪŋ əˈraʊnd naɪn eɪ ˈɛm/",
+  },
+  {
+    id: "fast-food-q5",
+    topic: "fast-food",
+    topicLabel: "Fast Food",
+    number: "Q5",
+    question: "How often do you eat fast food?",
+    answer:
+      "I usually eat fast food once a week.\nThere is a MOS Burger across from my house, so I often go there.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/fast-food-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/fast-food-q5-answer-line-2.wav",
+    ],
+    answerIpa:
+      "/aɪ ˈjuʒuəli it fæst fud wʌns ə wik/\n/ðər ɪz ə mɔs ˈbɜrɡər əˈkrɔs frəm maɪ haʊs, soʊ aɪ ˈɔfən ɡoʊ ðɛr/",
+  },
+  {
+    id: "fast-food-q6",
+    topic: "fast-food",
+    topicLabel: "Fast Food",
+    number: "Q6",
+    question: "Has fast food in your country become more popular than in the past? Why?",
+    answer:
+      "No, it hasn't.\nSince COVID, prices have gone up, so fast food has become more expensive.\nI think many people want to save money, too.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/fast-food-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/fast-food-q6-answer-line-2.wav",
+      "./tap-study-audio/lines/fast-food-q6-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/noʊ, ɪt ˈhæzənt/\n/sɪns ˈkoʊvɪd, ˈpraɪsɪz həv ɡɔn ʌp, soʊ fæst fud həz bɪˈkʌm mɔr ɪkˈspɛnsɪv/\n/aɪ θɪŋk ˈmɛni ˈpipəl wɑnt tə seɪv ˈmʌni, tu/",
+  },
+  {
+    id: "fast-food-q7",
+    topic: "fast-food",
+    topicLabel: "Fast Food",
+    number: "Q7",
+    question: "If a new fast food restaurant opened in your area, which of the following would encourage you to go there? Why?",
+    answer:
+      "A healthy menu would encourage me to go there.\nRecently, I had appendicitis, so I've been trying to be careful about what I eat.\nAlso, when I went to Europe, there were various kinds of salads, and they were really tasty.\nI'd like to eat similar food in Japan.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/fast-food-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/fast-food-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/fast-food-q7-answer-line-3.wav",
+      "./tap-study-audio/lines/fast-food-q7-answer-line-4.wav",
+    ],
+    answerIpa:
+      "/ə ˈhɛlθi ˈmɛnju wəd ɪnˈkɜrɪdʒ mi tə ɡoʊ ðɛr/\n/ˈrisəntli, aɪ hæd əˌpɛndəˈsaɪtəs, soʊ aɪv bɪn ˈtraɪɪŋ tə bi ˈkɛrfəl əˈbaʊt wʌt aɪ it/\n/ˈɔlsoʊ, wɛn aɪ wɛnt tə ˈjʊrəp, ðər wər ˈvɛriəs kaɪndz əv ˈsælədz, ən ðeɪ wər ˈrɪli ˈteɪsti/\n/aɪd laɪk tə it ˈsɪmələr fud ɪn dʒəˈpæn/",
+  },
 ];
 
 const state = {
