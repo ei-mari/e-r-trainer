@@ -241,15 +241,17 @@ const cards = [
     number: "Q3",
     question: "Do you think tourist information centers are still necessary now that people can use smartphones? Why or why not?",
     answer:
-      "No, I don't.\nWe can check maps and a lot of information on our smartphones.\nBut I think public transportation can be difficult for foreigners to understand.\nSo transportation websites and apps should provide clear information about how to buy tickets and how to pay.",
+      "I think tourist information centers are still necessary.\nNowadays, we can check information on our smartphones.\nIt's easy and quick.\nBut if our phone batteries are low or there is no Wi-Fi, we need to ask the staff.\nAlso, they can give us local information that we may not find online.\nSo, I think tourist information centers are still useful even though we have smartphones.",
     answerLineAudios: [
       "./tap-study-audio/lines/tourist-information-q3-answer-line-1.wav",
       "./tap-study-audio/lines/tourist-information-q3-answer-line-2.wav",
       "./tap-study-audio/lines/tourist-information-q3-answer-line-3.wav",
       "./tap-study-audio/lines/tourist-information-q3-answer-line-4.wav",
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-5.wav",
+      "./tap-study-audio/lines/tourist-information-q3-answer-line-6.wav",
     ],
     answerIpa:
-      "/noʊ, aɪ doʊnt/\n/wi kən tʃɛk mæps ən ə lɑt əv ˌɪnfərˈmeɪʃən ɑn aʊər ˈsmɑrtˌfoʊnz/\n/bət aɪ θɪŋk ˈpʌblɪk ˌtrænspərˈteɪʃən kən bi ˈdɪfəkəlt fər ˈfɔrənərz tə ˌʌndərˈstænd/\n/soʊ ˌtrænspərˈteɪʃən ˈwɛbˌsaɪts ən æps ʃəd prəˈvaɪd klɪr ˌɪnfərˈmeɪʃən əˈbaʊt haʊ tə baɪ ˈtɪkəts ən haʊ tə peɪ/",
+      "/aɪ θɪŋk ˈtʊrɪst ˌɪnfərˈmeɪʃən ˈsɛntərz ər stɪl ˈnɛsəˌsɛri/\n/ˈnaʊəˌdeɪz, wi kən tʃɛk ˌɪnfərˈmeɪʃən ɑn aʊər ˈsmɑrtˌfoʊnz/\n/ɪts ˈizi ən kwɪk/\n/bət ɪf aʊər foʊn ˈbætəriz ər loʊ ər ðər ɪz noʊ ˈwaɪˌfaɪ, wi nid tə æsk ðə stæf/\n/ˈɔlsoʊ, ðeɪ kən ɡɪv əs ˈloʊkəl ˌɪnfərˈmeɪʃən ðət wi meɪ nɑt faɪnd ˈɑnˌlaɪn/\n/soʊ, aɪ θɪŋk ˈtʊrɪst ˌɪnfərˈmeɪʃən ˈsɛntərz ər stɪl ˈjusfəl ˈivən ðoʊ wi həv ˈsmɑrtˌfoʊnz/",
   },
   {
     id: "daily-routine-q5",
