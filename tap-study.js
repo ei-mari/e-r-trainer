@@ -350,6 +350,54 @@ const cards = [
     answerIpa:
       "/ə ˈhɛlθi ˈmɛnju wəd ɪnˈkɜrɪdʒ mi tə ɡoʊ ðɛr/\n/ˈrisəntli, aɪ hæd əˌpɛndəˈsaɪtəs, soʊ aɪv bɪn ˈtraɪɪŋ tə bi ˈkɛrfəl əˈbaʊt wʌt aɪ it/\n/ˈɔlsoʊ, wɛn aɪ wɛnt tə ˈjʊrəp, ðər wər ˈvɛriəs kaɪndz əv ˈsælədz, ən ðeɪ wər ˈrɪli ˈteɪsti/\n/aɪd laɪk tə it ˈsɪmələr fud ɪn dʒəˈpæn/",
   },
+  {
+    id: "text-messaging-q5",
+    topic: "text-messaging",
+    topicLabel: "Text Messaging",
+    number: "Q5",
+    question: "About how many text messages do you send a day? Are they mostly for personal purposes?",
+    answer:
+      "I usually send about 20 text messages a day.\nNo, not really.\nI use text messaging for both work and personal purposes.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/text-messaging-q5-answer-line-1.wav",
+      "./tap-study-audio/lines/text-messaging-q5-answer-line-2.wav",
+      "./tap-study-audio/lines/text-messaging-q5-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/aɪ ˈjuʒuəli sɛnd əˈbaʊt ˈtwɛnti tɛkst ˈmɛsɪdʒɪz ə deɪ/\n/noʊ, nɑt ˈrɪli/\n/aɪ juz tɛkst ˈmɛsɪdʒɪŋ fər boʊθ wɜrk ən ˈpɜrsənəl ˈpɜrpəsɪz/",
+  },
+  {
+    id: "text-messaging-q6",
+    topic: "text-messaging",
+    topicLabel: "Text Messaging",
+    number: "Q6",
+    question: "Do you think text messaging is better than sending e-mails? Why?",
+    answer:
+      "Yes, I do.\nIt's easier and quicker than sending e-mails.\nAlso, we can see if people have read our messages, so I think text messaging is more convenient.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/text-messaging-q6-answer-line-1.wav",
+      "./tap-study-audio/lines/text-messaging-q6-answer-line-2.wav",
+      "./tap-study-audio/lines/text-messaging-q6-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/jɛs, aɪ du/\n/ɪts ˈiziər ən ˈkwɪkər ðən ˈsɛndɪŋ ˈiˌmeɪlz/\n/ˈɔlsoʊ, wi kən si ɪf ˈpipəl həv rɛd aʊər ˈmɛsɪdʒɪz, soʊ aɪ θɪŋk tɛkst ˈmɛsɪdʒɪŋ ɪz mɔr kənˈvinjənt/",
+  },
+  {
+    id: "text-messaging-q7",
+    topic: "text-messaging",
+    topicLabel: "Text Messaging",
+    number: "Q7",
+    question: "In what situations do you think it is not appropriate to send text messages, and why?",
+    answer:
+      "I think text messaging is not appropriate when we contact people from other companies, especially when we need to discuss important documents with them.\nIt can be too casual.\nAlso, some people may feel uncomfortable with text messages in formal situations.",
+    answerLineAudios: [
+      "./tap-study-audio/lines/text-messaging-q7-answer-line-1.wav",
+      "./tap-study-audio/lines/text-messaging-q7-answer-line-2.wav",
+      "./tap-study-audio/lines/text-messaging-q7-answer-line-3.wav",
+    ],
+    answerIpa:
+      "/aɪ θɪŋk tɛkst ˈmɛsɪdʒɪŋ ɪz nɑt əˈproʊpriət wɛn wi ˈkɑnˌtækt ˈpipəl frəm ˈʌðər ˈkʌmpəniz, əˈspɛʃəli wɛn wi nid tə dɪˈskʌs ɪmˈpɔrtənt ˈdɑkjəmənts wɪð ðəm/\n/ɪt kən bi tu ˈkæʒuəl/\n/ˈɔlsoʊ, sʌm ˈpipəl meɪ fil ʌnˈkʌmfərtəbəl wɪð tɛkst ˈmɛsɪdʒɪz ɪn ˈfɔrməl ˌsɪtʃuˈeɪʃənz/",
+  },
 ];
 
 const state = {
